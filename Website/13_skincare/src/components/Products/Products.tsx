@@ -5,6 +5,9 @@ import { ProductsData } from "../../constants/products";
 
 const Products = () => {
   const [MenuProducts, setMenuProducts] = useState(ProductsData);
+  const filterMenuProducts = (type: string) => {
+    setMenuProducts(ProductsData.filter((product) => product.type === type));
+  };
   return (
     <div className={css.container}>
       <img src={Plane} alt="Plane" />
@@ -12,10 +15,12 @@ const Products = () => {
 
       <div className={css.products}>
         <ul className={css.menu}>
-          <li>All</li>
-          <li>Skincare</li>
-          <li>Conditioners</li>
-          <li>Foundations</li>
+          <li onClick={() => setMenuProducts(ProductsData)}>All</li>
+          <li onClick={() => filterMenuProducts("skincare")}>Skincare</li>
+          <li onClick={() => filterMenuProducts("conditioner")}>
+            Conditioners
+          </li>
+          <li onClick={() => filterMenuProducts("foundation")}>Foundations</li>
         </ul>
         <div className={css.list}>
           {MenuProducts.map((product, index) => (
