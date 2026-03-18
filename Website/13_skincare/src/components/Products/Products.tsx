@@ -20,7 +20,15 @@ const Products = () => {
         <div className={css.list}>
           {MenuProducts.map((product, index) => (
             <div key={index} className={css.product}>
-              Products
+              <div className="left-s">
+                <div className="name">
+                  <span>{product.name}</span>
+                  <span>{product.detail}</span>
+                </div>
+                <span>${product.price}</span>
+                <div>Shop Now</div>
+              </div>
+              <img src={product.img} alt="Product Image" className="img-p" />
             </div>
           ))}
         </div>
