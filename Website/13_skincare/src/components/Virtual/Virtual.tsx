@@ -6,8 +6,8 @@ const Virtual = () => {
   return (
     <div className={css.Virtual}>
       <div className={css.left}>
-        <span>virtual try-one</span>
-        <span>Never Buy the wrong Shade Again!</span>
+        <span>virtual try-on</span>
+        <span>never buy the wrong shade again!</span>
         <span>Try Now!</span>
         <img src={Shade} alt="Blue Shade" />
       </div>
