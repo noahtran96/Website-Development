@@ -5,7 +5,7 @@ import {
   InboxIcon,
   PhoneIcon,
   MapPinIcon,
-  LogOutIcon,
+  ArrowLeftStartOnRectangleIcon,
   UsersIcon,
   LinkIcon,
 } from "@heroicons/react/24/outline";
@@ -40,7 +40,7 @@ const Footer = () => {
           <div className={css.detail}>
             <span>Account</span>
             <span className={css.pngLine}>
-              <LogOutIcon className={css.icon} />
+              <ArrowLeftStartOnRectangleIcon className={css.icon} />
               Sign In
             </span>
           </div>
@@ -50,9 +50,7 @@ const Footer = () => {
             <span>Company</span>
             <span className={css.pngLine}>
               <UsersIcon className={css.icon} />
-              <a href="/about">
-                <p>About Us</p>
-              </a>
+              <a href="/about">About Us</a>
             </span>
           </div>
         </div>
