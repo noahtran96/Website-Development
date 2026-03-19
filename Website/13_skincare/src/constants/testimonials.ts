@@ -17,7 +17,7 @@ export const TestimonialsData = [
   {
     image: profile1,
     comment:
-      "The texture of my skin has improved so much since I started using this serum. My pores look smaller and my face feels incredibly soft. I'm already on my second bottle – I can't live without it!",
+      "The texture of my skin has improved so much since I started using this serum. My pores look smaller and my face feels incredibly soft. I'm already on my second bottle!",
     name: "Alicia Hormonzi",
   },
   {

@@ -28,6 +28,11 @@ const Testimonials = () => {
           slidesPerGroup={1}
           spaceBetween={20}
           className={css.testimonialCarousel}
+          breakpoints={{
+            856: { slidesPerView: 3 },
+            640: { slidesPerView: 2 },
+            0: { slidesPerView: 1 },
+          }}
         >
           {TestimonialsData.map((testimonial, index) => (
             <SwiperSlide key={index}>
