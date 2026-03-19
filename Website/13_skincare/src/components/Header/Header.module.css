@@ -44,6 +44,17 @@
   height: 1.5rem;
   cursor: pointer;
 }
+.bars {
+  display: none;
+}
+@media screen and (max-width: 856px) {
+  .search {
+    display: none;
+  }
+  .right {
+    gap: 1rem;
+  }
+}
 @media screen and (max-width: 640px) {
   .right {
     position: absolute;
