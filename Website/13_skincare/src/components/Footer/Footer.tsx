@@ -1,4 +1,5 @@
 import React from "react";
+import type { FC } from "react";
 import css from "./Footer.module.css";
 import Logo from "../../assets/logo.png";
 import {
@@ -10,7 +11,7 @@ import {
   LinkIcon,
 } from "@heroicons/react/24/outline";
 
-const Footer = () => {
+const Footer: FC = () => {
   return (
     <div className={css.cFooterWrapper}>
       <hr />

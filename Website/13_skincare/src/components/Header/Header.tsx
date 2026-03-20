@@ -1,13 +1,14 @@
 import React, { useState } from "react";
+import type { FC } from "react";
 import css from "./Header.module.css";
 import Logo from "../../assets/logo.png";
 import { CgShoppingBag } from "react-icons/cg";
 import { GoRows } from "react-icons/go";
 
-const Header: React.FC = () => {
-  const [ShowMenu, setShowMenu] = useState(true);
-  const toggleMenu = () => {
-    setShowMenu((ShowMenu) => !ShowMenu);
+const Header: FC = () => {
+  const [showMenu, setShowMenu] = useState<boolean>(true);
+  const toggleMenu = (): void => {
+    setShowMenu((showMenu) => !showMenu);
   };
   return (
     <div className={css.container}>
@@ -21,7 +22,7 @@ const Header: React.FC = () => {
         </div>
         <ul
           className={css.menu}
-          style={{ display: ShowMenu ? "flex" : "none" }}
+          style={{ display: showMenu ? "flex" : "none" }}
         >
           <li>Collections</li>
           <li>Brands</li>

@@ -1,4 +1,5 @@
 import React from "react";
+import type { FC } from "react";
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 import Slider from "./components/Slider/Slider";
@@ -7,7 +8,7 @@ import Products from "./components/Products/Products";
 import Testimonials from "./components/Testimonials/Testimonials";
 import Footer from "./components/Footer/Footer";
 
-const App = () => {
+const App: FC = () => {
   return (
     <div className="App">
       <Header />

@@ -1,4 +1,5 @@
 import React from "react";
+import type { FC } from "react";
 import css from "./Hero.module.css";
 import HeroImg from "../../assets/hero.png";
 import { RiShoppingBagFill } from "react-icons/ri";
@@ -6,8 +7,8 @@ import { BsArrowRight } from "react-icons/bs";
 import { motion } from "framer-motion";
 import type { Transition } from "framer-motion";
 
-const Hero = () => {
-  const transition: Transition = { duration: 3, type: "spring" };
+const transition: Transition = { duration: 3, type: "spring" };
+const Hero: FC = () => {
   return (
     <div className={css.container}>
       {/* left side */}

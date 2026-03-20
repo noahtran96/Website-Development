@@ -1,7 +1,12 @@
 import profile1 from "../assets/profile1.png";
 import profile2 from "../assets/profile2.png";
 
-export const TestimonialsData = [
+export interface Testimonial {
+  image: string;
+  comment: string;
+  name: string;
+}
+export const TestimonialsData: Testimonial[] = [
   {
     image: profile1,
     comment:

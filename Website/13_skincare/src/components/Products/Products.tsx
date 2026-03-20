@@ -1,13 +1,14 @@
 import React, { useState } from "react";
+import type { FC } from "react";
 import css from "./Products.module.css";
 import Plane from "../../assets/plane.png";
-import { ProductsData } from "../../constants/products";
+import { ProductsData, type Product } from "../../constants/products";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 
-const Products = () => {
-  const [parent] = useAutoAnimate();
-  const [MenuProducts, setMenuProducts] = useState(ProductsData);
-  const filterMenuProducts = (type: string) => {
+const Products: FC = () => {
+  const [parent] = useAutoAnimate<HTMLDivElement>();
+  const [menuProducts, setMenuProducts] = useState<Product[]>(ProductsData);
+  const filterMenuProducts = (type: string): void => {
     setMenuProducts(ProductsData.filter((product) => product.type === type));
   };
   return (
@@ -25,7 +26,7 @@ const Products = () => {
           <li onClick={() => filterMenuProducts("foundation")}>Foundations</li>
         </ul>
         <div className={css.list} ref={parent}>
-          {MenuProducts.map((product, index) => (
+          {menuProducts.map((product: Product, index: number) => (
             <div key={index} className={css.product}>
               <div className="left-s">
                 <div className="name">

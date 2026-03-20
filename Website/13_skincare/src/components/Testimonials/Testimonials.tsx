@@ -1,10 +1,14 @@
 import React from "react";
+import type { FC } from "react";
 import css from "./Testimonials.module.css";
 import Hero from "../../assets/testimonialHero.png";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { TestimonialsData } from "../../constants/testimonials";
+import {
+  TestimonialsData,
+  type Testimonial,
+} from "../../constants/testimonials";
 
-const Testimonials = () => {
+const Testimonials: FC = () => {
   return (
     <div className={css.testimonials}>
       <div className={css.wrapper}>
@@ -34,7 +38,7 @@ const Testimonials = () => {
             0: { slidesPerView: 1 },
           }}
         >
-          {TestimonialsData.map((testimonial, index) => (
+          {TestimonialsData.map((testimonial: Testimonial, index: number) => (
             <SwiperSlide key={index}>
               <div className={css.testimonial}>
                 <img src={testimonial.image} alt="Testimonial Image" />

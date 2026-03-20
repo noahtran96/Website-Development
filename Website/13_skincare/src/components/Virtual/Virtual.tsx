@@ -1,11 +1,12 @@
 import React from "react";
+import type { FC } from "react";
 import css from "./Virtual.module.css";
 import Shade from "../../assets/shade.png";
 import ReactCompareImage from "react-compare-image";
 import Before from "../../assets/before.png";
 import After from "../../assets/after.png";
 
-const Virtual = () => {
+const Virtual: FC = () => {
   return (
     <div className={css.Virtual}>
       {/* left side */}

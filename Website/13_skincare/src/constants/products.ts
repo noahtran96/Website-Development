@@ -13,122 +13,129 @@ import img12 from "../assets/img12.png";
 import img13 from "../assets/img13.png";
 import img14 from "../assets/img14.png";
 
-export const SliderProducts = [
+export const SliderProducts: Product[] = [
   {
     name: "SKIN",
     detail: "Super Skincare",
-    price: "25",
+    price: 25,
     img: img1,
   },
   {
     name: "SKIN",
     detail: "Super Skincare",
-    price: "30",
+    price: 30,
     img: img2,
   },
   {
     name: "NATURE",
     detail: "Super Skincare",
-    price: "25",
+    price: 25,
     img: img3,
   },
 ];
-export const ProductsData = [
+export interface Product {
+  name: string;
+  detail: string;
+  price: number;
+  img: string;
+  type?: string;
+}
+export const ProductsData: Product[] = [
   {
     name: "SKIN",
     detail: "Super Skincare",
-    price: "25",
+    price: 25,
     img: img1,
     type: "skincare",
   },
   {
     name: "SKIN",
     detail: "Super Skincare",
-    price: "30",
+    price: 30,
     img: img2,
     type: "skincare",
   },
   {
     name: "NATURE",
     detail: "Super Skincare",
-    price: "25",
+    price: 25,
     img: img3,
     type: "skincare",
   },
   {
     name: "FOUNDATION",
     detail: "Super Skincare",
-    price: "25",
+    price: 25,
     img: img4,
     type: "foundation",
   },
   {
     name: "CONDITIONER",
     detail: "Super Skincare",
-    price: "30",
+    price: 30,
     img: img5,
     type: "conditioner",
   },
   {
     name: "NATURE",
     detail: "Super Skincare",
-    price: "25",
+    price: 25,
     img: img6,
     type: "skincare",
   },
   {
     name: "CONDITIONER",
     detail: "Best Conditioner",
-    price: "30",
+    price: 30,
     img: img7,
     type: "conditioner",
   },
   {
     name: "CONDITIONER",
     detail: "Best Conditioner",
-    price: "30",
+    price: 30,
     img: img8,
     type: "conditioner",
   },
   {
     name: "CONDITIONER",
     detail: "Best Conditioner",
-    price: "30",
+    price: 30,
     img: img9,
     type: "conditioner",
   },
   {
     name: "CONDITIONER",
     detail: "Best Conditioner",
-    price: "30",
+    price: 30,
     img: img10,
     type: "conditioner",
   },
   {
     name: "FOUNDATION",
     detail: "Nourish Your Skin",
-    price: "12",
+    price: 12,
     img: img11,
     type: "foundation",
   },
   {
     name: "FOUNDATION",
     detail: "Nourish Your Skin",
-    price: "12",
+    price: 12,
     img: img12,
     type: "foundation",
   },
   {
     name: "FOUNDATION",
     detail: "Nourish Your Skin",
-    price: "12",
+    price: 12,
     img: img13,
     type: "foundation",
   },
   {
     name: "FOUNDATION",
     detail: "Nourish Your Skin",
-    price: "12",
+    price: 12,
     img: img14,
     type: "foundation",
   },
