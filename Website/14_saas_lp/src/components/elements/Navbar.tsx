@@ -1,6 +1,7 @@
 import type { FC } from "react";
 import { Container } from "../shared/Container";
 import { NavItem } from "../shared/NavItem";
+import { BtnLink } from "../shared/BtnLink";
 import Logo from "../../../public/assets/icon.svg";
 
 const navItems = [
@@ -32,6 +33,9 @@ export const Navbar: FC = () => {
                 <NavItem href={item.href} text={item.text} key={index} />
               ))}
             </ul>
+            <div className="lg:min-w-max flex items-center sm:w-max w-full pb-6 lg:pb-0 border-b border-box-border lg:border-0 px-6 lg:px-0">
+              <BtnLink text="Get Started" href="#cta" className="" />
+            </div>
           </div>
         </nav>
       </Container>
