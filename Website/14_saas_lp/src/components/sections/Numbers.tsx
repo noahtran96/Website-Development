@@ -12,6 +12,24 @@ export const Numbers: FC = () => {
             </h2>
             <p className="mt-2 text-heading-3">AI Models Implemented</p>
           </div>
+          <div className="text-center px-5">
+            <h2 className="font-semibold text-xl sm:text-2xl md:text-4xl text-heading-1">
+              250+
+            </h2>
+            <p className="mt-2 text-heading-3">Enterprise Clients</p>
+          </div>
+          <div className="text-center px-5">
+            <h2 className="font-semibold text-xl sm:text-2xl md:text-4xl text-heading-1">
+              99.9%
+            </h2>
+            <p className="mt-2 text-heading-3">Uptime Guarantee</p>
+          </div>
+          <div className="text-center px-5">
+            <h2 className="font-semibold text-xl sm:text-2xl md:text-4xl text-heading-1">
+              10+
+            </h2>
+            <p className="mt-2 text-heading-3">Years of Innovation</p>
+          </div>
         </div>
       </Container>
     </section>

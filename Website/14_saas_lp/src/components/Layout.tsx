@@ -15,7 +15,7 @@ const Layout: FC<LayoutProps> = ({ title, children }) => {
   return (
     <>
       <Navbar />
-      <main className="flex flex-col gap-y-20 md:gap-y-32 overflow-hidden">
+      <main className="flex flex-col gap-y-20 md:gap-y-32 overflow-hidden bg-[rgb(var(--color-bg))] transition-colors duration-300">
         {children}
       </main>
       <Footer />

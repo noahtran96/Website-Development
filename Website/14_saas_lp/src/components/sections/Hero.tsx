@@ -2,6 +2,7 @@ import type { FC } from "react";
 import { Container } from "../shared/Container";
 import { Paragraph } from "../shared/Paragraph";
 import { Button } from "../shared/Button";
+import { Numbers } from "./Numbers";
 
 export const Hero: FC = () => {
   return (
@@ -72,6 +73,8 @@ export const Hero: FC = () => {
           />
         </div>
       </Container>
+      {/* Stats */}
+      <Numbers />
     </section>
   );
 };
