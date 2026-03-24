@@ -14,7 +14,7 @@ export const Button: FC<ButtonProps> = ({
   return (
     <button
       onClick={onClick}
-      className={`px-6 py-3 rounded-full outline-none relative overflow-hidden border dark:bg-violet-600 ${className}`}
+      className={`px-6 py-3 rounded-full outline-none relative overflow-hidden border border-transparent dark:bg-violet-600 ${className}`}
     >
       {children}
     </button>
