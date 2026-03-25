@@ -20,13 +20,13 @@ const contactInfo = [
   {
     icon: Phone,
     label: "Phone",
-    value: "+1 (555) 123-4567",
-    href: "tel:+15551234567",
+    value: "+84 77 906 37 10",
+    href: "tel:+84779063710",
   },
   {
     icon: MapPin,
     label: "Location",
-    value: "Ho Chi Minh City, VN",
+    value: "Ho Chi Minh City, Vietnam",
     href: "#",
   },
 ];

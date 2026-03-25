@@ -12,22 +12,24 @@ const projects = [
     github: "#",
   },
   {
-    title: "E-Commerce Platform",
+    title: "SaaS Platform",
     description:
       "A full-featured e-commerce solution with inventory management, payment processing, and analytics dashboard.",
     image: "/projects/project2.png",
-    tags: ["Next.js", "Stripe", "PostgreSQL", "Tailwind CSS"],
+    tags: ["TypeScript", "Tailwind CSS"],
     link: "#",
-    github: "#",
+    github:
+      "https://github.com/noahtran96/Website-Development/tree/main/Website/14_saas_lp",
   },
   {
-    title: "AI Writing Assistant",
+    title: "Food Ordering Website",
     description:
-      "An intelligent writing tool powered by GPT-4, helping users create better content faster.",
+      "A simple and interactive food ordering website that allows users to browse food categories, add items to a cart, and simulate the checkout process.",
     image: "/projects/project3.png",
     tags: ["React.js", "OpenAI", "Python", "FastAPI"],
     link: "#",
-    github: "#",
+    github:
+      "https://github.com/noahtran96/Website-Development/tree/main/Website/11_food_delivery",
   },
   {
     title: "Project Management Tool",
@@ -89,6 +91,8 @@ export const Projects = () => {
                   </a>
                   <a
                     href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
                   >
                     <Github className="w-5 h-5" />
@@ -124,10 +128,17 @@ export const Projects = () => {
 
         {/* View All CTA Button */}
         <div className="text-center mt-12 animate-fade-in animation-delay-500">
-          <AnimatedBorderButton>
-            View All Projects
-            <ArrowUpRight className="w-5 h-5" />
-          </AnimatedBorderButton>
+          <a
+            href="https://github.com/noahtran96/Website-Development/tree/main/Website"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block"
+          >
+            <AnimatedBorderButton>
+              View All Projects
+              <ArrowUpRight className="w-5 h-5" />
+            </AnimatedBorderButton>
+          </a>
         </div>
       </div>
     </section>
