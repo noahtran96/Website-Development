@@ -1,4 +1,3 @@
-import React from "react";
 import type { FC } from "react";
 import css from "./Hero.module.css";
 import HeroImg from "../../assets/hero.png";

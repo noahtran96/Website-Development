@@ -1,4 +1,3 @@
-import React from "react";
 import type { FC } from "react";
 import css from "./Footer.module.css";
 import Logo from "../../assets/logo.png";

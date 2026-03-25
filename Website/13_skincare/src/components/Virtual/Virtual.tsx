@@ -1,4 +1,3 @@
-import React from "react";
 import type { FC } from "react";
 import css from "./Virtual.module.css";
 import Shade from "../../assets/shade.png";

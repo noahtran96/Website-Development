@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import type { FC } from "react";
 import css from "./Products.module.css";
 import Plane from "../../assets/plane.png";

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import type { FC } from "react";
 import css from "./Header.module.css";
 import Logo from "../../assets/logo.png";

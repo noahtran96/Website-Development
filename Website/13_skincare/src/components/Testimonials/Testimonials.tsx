@@ -1,4 +1,3 @@
-import React from "react";
 import type { FC } from "react";
 import css from "./Testimonials.module.css";
 import Hero from "../../assets/testimonialHero.png";
