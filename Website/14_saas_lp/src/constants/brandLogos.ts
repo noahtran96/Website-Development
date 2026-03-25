@@ -32,11 +32,6 @@ export const BRAND_LOGOS: BrandLogo[] = [
   },
   {
     id: 6,
-    name: "uber",
-    alt: "Uber Brand Logo",
-  },
-  {
-    id: 7,
     name: "youtube",
     alt: "YouTube Brand Logo",
   },
