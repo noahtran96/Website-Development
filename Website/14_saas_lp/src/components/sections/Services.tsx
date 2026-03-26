@@ -2,8 +2,9 @@ import type { FC } from "react";
 import { Container } from "../shared/Container";
 import { Title } from "../shared/Title";
 import { Paragraph } from "../shared/Paragraph";
-import { SERVICE_ITEMS } from "../../constants/servicesItems";
-import type { ServiceItem } from "../../constants/servicesItems";
+import { SERVICE_ITEMS } from "../../constants";
+import type { ServiceItem } from "../../constants";
+import { Service } from "../cards/Service";
 
 export const Services: FC = () => {
   return (
@@ -16,8 +17,15 @@ export const Services: FC = () => {
             processing, and predictive analytics. Our services include:
           </Paragraph>
         </div>
-        <div>
-          <SERVICE_ITEMS title={} description={} icon={} />
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {SERVICE_ITEMS.map((service: ServiceItem, index: number) => (
+            <Service
+              title={service.title}
+              description={service.description}
+              icon={service.icon}
+              key={index}
+            />
+          ))}
         </div>
       </Container>
     </section>
