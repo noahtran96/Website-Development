@@ -14,9 +14,9 @@ const projects = [
   {
     title: "SaaS Platform",
     description:
-      "A full-featured e-commerce solution with inventory management, payment processing, and analytics dashboard.",
+      "A modern AI SaaS landing page showcasing services, pricing plans, and business solutions with a clean, responsive UI.",
     image: "/projects/project2.png",
-    tags: ["TypeScript", "Tailwind CSS"],
+    tags: ["React", "TypeScript", "Zustand", "Tailwind CSS", "Vite", "Vercel"],
     link: "https://14saaslp.vercel.app/",
     github:
       "https://github.com/noahtran96/Website-Development/tree/main/Website/14_saas_lp",
