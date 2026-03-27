@@ -17,7 +17,7 @@ const projects = [
       "A full-featured e-commerce solution with inventory management, payment processing, and analytics dashboard.",
     image: "/projects/project2.png",
     tags: ["TypeScript", "Tailwind CSS"],
-    link: "#",
+    link: "https://14saaslp.vercel.app/",
     github:
       "https://github.com/noahtran96/Website-Development/tree/main/Website/14_saas_lp",
   },
