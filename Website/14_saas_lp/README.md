@@ -1,73 +1,56 @@
-# React + TypeScript + Vite
+# 🚀 EdgeAI Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern **AI SaaS landing page** built with **React + TypeScript + TailwindCSS**, showcasing AI services, pricing plans, and business solutions with a clean, responsive design.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🌐 Deployment
 
-## React Compiler
+👉 https://14saaslp.vercel.app/
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- ⚛️ React + TypeScript
+- 🎨 TailwindCSS (custom theme + dark mode)
+- 🧠 Zustand (state management)
+- 💅 Responsive Design
+- 🌙 Dark / Light Mode Toggle
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## ✨ Features
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Responsive landing page design
+- Dark / Light mode toggle (Zustand + persist)
+- Clean reusable component structure
+- Smooth scrolling navigation
+- Modern UI with TailwindCSS
+- AI SaaS-focused layout
+  - Hero section (headline + email CTA)
+  - Brand logos (social proof)
+  - Services section (AI capabilities)
+  - About Us (mission & vision)
+  - Pricing plans (Basic / Pro / Enterprise)
+  - Call-to-action section
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ⚙️ Getting Started
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Install dependencies:  
+`npm install`
+
+Run the project:  
+`npm run dev`
+
+The app runs locally at:  
+`http://localhost:5173`
+
+---
+
+## 📺 Credits
+
+This project was built by following a [YouTube tutorial](https://www.youtube.com/watch?v=b4i8l73DU6A) for educational purposes.  
+All credit for the original idea and guidance belongs to the tutorial creator.
