@@ -21,7 +21,14 @@ export const Navbar: FC = () => {
             </span>
           </div>
           {/* navigation links */}
-          <div className="hidden"></div>
+          <div className="flex items-center space-x-6 lg:space-x-8">
+            <a
+              href="#features"
+              className="text-gray-300 hover:text-white text-sm lg:text-base"
+            >
+              Features
+            </a>
+          </div>
         </div>
       </div>
     </nav>

@@ -12,7 +12,7 @@ const projects = [
     github: "#",
   },
   {
-    title: "SaaS Platform",
+    title: "SaaS Landing Page",
     description:
       "A modern AI SaaS landing page showcasing services, pricing plans, and business solutions with a clean, responsive UI.",
     image: "/projects/project2.png",
