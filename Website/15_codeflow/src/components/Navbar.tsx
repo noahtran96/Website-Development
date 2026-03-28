@@ -1,7 +1,11 @@
-import type { FC } from "react";
+import { useState, type FC } from "react";
 import logo from "/logo.png";
+import { NAV_ITEMS } from "../constants";
+import type { NavItemConfig } from "../constants";
+import { Menu, X } from "lucide-react";
 
 export const Navbar: FC = () => {
+  const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState<boolean>(false);
   return (
     <nav className="fixed top-0 w-full z-50 transition-all duration-300 bg-slate-950/20 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -21,14 +25,28 @@ export const Navbar: FC = () => {
             </span>
           </div>
           {/* navigation links */}
-          <div className="flex items-center space-x-6 lg:space-x-8">
-            <a
-              href="#features"
-              className="text-gray-300 hover:text-white text-sm lg:text-base"
-            >
-              Features
-            </a>
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+            {NAV_ITEMS.map((item: NavItemConfig, index: number) => (
+              <a
+                href={item.href}
+                key={index}
+                className="text-gray-300 hover:text-white text-sm lg:text-base"
+              >
+                {item.text}
+              </a>
+            ))}
           </div>
+          {/* mobile menu button */}
+          <button
+            className="md:hidden p-2 text-gray-300 hover:text-white"
+            onClick={() => setMobileMenuIsOpen((prev) => !prev)}
+          >
+            {mobileMenuIsOpen ? (
+              <X className="w-5 h-5 sm:w-6 sm:h-6" />
+            ) : (
+              <Menu className="w-5 h-5 sm:w-6 sm:h-6" />
+            )}
+          </button>
         </div>
       </div>
     </nav>
