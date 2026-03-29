@@ -51,15 +51,18 @@ export const Navbar: FC = () => {
       </div>
       {mobileMenuIsOpen && (
         <div className="md:hidden bg-slate-900/95 backdrop-blur-lg border-t border-slate-800 animate-in slide-in-from-top duration-300">
-          {NAV_ITEMS.map((item: NavItemConfig, index: number) => (
-            <a
-              href={item.href}
-              key={index}
-              className="text-gray-300 hover:text-white text-sm lg:text-base"
-            >
-              {item.text}
-            </a>
-          ))}
+          <div className="px-4 py-4 sm:py-6 space-y-3 sm:space-y-4">
+            {NAV_ITEMS.map((item: NavItemConfig, index: number) => (
+              <a
+                href={item.href}
+                key={index}
+                className="text-gray-300 hover:text-white text-sm lg:text-base block"
+                onClick={() => setMobileMenuIsOpen(false)}
+              >
+                {item.text}
+              </a>
+            ))}
+          </div>
         </div>
       )}
     </nav>
