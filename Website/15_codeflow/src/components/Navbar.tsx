@@ -49,6 +49,19 @@ export const Navbar: FC = () => {
           </button>
         </div>
       </div>
+      {mobileMenuIsOpen && (
+        <div className="md:hidden bg-slate-900/95 backdrop-blur-lg border-t border-slate-800 animate-in slide-in-from-top duration-300">
+          {NAV_ITEMS.map((item: NavItemConfig, index: number) => (
+            <a
+              href={item.href}
+              key={index}
+              className="text-gray-300 hover:text-white text-sm lg:text-base"
+            >
+              {item.text}
+            </a>
+          ))}
+        </div>
+      )}
     </nav>
   );
 };
