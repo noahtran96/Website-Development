@@ -39,7 +39,19 @@ export const Hero: FC = () => {
           {/* IDE inner box */}
           <div className="bg-gradient-to-br from-gray-900/20 to-gray-800/20 backdrop-blur-sm rounded-lg overflow-hidden h-[280px] sm:h-[350px] lg:h-[450px] border border-white/5">
             {/* IDE header */}
-            <div className="flex items-center justify-between px-3 sm:px-4 py-2 sm:py-3 bg-white/5 backdrop-blur-sm border-b border-white"></div>
+            <div className="flex items-center justify-between px-3 sm:px-4 py-2 sm:py-3 bg-white/5 backdrop-blur-sm border-b border-white">
+              {/* 3 dots + title container */}
+              <div className="flex items-center  space-x-2">
+                {/* 3 dots container */}
+                <div className="flex items-center space-x-1 sm:space-x-2">
+                  {/* 3 dots */}
+                  <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-red-500" />
+                  <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-yellow-500" />
+                  <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-green-500" />
+                </div>
+                <span>CodeFlow AI</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
