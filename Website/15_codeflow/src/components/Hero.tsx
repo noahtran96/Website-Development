@@ -43,7 +43,7 @@ export const Hero: FC = () => {
       {/* hero outer box */}
       <div className="max-w-7xl mx-auto text-center relative w-full">
         {/* hero inner box */}
-        <div className="max-w-7xl mx-auto flex flex-col lg:grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center relative">
+        <div className="max-w-7xl mx-auto flex flex-col lg:grid lg:grid-cols-2 text-cente lg:text-left gap-6 sm:gap-8 lg:gap-12 items-center relative">
           {/* hero text */}
           <div>
             {/* hero introduction pill */}
@@ -56,7 +56,7 @@ export const Hero: FC = () => {
               </span>
             </div>
             {/* hero tagline */}
-            <h1 className="text-5xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-4 sm:mb-6 animate-in slide-in-from-bottom duration-700 delay-100 leading-tight">
+            <h1 className="text-5xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold mb-4 sm:mb-6 animate-in slide-in-from-bottom duration-700 delay-100 leading-tight">
               <span className="bg-gradient-to-r from-white via-blue to-cyan-100 bg-clip-text text-transparent block mb-1 sm:mb-2">
                 Code Faster
               </span>
