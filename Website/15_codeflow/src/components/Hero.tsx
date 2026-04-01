@@ -98,6 +98,8 @@ export const Hero: FC = () => {
               </div>
             </div>
           </div>
+
+          {/* floating cards */}
         </div>
       </div>
     </section>
