@@ -5,6 +5,7 @@ import { CODE_EXAMPLES } from "../constants";
 import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
 import js from "react-syntax-highlighter/dist/esm/languages/hljs/javascript";
 import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { FLOATING_CARDS } from "../constants/floatingCards";
 SyntaxHighlighter.registerLanguage("javascript", js);
 
 interface Position {
@@ -99,7 +100,32 @@ export const Hero: FC = () => {
             </div>
           </div>
 
-          {/* floating cards */}
+          {/* floating cards container */}
+          <div
+            className={`hidden lg:block absolute bottom-4 right-4 transform translate-x-8 translate-y-8 w-72 ${FLOATING_CARDS[activeTab].bgColor} backdrop-blur-xl rounded-lg p-4 border border-white/20 shadow-2xl`}
+          >
+            {/* floating cards title container */}
+            <div className="flex items-center space-x-2 mb-2">
+              {/* floating cards icon */}
+              <div
+                className={`w-6 h-6 ${FLOATING_CARDS[activeTab].iconColor} flex items-center justify-center text-sm font-bold`}
+              >
+                {FLOATING_CARDS[activeTab].icon}
+              </div>
+              {/* floating cards title */}
+              <span
+                className={`text-sm font-medium ${FLOATING_CARDS[activeTab].textColor}`}
+              >
+                {FLOATING_CARDS[activeTab].title}
+              </span>
+            </div>
+            {/* floating cards content */}
+            <div
+              className={`text-sm text-left ${FLOATING_CARDS[activeTab].contentColor}`}
+            >
+              {FLOATING_CARDS[activeTab].content}
+            </div>
+          </div>
         </div>
       </div>
     </section>
