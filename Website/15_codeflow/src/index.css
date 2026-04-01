@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+button {
+  cursor: pointer;
+}
+
 @layer utilities {
   .animate-in {
     animation-fill-mode: both;
@@ -7,6 +11,10 @@
 
   .slide-in-from-top {
     animation-name: slideInFromTop;
+  }
+
+  .duration-200 {
+    animation-duration: 200ms;
   }
 
   .duration-300 {

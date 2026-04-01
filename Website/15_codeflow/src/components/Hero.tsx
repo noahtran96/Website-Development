@@ -1,6 +1,11 @@
 import type { FC } from "react";
 import { useState, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
+import { CODE_EXAMPLES } from "../constants";
+import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
+import js from "react-syntax-highlighter/dist/esm/languages/hljs/javascript";
+import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/hljs";
+SyntaxHighlighter.registerLanguage("javascript", js);
 
 interface Position {
   x: number;
@@ -9,6 +14,7 @@ interface Position {
 
 export const Hero: FC = () => {
   const [mousePosition, setMousePosition] = useState<Position>({ x: 0, y: 0 });
+  const [activeTab, setActiveTab] = useState<string>("App.jsx");
   useEffect(() => {
     function handleMouseMove(e: MouseEvent) {
       setMousePosition({ x: e.clientX, y: e.clientY });
@@ -56,6 +62,40 @@ export const Hero: FC = () => {
               </div>
               {/* IDE header icon */}
               <ChevronDown className="w-3 h-3 sm:w-4 sm:h-4 text-gray-400" />
+            </div>
+            {/* IDE tab button + content container */}
+            <div className="p-3 sm:p-4 relative h-full">
+              {/* IDE tab button container */}
+              <div className="flex space-x-1 sm:space-x-2 mb-3 sm:mb-4 overflow-x-auto">
+                {Object.keys(CODE_EXAMPLES).map(
+                  (example: string, index: number) => (
+                    <button
+                      key={index}
+                      onClick={() => setActiveTab(example)}
+                      className={`px-3 py-2 backdrop-blur-sm text-xs sm:text-sm rounded-t-lg border ${activeTab === example ? "bg-blue-500/30 text-white border-blue-400/20" : "bg-white/5 text-gray-300 border-white/10 hover:bg-white-10"} transition-all duration-200 whitespace-nowrap`}
+                    >
+                      {example}
+                    </button>
+                  ),
+                )}
+              </div>
+              {/* IDE code content */}
+              <div className="relative overflow-hidden flex-grow">
+                <SyntaxHighlighter
+                  language="javascript"
+                  style={nightOwl}
+                  customStyle={{
+                    margin: 0,
+                    borderRadius: "0px",
+                    fontSize: "11px",
+                    lineHeight: "1.4",
+                    height: "100%",
+                    border: "1px solid #3c3c3c",
+                  }}
+                >
+                  {CODE_EXAMPLES[activeTab]}
+                </SyntaxHighlighter>
+              </div>
             </div>
           </div>
         </div>
