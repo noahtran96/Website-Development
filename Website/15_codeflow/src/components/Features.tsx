@@ -63,11 +63,11 @@ export const Features: FC = () => {
                           style={nightOwl}
                           customStyle={{
                             margin: 0,
+                            background: "transparent",
                             borderRadius: "0px",
                             fontSize: "0.75rem",
                             lineHeight: "1.4",
                             height: "100%",
-                            border: "1px solid #3c3c3c",
                           }}
                           wrapLines={true}
                         >
@@ -79,6 +79,20 @@ export const Features: FC = () => {
                 </div>
               </div>
               {/* features text */}
+              {/* text outer box */}
+              <div className="flex-1 w-full">
+                {/* text inner box */}
+                <div className="max-w-lg mx-auto lg:mx-0 text-center lg:text-left">
+                  {/* title */}
+                  <h3 className="text-4xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 text-white">
+                    {feature.title}
+                  </h3>
+                  {/* description */}
+                  <p className="text-gray-300 text-base text-xl sm:text-lg leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
+              </div>
             </div>
           ))}
         </div>
