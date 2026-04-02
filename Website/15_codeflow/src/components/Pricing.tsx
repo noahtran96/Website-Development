@@ -11,6 +11,7 @@ export const Pricing: FC = () => {
       <div className="max-w-7xl mx-auto">
         {/* pricing headline */}
         <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+          {/* headline text */}
           <h2 className="text-5xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
             <span className="bg-gradient-to-b from-white to-gray-300 bg-clip-text text-transparent">
               Simple, Transparent
@@ -20,6 +21,7 @@ export const Pricing: FC = () => {
               Pricing Plans
             </span>
           </h2>
+          {/* description */}
           <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto">
             Choose the perfect plan for your needs. All plans include a 14-day
             free trial.
@@ -28,6 +30,7 @@ export const Pricing: FC = () => {
 
         {/* pricing cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-6">
+          {/* pricing card loop */}
           {PRICING_PLANS.map((plan: PricingPlan, key: number) => (
             <div
               key={key}
@@ -46,6 +49,30 @@ export const Pricing: FC = () => {
                   </div>
                 </div>
               )}
+
+              {/* pricing plan details container */}
+              <div className="text-center mb-6 sm:mb-8">
+                {/* plan name */}
+                <h3 className="text-xl sm:text-2xl font-bold mb-2">
+                  {plan.name}
+                </h3>
+                {/* plan description */}
+                <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">
+                  {plan.description}
+                </p>
+                {/* price */}
+                <div className="flex items-baseline justify-center">
+                  <span
+                    className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text 
+                  text-transparent"
+                  >
+                    ${plan.price}
+                  </span>
+                  <span className="text-gray-400 ml-1 sm:ml-2 text-sm sm:text-base">
+                    /month
+                  </span>
+                </div>
+              </div>
             </div>
           ))}
         </div>
