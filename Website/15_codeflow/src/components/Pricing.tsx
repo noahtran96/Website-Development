@@ -92,6 +92,17 @@ export const Pricing: FC = () => {
                   </li>
                 ))}
               </ul>
+
+              {/* CTA */}
+              <button
+                className={`w-full py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg font-semibold transition-all duration-300 mt-auto hover:scale-102 text-sm sm:text-base ${
+                  plan.mostPopular
+                    ? "bg-gradient-to-b from-blue-500 to-cyan-500"
+                    : "bg-white/5 border border-white/10 hover:bg-white/10"
+                }`}
+              >
+                Get Started
+              </button>
             </div>
           ))}
         </div>
