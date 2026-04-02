@@ -36,9 +36,10 @@ const projects = [
     description:
       "A collaborative workspace for teams with real-time updates, task tracking, and integrations.",
     image: "/projects/project4.png",
-    tags: ["Next.js", "Socket.io", "MongoDB", "Redis"],
-    link: "#",
-    github: "#",
+    tags: ["React", "TypeScript", "Tailwind CSS", "Vite", "Vercel"],
+    link: "https://15codeflow.vercel.app/",
+    github:
+      "https://github.com/noahtran96/Website-Development/tree/main/Website/15_codeflow",
   },
 ];
 
