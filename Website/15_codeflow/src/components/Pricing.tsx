@@ -106,6 +106,16 @@ export const Pricing: FC = () => {
             </div>
           ))}
         </div>
+
+        {/* contact tagline */}
+        <div className="mt-8 sm:mt-12 text-center">
+          <p className="text-gray-400 text-base text-xl">
+            Need a custom plan?{" "}
+            <a href="#" className="text-blue-400 hover:text-blue-300">
+              Contact our sales team
+            </a>
+          </p>
+        </div>
       </div>
     </section>
   );
