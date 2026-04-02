@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import { PRICING_PLANS, type PricingPlan } from "../constants";
-import { Star } from "lucide-react";
+import { Check, Star } from "lucide-react";
 
 export const Pricing: FC = () => {
   return (
@@ -73,6 +73,25 @@ export const Pricing: FC = () => {
                   </span>
                 </div>
               </div>
+
+              {/* pricing plan features container */}
+              <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 flex-row">
+                {plan.features.map((feature: string, featureKey: number) => (
+                  <li
+                    key={featureKey}
+                    className="flex items-start space-x-2 sm:space-x-3"
+                  >
+                    {/* icon */}
+                    <div className="flex-shrink-0 w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-blue-500/20 flex items-center justify-center mt-0.5">
+                      <Check className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-blue-400" />
+                    </div>
+                    {/* text */}
+                    <span className="text-gray-300 text-sm sm:text-base">
+                      {feature}
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
