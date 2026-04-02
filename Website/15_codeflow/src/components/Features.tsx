@@ -32,7 +32,7 @@ export const Features: FC = () => {
           {FEATURES.map((feature: Feature, key: number) => (
             <div
               key={key}
-              className={`flex flex-col lg:flex-grow items-center gap-8 sm:gap-12 ${feature.imagePosition === "right" ? " lg:flex-row-reverse" : ""}`}
+              className={`flex flex-col lg:flex-row items-center gap-8 sm:gap-12 ${feature.imagePosition === "right" ? " lg:flex-row-reverse" : ""}`}
             >
               {/* IDE interface */}
               {/* IDE interface wrapper */}
