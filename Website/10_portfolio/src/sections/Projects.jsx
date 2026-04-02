@@ -130,7 +130,7 @@ export const Projects = () => {
         {/* View All CTA Button */}
         <div className="text-center mt-12 animate-fade-in animation-delay-500">
           <a
-            href="https://github.com/noahtran96/Website-Development/tree/main/Website"
+            href="https://github.com/noahtran96"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block"
