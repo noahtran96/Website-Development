@@ -30,15 +30,15 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="py-12 border-t border-border">
+    <footer className="border-border border-t py-12">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
           {/* Logo & Copyright */}
           <div className="text-center md:text-left">
             <a href="#" className="text-xl font-bold tracking-tight">
               Noah<span className="text-primary">.</span>
             </a>
-            <p className="text-sm text-muted-foreground mt-2">
+            <p className="text-muted-foreground mt-2 text-sm">
               © {currentYear} Noah Tran. All rights reserved.
             </p>
           </div>
@@ -49,7 +49,7 @@ export const Footer = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="text-muted-foreground hover:text-foreground text-sm transition-colors"
               >
                 {link.label}
               </a>
@@ -63,9 +63,9 @@ export const Footer = () => {
                 key={social.label}
                 href={social.href}
                 aria-label={social.label}
-                className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all"
+                className="glass hover:bg-primary/10 hover:text-primary rounded-full p-2 transition-all"
               >
-                <social.icon className="w-5 h-5" />
+                <social.icon className="h-5 w-5" />
               </a>
             ))}
           </div>

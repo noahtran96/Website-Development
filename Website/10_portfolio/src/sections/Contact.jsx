@@ -85,21 +85,21 @@ export const Contact = () => {
     }
   };
   return (
-    <section id="contact" className="py-32 relative overflow-hidden">
+    <section id="contact" className="relative overflow-hidden py-32">
       {/* Background glow */}
-      <div className="absolute top-0 left-0 w-full h-full">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
+      <div className="absolute top-0 left-0 h-full w-full">
+        <div className="bg-primary/5 absolute top-1/4 left-1/4 h-96 w-96 rounded-full blur-3xl" />
+        <div className="bg-highlight/5 absolute right-1/4 bottom-1/4 h-64 w-64 rounded-full blur-3xl" />
       </div>
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="relative z-10 container mx-auto px-6">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">
+        <div className="mx-auto mb-16 max-w-3xl text-center">
+          <span className="text-secondary-foreground animate-fade-in text-sm font-medium tracking-wider uppercase">
             Get In Touch
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
+          <h2 className="animate-fade-in animation-delay-100 text-secondary-foreground mt-4 mb-6 text-4xl font-bold md:text-5xl">
             Let's build{" "}
-            <span className="font-serif italic font-normal text-white">
+            <span className="font-serif font-normal text-white italic">
               something great.
             </span>
           </h2>
@@ -109,13 +109,13 @@ export const Contact = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
-          <div className="glass p-8 rounded-3xl border border-primary/30 animate-fade-in animation-delay-300">
+        <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-2">
+          <div className="glass border-primary/30 animate-fade-in animation-delay-300 rounded-3xl border p-8">
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-sm font-medium mb-2"
+                  className="mb-2 block text-sm font-medium"
                 >
                   Name
                 </label>
@@ -128,13 +128,13 @@ export const Contact = () => {
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
                   }
-                  className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus_ring-primary outline-none transition-all"
+                  className="bg-surface border-border focus:border-primary focus_ring-primary w-full rounded-xl border px-4 py-3 transition-all outline-none focus:ring-1"
                 />
               </div>
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium mb-2"
+                  className="mb-2 block text-sm font-medium"
                 >
                   Email
                 </label>
@@ -147,13 +147,13 @@ export const Contact = () => {
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
                   }
-                  className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus_ring-primary outline-none transition-all"
+                  className="bg-surface border-border focus:border-primary focus_ring-primary w-full rounded-xl border px-4 py-3 transition-all outline-none focus:ring-1"
                 />
               </div>
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-sm font-medium mb-2"
+                  className="mb-2 block text-sm font-medium"
                 >
                   Message
                 </label>
@@ -165,7 +165,7 @@ export const Contact = () => {
                   onChange={(e) =>
                     setFormData({ ...formData, message: e.target.value })
                   }
-                  className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus_ring-primary outline-none transition-all resize-none"
+                  className="bg-surface border-border focus:border-primary focus_ring-primary w-full resize-none rounded-xl border px-4 py-3 transition-all outline-none focus:ring-1"
                 />
               </div>
               <Button
@@ -178,24 +178,23 @@ export const Contact = () => {
                   <>Sending...</>
                 ) : (
                   <>
-                    Send Message <Send className="w-5 h-5" />
+                    Send Message <Send className="h-5 w-5" />
                   </>
                 )}
               </Button>
 
               {submitStatus.type && (
                 <div
-                  className={`flex items-center gap-3
-                     p-4 rounded-xl ${
-                       submitStatus.type === "success"
-                         ? "bg-green-500/10 border border-green-500/20 text-green-400"
-                         : "bg-red-500/10 border border-red-500/20 text-red-400"
-                     }`}
+                  className={`flex items-center gap-3 rounded-xl p-4 ${
+                    submitStatus.type === "success"
+                      ? "border border-green-500/20 bg-green-500/10 text-green-400"
+                      : "border border-red-500/20 bg-red-500/10 text-red-400"
+                  }`}
                 >
                   {submitStatus.type === "success" ? (
-                    <CheckCircle className="w-5 h-5 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 flex-shrink-0" />
                   ) : (
-                    <AlertCircle className="w-5 h-5 flex-shrink-0" />
+                    <AlertCircle className="h-5 w-5 flex-shrink-0" />
                   )}
                   <p className="text-sm">{submitStatus.message}</p>
                 </div>
@@ -204,9 +203,9 @@ export const Contact = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-6 animate-fade-in animation-delay-400">
+          <div className="animate-fade-in animation-delay-400 space-y-6">
             <div className="glass rounded-3xl p-8">
-              <h3 className="text-xl font-semibold mb-6">
+              <h3 className="mb-6 text-xl font-semibold">
                 Contact Information
               </h3>
               <div className="space-y-4">
@@ -214,13 +213,13 @@ export const Contact = () => {
                   <a
                     key={index}
                     href={item.href}
-                    className="flex items-center gap-4 p-4 rounded-xl hover:bg-surface transition-colors group"
+                    className="hover:bg-surface group flex items-center gap-4 rounded-xl p-4 transition-colors"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                      <item.icon className="w-5 h-5 text-primary" />
+                    <div className="bg-primary/10 group-hover:bg-primary/20 flex h-12 w-12 items-center justify-center rounded-xl transition-colors">
+                      <item.icon className="text-primary h-5 w-5" />
                     </div>
                     <div>
-                      <div className="text-sm text-muted-foreground">
+                      <div className="text-muted-foreground text-sm">
                         {item.label}
                       </div>
                       <div className="font-medium">{item.value}</div>
@@ -231,9 +230,9 @@ export const Contact = () => {
             </div>
 
             {/* Availability Card */}
-            <div className="glass rounded-3xl p-8 border border-primary/30">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="w-3 h-3 bg-primary rounded-full animate-pulse" />
+            <div className="glass border-primary/30 rounded-3xl border p-8">
+              <div className="mb-4 flex items-center gap-3">
+                <span className="bg-primary h-3 w-3 animate-pulse rounded-full" />
                 <span className="font-medium">Currently Available</span>
               </div>
               <p className="text-muted-foreground text-sm">

@@ -21,22 +21,22 @@ const skills = [
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative flex min-h-screen items-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
         <img
           src="/hero-bg.png"
           alt="Hero image"
-          className="w-full h-full object-cover opacity-40"
+          className="h-full w-full object-cover opacity-40"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/80 to-background"></div>
+        <div className="from-background/20 via-background/80 to-background absolute inset-0 bg-gradient-to-b"></div>
       </div>
 
       {/* Blue Dots*/}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
         {[...Array(30)].map((_, i) => (
           <div
-            className="absolute w-1.5 h-1.5 rounded-full opacity-60"
+            className="absolute h-1.5 w-1.5 rounded-full opacity-60"
             style={{
               backgroundColor: "#60a5fa",
               left: `${Math.random() * 100}%`,
@@ -49,28 +49,28 @@ export const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-6 pt-32 pb-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 container mx-auto px-6 pt-32 pb-20">
+        <div className="grid items-center gap-12 lg:grid-cols-2">
           {/* Left Column - Text Content */}
           <div className="space-y-8">
             <div className="animate-fade-in">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
-                <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+              <span className="glass text-primary inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm">
+                <span className="bg-primary h-2 w-2 animate-pulse rounded-full" />
                 Software Engineering Enthusiast
               </span>
             </div>
 
             {/* Headline */}
             <div className="space-y-4">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
+              <h1 className="animate-fade-in animation-delay-100 text-5xl leading-tight font-bold md:text-6xl lg:text-7xl">
                 Crafting <span className="text-primary glow-text">digital</span>
                 <br />
                 experiences with <br />
-                <span className="font-serif italic font-normal text-white">
+                <span className="font-serif font-normal text-white italic">
                   precision.
                 </span>
               </h1>
-              <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
+              <p className="text-muted-foreground animate-fade-in animation-delay-200 max-w-lg text-lg">
                 Hi, I'm Noah Tran - a software engineering enthusiast
                 specializing in React, TypeScript and Tailwind CSS. I build
                 scalable, performant web applications that users love.
@@ -78,19 +78,19 @@ export const Hero = () => {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
+            <div className="animate-fade-in animation-delay-300 flex flex-wrap gap-4">
               <Button size="lg">
-                Contact Me <ArrowRight className="w-5 h-5" />
+                Contact Me <ArrowRight className="h-5 w-5" />
               </Button>
               <AnimatedBorderButton>
-                <Download className="w-5 h-5" />
+                <Download className="h-5 w-5" />
                 Download CV
               </AnimatedBorderButton>
             </div>
 
             {/* Social Links */}
-            <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
-              <span className="text-sm text-muted-foreground">Follow me: </span>
+            <div className="animate-fade-in animation-delay-400 flex items-center gap-4">
+              <span className="text-muted-foreground text-sm">Follow me: </span>
               {[
                 { icon: Github, href: "https://github.com/noahtran96" },
                 {
@@ -111,29 +111,29 @@ export const Hero = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
+                  className="glass hover:bg-primary/10 hover:text-primary rounded-full p-2 transition-all duration-300"
                 >
-                  {<social.icon className="w-5 h-5" />}
+                  {<social.icon className="h-5 w-5" />}
                 </a>
               ))}
             </div>
           </div>
           {/* Right Column - Profile Image */}
-          <div className="relative animate-fade-in animation-delay-300">
+          <div className="animate-fade-in animation-delay-300 relative">
             {/* Profile Image */}
-            <div className="relative max-w-md mx-auto">
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/30 via-transparent to-primary/10 blur-2xl animate-pulse" />
-              <div className="relative glass rounded-3xl p-2 glow-border">
+            <div className="relative mx-auto max-w-md">
+              <div className="from-primary/30 to-primary/10 absolute inset-0 animate-pulse rounded-3xl bg-gradient-to-br via-transparent blur-2xl" />
+              <div className="glass glow-border relative rounded-3xl p-2">
                 <img
                   src="/profile-photo1.png"
                   alt="Noah Tran"
-                  className="w-full aspect-[4/5] object-cover rounded-2xl"
+                  className="aspect-[4/5] w-full rounded-2xl object-cover"
                 />
 
                 {/* Floating Badge */}
-                <div className="absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 animate-float">
+                <div className="glass animate-float absolute -right-4 -bottom-4 rounded-xl px-4 py-3">
                   <div className="flex items-center gap-3">
-                    <div className="w-3 h-3 bg-primary rounded-full animate-pulse" />
+                    <div className="bg-primary h-3 w-3 animate-pulse rounded-full" />
                     <span className="text-sm font-medium">
                       Available for work
                     </span>
@@ -141,9 +141,9 @@ export const Hero = () => {
                 </div>
 
                 {/* Stats Badge */}
-                <div className="absolute -top-4 -left-4 glass rounded-xl px-4 py-3 animate-float animation-delay-500">
-                  <div className="text-2xl font-bold text-primary">1+</div>
-                  <div className="text-xs text-muted-foreground">Year Exp.</div>
+                <div className="glass animate-float animation-delay-500 absolute -top-4 -left-4 rounded-xl px-4 py-3">
+                  <div className="text-primary text-2xl font-bold">1+</div>
+                  <div className="text-muted-foreground text-xs">Year Exp.</div>
                 </div>
               </div>
             </div>
@@ -151,15 +151,15 @@ export const Hero = () => {
         </div>
 
         {/* Skills Section */}
-        <div className="mt-20 animate-fade-in animation-delay-600">
-          <p className="text-sm text-muted-foreground mb-6 text-center">
+        <div className="animate-fade-in animation-delay-600 mt-20">
+          <p className="text-muted-foreground mb-6 text-center text-sm">
             Technologies I work with
           </p>
           <div className="relative overflow-hidden">
-            <div className="flex animate-marquee">
+            <div className="animate-marquee flex">
               {[...skills, ...skills].map((skill, index) => (
                 <div key={index} className="flex-shrink-0 px-8 py-4">
-                  <span className="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">
+                  <span className="text-muted-foreground/50 hover:text-muted-foreground text-xl font-semibold transition-colors">
                     {skill}
                   </span>
                 </div>
@@ -169,13 +169,13 @@ export const Hero = () => {
         </div>
 
         {/* Scroll Icon */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in animation-delay-800">
+        <div className="animate-fade-in animation-delay-800 absolute bottom-8 left-1/2 -translate-x-1/2">
           <a
             href="#about"
-            className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary"
+            className="text-muted-foreground hover:text-primary flex flex-col items-center gap-2"
           >
-            <span className="text-xs uppercase tracking-wider">Scroll</span>
-            <ChevronDown className="w-6 h-6 animate-bounce" />
+            <span className="text-xs tracking-wider uppercase">Scroll</span>
+            <ChevronDown className="h-6 w-6 animate-bounce" />
           </a>
         </div>
       </div>
