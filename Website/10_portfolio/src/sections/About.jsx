@@ -55,7 +55,7 @@ export const About = () => {
                 technologies.
               </p>
               <p>
-                I specialize in React, Next.js, and TypeScript, building
+                I specialize in React, TypeScript, and Tailwind CSS, building
                 everything from sleek landing pages to complex enterprise
                 applications. My approach combines technical excellence with a
                 keen eye for design and user experience.

@@ -11,7 +11,8 @@ import {
 } from "lucide-react";
 
 const skills = [
-  "React.js",
+  "React",
+  "TypeScript",
   "Tailwind CSS",
   "JavaScript (ES6+)",
   "HTML5",
@@ -71,7 +72,7 @@ export const Hero = () => {
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
                 Hi, I'm Noah Tran - a software engineering enthusiast
-                specializing in React.js, Next.js, and TypeScript. I build
+                specializing in React, TypeScript and Tailwind CSS. I build
                 scalable, performant web applications that users love.
               </p>
             </div>
