@@ -7,14 +7,14 @@ import { NavItem } from "../shared/NavItem";
 
 export const Footer: FC = () => {
   return (
-    <footer className="relative pt-28 rounded-t-3xl bg-box-bg">
+    <footer className="bg-box-bg relative rounded-t-3xl pt-28">
       <Container className="pb-8">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="flex items-center gap-3 mb-4 md:mb-0">
-            <img src={Logo} alt="EdgeAI Logo" className="w-7 h-7" />
-            <span className="text-lg font-semibold text-heading-1">EdgeAI</span>
+        <div className="flex flex-col items-center justify-between md:flex-row">
+          <div className="mb-4 flex items-center gap-3 md:mb-0">
+            <img src={Logo} alt="EdgeAI Logo" className="h-7 w-7" />
+            <span className="text-heading-1 text-lg font-semibold">EdgeAI</span>
           </div>
-          <ul className="flex gap-6 text-heading-1">
+          <ul className="text-heading-1 flex gap-6">
             {NAV_ITEMS.map((item: NavItemConfig, index: number) => (
               <NavItem key={index} href={item.href} text={item.text} />
             ))}

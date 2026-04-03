@@ -7,19 +7,19 @@ import { Info } from "../cards/Info";
 export const AboutUs: FC = () => {
   return (
     <section id="about-us">
-      <Container className="flex flex-col md:flex-row gap-10 lg:gap-12 items-center">
+      <Container className="flex flex-col items-center gap-10 md:flex-row lg:gap-12">
         {/* Left Section */}
         <div className="w-full md:w-5/12 lg:w-1/2">
-          <div className="w-full h-80 sm:h-96 relative">
+          <div className="relative h-80 w-full sm:h-96">
             <img
               src="https://images.pexels.com/photos/8728381/pexels-photo-8728381.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               alt="About Our Mission"
-              className="w-full h-full object-cover rounded-3xl shadow-lg relative z-10"
+              className="relative z-10 h-full w-full rounded-3xl object-cover shadow-lg"
             />
           </div>
         </div>
         {/* Right Section */}
-        <div className="w-full md:w-7/12 lg:w-1/2 flex flex-col">
+        <div className="flex w-full flex-col md:w-7/12 lg:w-1/2">
           <Title>About Our AI Solution</Title>
           <Paragraph>
             We are on a mission to empower businesses with transformative AI
@@ -28,7 +28,7 @@ export const AboutUs: FC = () => {
             unique needs. Join us and lead the digital revolution in your
             industry.
           </Paragraph>
-          <div className="pt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl">
+          <div className="grid max-w-3xl grid-cols-1 gap-4 pt-8 sm:grid-cols-2">
             <Info
               title="Mission"
               description="Our mission is to use AI for the good of humanity and the planet."
@@ -40,7 +40,7 @@ export const AboutUs: FC = () => {
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
-                className="w-4 h-4 sm:w-5 sm:h-5"
+                className="h-4 w-4 sm:h-5 sm:w-5"
               >
                 <path
                   strokeLinecap="round"
@@ -60,7 +60,7 @@ export const AboutUs: FC = () => {
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
-                className="w-4 h-4 sm:w-5 sm:h-5"
+                className="h-4 w-4 sm:h-5 sm:w-5"
               >
                 <path
                   strokeLinecap="round"

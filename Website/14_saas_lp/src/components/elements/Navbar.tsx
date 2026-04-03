@@ -12,34 +12,34 @@ export const Navbar: FC = () => {
   return (
     <header className="absolute inset-x-0 top-0 z-50 py-6">
       <Container>
-        <nav className="w-full flex justify-between gap-6 relative">
+        <nav className="relative flex w-full justify-between gap-6">
           {/* Logo */}
-          <div className="min-w-max inline-flex relative">
+          <div className="relative inline-flex min-w-max">
             <a href="/" className="relative flex items-center gap-3">
-              <img src={Logo} alt="EgdeAI Logo" className="w-10 h-10" />
-              <div className="inline-flex text-lg font-semibold text-heading-1">
+              <img src={Logo} alt="EgdeAI Logo" className="h-10 w-10" />
+              <div className="text-heading-1 inline-flex text-lg font-semibold">
                 EdgeAI
               </div>
             </a>
           </div>
 
           {/* Menu */}
-          <div className="flex flex-col lg:flex-row w-full lg:justify-between lg:items-center absolute top-full left-0 lg:static lg:top-0 bg-body lg:bg-transparent border-x border-x-box-border lg:border-x-0 lg:h-auto h-0 overflow-hidden">
-            <ul className="border-t border-box-border lg:border-t-0 px-6 lg:px-0 pt-6 lg:pt-0 flex flex-col lg:flex-row gap-y-4 gap-x-3 text-lg text-heading-2 w-full lg:justify-center lg:items-center">
+          <div className="bg-body border-x-box-border absolute top-full left-0 flex h-0 w-full flex-col overflow-hidden border-x lg:static lg:top-0 lg:h-auto lg:flex-row lg:items-center lg:justify-between lg:border-x-0 lg:bg-transparent">
+            <ul className="border-box-border text-heading-2 flex w-full flex-col gap-x-3 gap-y-4 border-t px-6 pt-6 text-lg lg:flex-row lg:items-center lg:justify-center lg:border-t-0 lg:px-0 lg:pt-0">
               {NAV_ITEMS.map((item: NavItemConfig, index: number) => (
                 <NavItem href={item.href} text={item.text} key={index} />
               ))}
             </ul>
-            <div className="lg:min-w-max flex items-center sm:w-max w-full pb-6 lg:pb-0 border-b border-box-border lg:border-0 px-6 lg:px-0">
+            <div className="border-box-border flex w-full items-center border-b px-6 pb-6 sm:w-max lg:min-w-max lg:border-0 lg:px-0 lg:pb-0">
               <BtnLink text="Get Started" href="#cta" className="" />
             </div>
           </div>
 
           {/* Light/Dark Mode Toggle */}
-          <div className="min-w-max flex items-center gap-x-3">
+          <div className="flex min-w-max items-center gap-x-3">
             <button
               onClick={toggleTheme}
-              className="outline-hidden flex relative text-heading-2 rounded-full p-2 lg:p-3 border border-box-border"
+              className="text-heading-2 border-box-border relative flex rounded-full border p-2 outline-hidden lg:p-3"
             >
               {theme === "dark" ? (
                 <svg
@@ -48,7 +48,7 @@ export const Navbar: FC = () => {
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="w-6 h-6"
+                  className="h-6 w-6"
                 >
                   <path
                     strokeLinecap="round"
@@ -63,7 +63,7 @@ export const Navbar: FC = () => {
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="w-6 h-6"
+                  className="h-6 w-6"
                 >
                   <path
                     strokeLinecap="round"

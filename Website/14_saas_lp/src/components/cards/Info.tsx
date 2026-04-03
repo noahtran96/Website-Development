@@ -9,11 +9,11 @@ interface InfoProps {
 
 export const Info: FC<InfoProps> = ({ title, description, children }) => {
   return (
-    <div className="p-5 sm:p-6 lg:p-8 rounded-3xl border border-box-border bg-box-bg shadow-lg shadow-box-shadow relative overflow-hidden">
-      <div className="rounded-xl bg:body p-3 text-heading-1 w-max relative">
+    <div className="border-box-border bg-box-bg shadow-box-shadow relative overflow-hidden rounded-3xl border p-5 shadow-lg sm:p-6 lg:p-8">
+      <div className="bg:body text-heading-1 relative w-max rounded-xl p-3">
         {children}
       </div>
-      <h2 className="text-heading-2 w-max relative font-semibold md:text-xl">
+      <h2 className="text-heading-2 relative w-max font-semibold md:text-xl">
         {title}
       </h2>
       <Paragraph>{description}</Paragraph>

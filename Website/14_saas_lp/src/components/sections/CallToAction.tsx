@@ -5,13 +5,13 @@ import { Button } from "../shared/Button";
 
 export const CallToAction: FC = () => {
   return (
-    <section className="pb-20 relative">
+    <section className="relative pb-20">
       <Container>
-        <div className="relative rounded-2xl overflow-hidden">
-          <div className="relative z-10 mx-auto text-center max-w-xl md:max-w-2xl py-8 md:py-10 px-6 md:px-8">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-heading-1">
+        <div className="relative overflow-hidden rounded-2xl">
+          <div className="relative z-10 mx-auto max-w-xl px-6 py-8 text-center md:max-w-2xl md:px-8 md:py-10">
+            <h1 className="text-heading-1 text-3xl font-bold sm:text-4xl md:text-5xl">
               Quick Start your{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">
+              <span className="bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
                 own AI
               </span>{" "}
               Business
@@ -21,7 +21,7 @@ export const CallToAction: FC = () => {
               marketing efforts. Get data-driven insights and automation at your
               fingertips.
             </Paragraph>
-            <div className="mx-auto max-w-md sm:max-w-xl pt-10 dark:text-white">
+            <div className="mx-auto max-w-md pt-10 sm:max-w-xl dark:text-white">
               <Button>Get In Touch</Button>
             </div>
           </div>

@@ -10,7 +10,7 @@ export const NavItem: FC<NavItemProps> = ({ href, text }) => {
     <li>
       <a
         href={href}
-        className="duration-300 font-medium ease-linear hover:text-primary py-3"
+        className="hover:text-primary py-3 font-medium duration-300 ease-linear"
       >
         {text}
       </a>

@@ -7,17 +7,17 @@ import { Numbers } from "./Numbers";
 export const Hero: FC = () => {
   return (
     <section className="relative pt-32 lg:pt-36">
-      <Container className="flex flex-col lg:flex-row gap-10 lg:gap-12">
+      <Container className="flex flex-col gap-10 lg:flex-row lg:gap-12">
         {/* Glow */}
-        <div className="absolute w-full lg:w-1/2 inset-y-0 lg:right-0">
-          <span className="absolute -left-6 md:left-4 top-24 lg:top-28 w-24 h-24 rotate-90 skew-x-12 rounded-3xl bg-gradient-to-r from-blue-600 to-violet-600 blur-xl opacity-60 lg:opacity-95 lg:block hidden"></span>
-          <span className="absolute right-4 bottom-12 w-24 h-24 rounded-3xl bg-primary blur-xl opacity-80"></span>
+        <div className="absolute inset-y-0 w-full lg:right-0 lg:w-1/2">
+          <span className="absolute top-24 -left-6 hidden h-24 w-24 rotate-90 skew-x-12 rounded-3xl bg-gradient-to-r from-blue-600 to-violet-600 opacity-60 blur-xl md:left-4 lg:top-28 lg:block lg:opacity-95"></span>
+          <span className="bg-primary absolute right-4 bottom-12 h-24 w-24 rounded-3xl opacity-80 blur-xl"></span>
         </div>
         {/* Headline and Form */}
-        <div className="relative flex flex-col items-center text-center lg:text-left lg:py-8 lg:items-start lg:max-w-none max-w-3xl mx-auto lg:mx-0 lg:flex-1 lg:w-1/2">
-          <h1 className="text-heading-1 text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold">
+        <div className="relative mx-auto flex max-w-3xl flex-col items-center text-center lg:mx-0 lg:w-1/2 lg:max-w-none lg:flex-1 lg:items-start lg:py-8 lg:text-left">
+          <h1 className="text-heading-1 text-3xl font-bold sm:text-4xl md:text-5xl xl:text-6xl">
             Empower Your Business{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-violet-600 ml-2">
+            <span className="ml-2 bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
               with AI
             </span>
           </h1>
@@ -27,13 +27,13 @@ export const Hero: FC = () => {
             data-driven decision-making. Experience a future where your business
             runs smarter, faster, and more efficiently.
           </Paragraph>
-          <div className="mt-10 w-full flex max-w-md mx-auto lg:mx-0">
-            <div className="flex sm:flex-row flex-col gap-5 w-full">
+          <div className="mx-auto mt-10 flex w-full max-w-md lg:mx-0">
+            <div className="flex w-full flex-col gap-5 sm:flex-row">
               <form
                 action="#"
-                className="py-1 pl-6 w-full pr-1 flex gap-3 items-center text-heading-3 shadow-lg shadow-box-shadow border border-box-border bg-box-bg rounded-full ease-linear focus-within:bg-body focus-within:border-primary"
+                className="text-heading-3 shadow-box-shadow border-box-border bg-box-bg focus-within:bg-body focus-within:border-primary flex w-full items-center gap-3 rounded-full border py-1 pr-1 pl-6 shadow-lg ease-linear"
               >
-                <span className="min-w-max pr-2 border-r border-box-border">
+                <span className="border-box-border min-w-max border-r pr-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
@@ -41,7 +41,7 @@ export const Hero: FC = () => {
                     viewBox="0 0 24 24"
                     strokeWidth="1.5"
                     stroke="currentColor"
-                    className="w-5 h-5"
+                    className="h-5 w-5"
                   >
                     <path
                       strokeLinecap="round"
@@ -53,7 +53,7 @@ export const Hero: FC = () => {
                 <input
                   type="email"
                   placeholder="johndoe@gmail.com"
-                  className="w-full py-3 outline-none background-transparent"
+                  className="background-transparent w-full py-3 outline-none"
                 />
                 <Button className="min-w-max text-white">
                   <span className="relative z-[5]">Get Started</span>
@@ -63,13 +63,13 @@ export const Hero: FC = () => {
           </div>
         </div>
         {/* Image */}
-        <div className="flex flex-1 lg:w-1/2 lg:h-auto relative lg:max-w-none lg:mx-0 mx-auto max-w-3xl">
+        <div className="relative mx-auto flex max-w-3xl flex-1 lg:mx-0 lg:h-auto lg:w-1/2 lg:max-w-none">
           <img
             src="https://images.pexels.com/photos/7773731/pexels-photo-7773731.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
             alt="Hero Image"
             width={2350}
             height={2359}
-            className="lg:absolute lg:w-full lg:h-full rounded-3xl object-cover lg:max-h-none max-h-96"
+            className="max-h-96 rounded-3xl object-cover lg:absolute lg:h-full lg:max-h-none lg:w-full"
           />
         </div>
       </Container>

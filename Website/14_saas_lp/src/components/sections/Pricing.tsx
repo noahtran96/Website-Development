@@ -16,23 +16,23 @@ export const Pricing: FC = () => {
         </Paragraph>
       </Container>
       <Container className="mt-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {PRICING_PLANS.map((plan: PricingPlan, index: number) => (
-            <div key={index} className="relative group h-full">
-              <div className="bg-gradient-to-r from-blue-600 to-violet-600 p-1 rounded-3xl h-full">
-                <div className="bg-box-bg border border-box-border rounded-3xl shadow-lg shadow-box-shadow p-8 flex flex-col h-full relative">
+            <div key={index} className="group relative h-full">
+              <div className="h-full rounded-3xl bg-gradient-to-r from-blue-600 to-violet-600 p-1">
+                <div className="bg-box-bg border-box-border shadow-box-shadow relative flex h-full flex-col rounded-3xl border p-8 shadow-lg">
                   {plan.bestValue && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-gradient-to-r from-blue-600 to-violet-600">
+                    <div className="bg-primary absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-blue-600 to-violet-600 px-3 py-1 text-xs font-bold tracking-wider text-white uppercase">
                       Best Value
                     </div>
                   )}
-                  <h3 className="text-2xl font-semibold text-heading-1">
+                  <h3 className="text-heading-1 text-2xl font-semibold">
                     {plan.title}
                   </h3>
-                  <p className="mt-4 text-4xl font-bold text-heading-1">
+                  <p className="text-heading-1 mt-4 text-4xl font-bold">
                     {plan.price}
                   </p>
-                  <ul className="mt-6 flex-1 space-y-3 text-left text-heading-3">
+                  <ul className="text-heading-3 mt-6 flex-1 space-y-3 text-left">
                     {plan.features.map(
                       (feature: string, indexFeatures: number) => (
                         <li
@@ -46,7 +46,7 @@ export const Pricing: FC = () => {
                     )}
                   </ul>
                   <div className="mt-8">
-                    <Button className="w-full transform transition-transform duration-300 hover:scale-105 text-white">
+                    <Button className="w-full transform text-white transition-transform duration-300 hover:scale-105">
                       Choose Plan
                     </Button>
                   </div>
