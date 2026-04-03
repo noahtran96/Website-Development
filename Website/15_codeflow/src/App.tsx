@@ -16,7 +16,7 @@ export const App: FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
-    <div className="min-h-screen bg-slate-950 text-white overflow-hidden">
+    <div className="min-h-screen overflow-hidden bg-slate-950 text-white">
       <Navbar scrolled={scrolled} />
       <Hero />
       <Features />

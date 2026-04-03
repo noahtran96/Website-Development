@@ -5,46 +5,46 @@ export const Testimonials: FC = () => {
   return (
     <section
       id="testimonials"
-      className="py-16 sm:py-20 px-10 sm:px-6 lg:px-8 relative"
+      className="relative px-10 py-16 sm:px-6 sm:py-20 lg:px-8"
     >
       {/* testimonial outer box */}
-      <div className="max-w-7xl mx-auto">
+      <div className="mx-auto max-w-7xl">
         {/* testimonial inner box */}
-        <div className="flex flex-col lg:flex-row items-start gap-8 sm:gap-12 lg:gap-16">
+        <div className="flex flex-col items-start gap-8 sm:gap-12 lg:flex-row lg:gap-16">
           {/* left side - header */}
-          <div className="lg:w-1/2 w-full text-center lg:text-left">
+          <div className="w-full text-center lg:w-1/2 lg:text-left">
             {/* headline text */}
-            <h2 className="text-5xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
+            <h2 className="mb-4 text-5xl font-bold sm:mb-6 sm:text-4xl md:text-5xl lg:text-6xl">
               What developers are saying about us
             </h2>
             {/* description */}
-            <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto">
+            <p className="mx-auto max-w-2xl text-base text-gray-400 sm:text-lg">
               Everything you need to build, test, and deploy applications with
               AI-powered development tools.
             </p>
           </div>
 
           {/* right side - testimonial content */}
-          <div className="lg:w-1/2 w-full">
+          <div className="w-full lg:w-1/2">
             <div className="space-y-6 sm:space-y-8">
               {TESTIMONIAL_ITEMS.map(
                 (testimonial: TestimonialItem, key: number) => (
                   <div
                     key={key}
-                    className="bg-slate-900/50 p-4 sm:p-6 backdrop-blur-sm border border-slate-800 rounded-xl sm:rounded-2xl"
+                    className="rounded-xl border border-slate-800 bg-slate-900/50 p-4 backdrop-blur-sm sm:rounded-2xl sm:p-6"
                   >
                     {/* testimonial block */}
                     <div className="flex items-start space-x-3 sm:space-x-4">
                       {/* testimonial block - left side */}
                       <div className="flex-shrink-0">
-                        <div className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                        <div className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-2xl font-bold text-transparent sm:text-3xl lg:text-4xl">
                           "
                         </div>
                       </div>
                       {/* testimonial block - right side */}
                       <div className="flex-grow">
                         {/* content */}
-                        <p className="text-white text-base sm:text-lg leading-relaxed mb-3 sm:mb-4">
+                        <p className="mb-3 text-base leading-relaxed text-white sm:mb-4 sm:text-lg">
                           {testimonial.content}
                         </p>
                         {/* image, name and role */}
@@ -53,16 +53,16 @@ export const Testimonials: FC = () => {
                           <img
                             src={testimonial.image}
                             alt={testimonial.name}
-                            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover"
+                            className="h-10 w-10 rounded-full object-cover sm:h-12 sm:w-12"
                           />
                           {/* name and role */}
                           <div>
                             {/* name */}
-                            <h4 className="font-semibold text-white text-sm sm:text-base">
+                            <h4 className="text-sm font-semibold text-white sm:text-base">
                               {testimonial.name}
                             </h4>
                             {/* role */}
-                            <p className="test-xs sm:text-sm text-gray-400">
+                            <p className="test-xs text-gray-400 sm:text-sm">
                               {testimonial.role}
                             </p>
                           </div>

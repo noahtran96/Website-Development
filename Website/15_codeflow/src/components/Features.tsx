@@ -10,12 +10,12 @@ export const Features: FC = () => {
   return (
     <section
       id="features"
-      className="py-16 sm:py-20 px-10 sm:px-6 lg:px-8 relative"
+      className="relative px-10 py-16 sm:px-6 sm:py-20 lg:px-8"
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="mx-auto max-w-6xl">
         {/* features headline */}
-        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
-          <h2 className="text-5xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
+        <div className="mb-12 text-center sm:mb-16 lg:mb-20">
+          <h2 className="mb-4 text-5xl font-bold sm:mb-6 sm:text-4xl md:text-5xl lg:text-6xl">
             <span className="bg-gradient-to-b from-white to-gray-300 bg-clip-text text-transparent">
               Your Complete Development
             </span>
@@ -32,32 +32,29 @@ export const Features: FC = () => {
           {FEATURES.map((feature: Feature, key: number) => (
             <div
               key={key}
-              className={`flex flex-col lg:flex-row items-center gap-8 sm:gap-12 ${feature.imagePosition === "right" ? " lg:flex-row-reverse" : ""}`}
+              className={`flex flex-col items-center gap-8 sm:gap-12 lg:flex-row ${feature.imagePosition === "right" ? "lg:flex-row-reverse" : ""}`}
             >
               {/* IDE interface */}
               {/* IDE interface wrapper */}
-              <div className="flex-1 w-full">
-                <div className="relative group">
+              <div className="w-full flex-1">
+                <div className="group relative">
                   {/* gradient background */}
-                  <div
-                    className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 
-                  rounded-xl sm:rounded-2xl transition-all duration-500"
-                  />
+                  <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 transition-all duration-500 sm:rounded-2xl" />
                   {/* IDE interface outer box */}
-                  <div className="relative bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 overflow-hidden group-hover:border-1              group-hover:border-blue-600/50 transition-all duration-300">
+                  <div className="relative overflow-hidden rounded-xl border border-gray-700/50 bg-gray-900/50 p-4 backdrop-blur-sm transition-all duration-300 group-hover:border-1 group-hover:border-blue-600/50 sm:rounded-2xl sm:p-6">
                     {/* IDE interface inner box */}
-                    <div className="bg-gray-950 rounded-lg p-3 sm:p-4 font-mono text-xs sm:text-sm">
+                    <div className="rounded-lg bg-gray-950 p-3 font-mono text-xs sm:p-4 sm:text-sm">
                       {/* IDE interface header */}
-                      <div className="flex items-center space-x-1 sm:space-x-2 mb-3 sm:mb-4">
+                      <div className="mb-3 flex items-center space-x-1 sm:mb-4 sm:space-x-2">
                         {/* 3 dots container */}
                         <div className="flex items-center space-x-1 sm:space-x-2">
                           {/* 3 dots */}
-                          <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-red-500" />
-                          <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-yellow-500" />
-                          <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-green-500" />
+                          <div className="h-2 w-2 rounded-full bg-red-500 sm:h-3 sm:w-3" />
+                          <div className="h-2 w-2 rounded-full bg-yellow-500 sm:h-3 sm:w-3" />
+                          <div className="h-2 w-2 rounded-full bg-green-500 sm:h-3 sm:w-3" />
                         </div>
                         {/* IDE interface header text */}
-                        <span className="text-gray-400 ml-2 sm:ml-4 text-xs sm:text-sm">
+                        <span className="ml-2 text-xs text-gray-400 sm:ml-4 sm:text-sm">
                           {feature.title}
                         </span>
                       </div>
@@ -85,15 +82,15 @@ export const Features: FC = () => {
               </div>
               {/* features text */}
               {/* text outer box */}
-              <div className="flex-1 w-full">
+              <div className="w-full flex-1">
                 {/* text inner box */}
-                <div className="max-w-lg mx-auto lg:mx-0 text-center lg:text-left">
+                <div className="mx-auto max-w-lg text-center lg:mx-0 lg:text-left">
                   {/* title */}
-                  <h3 className="text-4xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 text-white">
+                  <h3 className="mb-4 text-4xl font-bold text-white sm:mb-6 sm:text-3xl lg:text-4xl">
                     {feature.title}
                   </h3>
                   {/* description */}
-                  <p className="text-gray-300 text-base text-xl sm:text-lg leading-relaxed">
+                  <p className="text-base text-xl leading-relaxed text-gray-300 sm:text-lg">
                     {feature.description}
                   </p>
                 </div>

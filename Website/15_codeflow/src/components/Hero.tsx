@@ -24,7 +24,7 @@ export const Hero: FC = () => {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-16 sm:pt-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 pt-16 sm:px-6 sm:pt-20 lg:px-8">
       {/* pointer glow motion */}
       <div
         className="absolute inset-0 opacity-30"
@@ -34,57 +34,57 @@ export const Hero: FC = () => {
       />
 
       {/* 1st static glow */}
-      <div className="absolute top-20 left-4 sm:left-10 w-48 sm:w-72 h-48 sm:h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute top-20 left-4 h-48 w-48 animate-pulse rounded-full bg-blue-500/10 blur-3xl sm:left-10 sm:h-72 sm:w-72" />
 
       {/* 2nd static glow */}
-      <div className="absolute bottom-20 right-4 sm:right-10 w-64 sm:w-96 h-64 sm:h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
+      <div className="absolute right-4 bottom-20 h-64 w-64 animate-pulse rounded-full bg-cyan-500/10 blur-3xl delay-1000 sm:right-10 sm:h-96 sm:w-96" />
 
       {/* hero content */}
       {/* hero outer box */}
-      <div className="max-w-7xl mx-auto text-center relative w-full">
+      <div className="relative mx-auto w-full max-w-7xl text-center">
         {/* hero inner box */}
-        <div className="max-w-7xl mx-auto flex flex-col lg:grid lg:grid-cols-2 text-cente lg:text-left gap-6 sm:gap-8 lg:gap-12 items-center relative">
+        <div className="text-cente relative mx-auto flex max-w-7xl flex-col items-center gap-6 sm:gap-8 lg:grid lg:grid-cols-2 lg:gap-12 lg:text-left">
           {/* hero text */}
           <div>
             {/* hero introduction pill */}
-            <div className="inline-flex items-center space-x-2 px-3 sm:px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full mb-4 sm:mb-6 animate-in slide-in-from-bottom duration-700">
+            <div className="animate-in slide-in-from-bottom mb-4 inline-flex items-center space-x-2 rounded-full border border-blue-500/20 bg-blue-500/10 px-3 py-2 duration-700 sm:mb-6 sm:px-4">
               {/* pill icon */}
-              <Sparkles className="w-4 h-4 text-blue-400" />
+              <Sparkles className="h-4 w-4 text-blue-400" />
               {/* pill text */}
-              <span className="text-xs sm:text-sm text-blue-300">
+              <span className="text-xs text-blue-300 sm:text-sm">
                 Introducing CodeFlow AI
               </span>
             </div>
             {/* hero tagline */}
-            <h1 className="text-5xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold mb-4 sm:mb-6 animate-in slide-in-from-bottom duration-700 delay-100 leading-tight">
-              <span className="bg-gradient-to-r from-white via-blue to-cyan-100 bg-clip-text text-transparent block mb-1 sm:mb-2">
+            <h1 className="animate-in slide-in-from-bottom mb-4 text-5xl leading-tight font-semibold delay-100 duration-700 sm:mb-6 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
+              <span className="via-blue mb-1 block bg-gradient-to-r from-white to-cyan-100 bg-clip-text text-transparent sm:mb-2">
                 Code Faster
               </span>
-              <span className="bg-gradient-to-b from-blue-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent block mb-1 sm:mb-2">
+              <span className="mb-1 block bg-gradient-to-b from-blue-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent sm:mb-2">
                 Build Better
               </span>
-              <span className="bg-gradient-to-r from-white via-blue to-cyan-100 bg-clip-text text-transparent block mb-1 sm:mb-2">
+              <span className="via-blue mb-1 block bg-gradient-to-r from-white to-cyan-100 bg-clip-text text-transparent sm:mb-2">
                 With CodeFlow AI
               </span>
             </h1>
             {/* hero description */}
-            <p className="text-md sm:text-base lg:text-lg text-gray-400 max-w-2xl mx-auto lg:mx-0 mb-6 sm:mb-8 animate-in slide-in-from-bottom duration-700 delay-200 leading-relaxed">
+            <p className="text-md animate-in slide-in-from-bottom mx-auto mb-6 max-w-2xl leading-relaxed text-gray-400 delay-200 duration-700 sm:mb-8 sm:text-base lg:mx-0 lg:text-lg">
               Accelerate your development workflow with intelligent code
               completion, automated testing, and smart debugging. Ship
               production-ready code 10x faster.
             </p>
             {/* CTA */}
             {/* CTA container */}
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 mb-8 sm:mb-12 animate-in slide-in-from-bottom duration-700 delay-300">
+            <div className="animate-in slide-in-from-bottom mb-8 flex flex-col items-center justify-center gap-3 delay-300 duration-700 sm:mb-12 sm:flex-row sm:gap-4 lg:justify-start">
               {/* 1st button */}
-              <button className="group w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-b from-blue-600 to-blue-400 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 hover:scale-102 flex items-center justify-center space-x-2">
+              <button className="group flex w-full items-center justify-center space-x-2 rounded-lg bg-gradient-to-b from-blue-600 to-blue-400 px-6 py-3 text-sm font-semibold transition-all duration-300 hover:scale-102 sm:w-auto sm:px-8 sm:py-4 sm:text-base">
                 <span>Start Coding Free</span>
-                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 sm:h-5 sm:w-5" />
               </button>
               {/* 2nd button */}
-              <button className="group w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 hover:bg-white/10 flex items-center justify-center space-x-2">
-                <div className="p-2 bg-white/10 rounded-full group-hover:bg-white/20 duration-300 transition-colors">
-                  <Play className="w-4 h-4 sm:w-5 sm:h-5 fill-white" />
+              <button className="group flex w-full items-center justify-center space-x-2 rounded-lg border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold backdrop-blur-sm transition-all duration-300 hover:bg-white/10 sm:w-auto sm:px-8 sm:py-4 sm:text-base">
+                <div className="rounded-full bg-white/10 p-2 transition-colors duration-300 group-hover:bg-white/20">
+                  <Play className="h-4 w-4 fill-white sm:h-5 sm:w-5" />
                 </div>
                 <span>Watch Demo</span>
               </button>
@@ -93,37 +93,37 @@ export const Hero: FC = () => {
           {/* IDE screen */}
           <div className="relative order-2 w-full">
             {/* IDE outer box */}
-            <div className="relative bg-white/5 backdrop-blur-xl rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow-2xl border border-white/10">
+            <div className="relative rounded-xl border border-white/10 bg-white/5 p-3 shadow-2xl backdrop-blur-xl sm:rounded-2xl sm:p-4">
               {/* IDE inner box */}
-              <div className="bg-gradient-to-br from-gray-900/20 to-gray-800/20 backdrop-blur-sm rounded-lg overflow-hidden h-[280px] sm:h-[350px] lg:h-[450px] border border-white/5">
+              <div className="h-[280px] overflow-hidden rounded-lg border border-white/5 bg-gradient-to-br from-gray-900/20 to-gray-800/20 backdrop-blur-sm sm:h-[350px] lg:h-[450px]">
                 {/* IDE header */}
-                <div className="flex items-center justify-between px-3 sm:px-4 py-2 sm:py-3 bg-white/5 backdrop-blur-sm border-b border-white">
+                <div className="flex items-center justify-between border-b border-white bg-white/5 px-3 py-2 backdrop-blur-sm sm:px-4 sm:py-3">
                   {/* 3 dots + title container */}
-                  <div className="flex items-center  space-x-2">
+                  <div className="flex items-center space-x-2">
                     {/* 3 dots container */}
                     <div className="flex items-center space-x-1 sm:space-x-2">
                       {/* 3 dots */}
-                      <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-red-500" />
-                      <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-yellow-500" />
-                      <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-green-500" />
+                      <div className="h-2 w-2 rounded-full bg-red-500 sm:h-3 sm:w-3" />
+                      <div className="h-2 w-2 rounded-full bg-yellow-500 sm:h-3 sm:w-3" />
+                      <div className="h-2 w-2 rounded-full bg-green-500 sm:h-3 sm:w-3" />
                     </div>
-                    <span className="text-xs sm:text-sm text-gray-300">
+                    <span className="text-xs text-gray-300 sm:text-sm">
                       CodeFlow AI
                     </span>
                   </div>
                   {/* IDE header icon */}
-                  <ChevronDown className="w-3 h-3 sm:w-4 sm:h-4 text-gray-400" />
+                  <ChevronDown className="h-3 w-3 text-gray-400 sm:h-4 sm:w-4" />
                 </div>
                 {/* IDE tab button + content container */}
-                <div className="p-3 sm:p-4 relative h-full">
+                <div className="relative h-full p-3 sm:p-4">
                   {/* IDE tab button container */}
-                  <div className="flex space-x-1 sm:space-x-2 mb-3 sm:mb-4 overflow-x-auto">
+                  <div className="mb-3 flex space-x-1 overflow-x-auto sm:mb-4 sm:space-x-2">
                     {Object.keys(CODE_EXAMPLES).map(
                       (example: string, index: number) => (
                         <button
                           key={index}
                           onClick={() => setActiveTab(example)}
-                          className={`px-3 py-2 backdrop-blur-sm text-xs sm:text-sm rounded-t-lg border ${activeTab === example ? "bg-blue-500/30 text-white border-blue-400/20" : "bg-white/5 text-gray-300 border-white/10 hover:bg-white-10"} transition-all duration-200 whitespace-nowrap`}
+                          className={`rounded-t-lg border px-3 py-2 text-xs backdrop-blur-sm sm:text-sm ${activeTab === example ? "border-blue-400/20 bg-blue-500/30 text-white" : "hover:bg-white-10 border-white/10 bg-white/5 text-gray-300"} whitespace-nowrap transition-all duration-200`}
                         >
                           {example}
                         </button>
@@ -131,7 +131,7 @@ export const Hero: FC = () => {
                     )}
                   </div>
                   {/* IDE code content */}
-                  <div className="relative overflow-hidden flex-grow">
+                  <div className="relative flex-grow overflow-hidden">
                     <SyntaxHighlighter
                       language="javascript"
                       style={nightOwl}
@@ -142,6 +142,9 @@ export const Hero: FC = () => {
                         lineHeight: "1.4",
                         height: "100%",
                         border: "1px solid #3c3c3c",
+                        wordWrap: "break-word",
+                        whiteSpace: "pre-wrap",
+                        textAlign: "left",
                       }}
                     >
                       {CODE_EXAMPLES[activeTab]}
@@ -152,13 +155,13 @@ export const Hero: FC = () => {
 
               {/* floating cards container */}
               <div
-                className={`hidden lg:block absolute bottom-4 right-4 transform translate-x-8 translate-y-8 w-72 ${FLOATING_CARDS[activeTab].bgColor} backdrop-blur-xl rounded-lg p-4 border border-white/20 shadow-2xl`}
+                className={`absolute right-4 bottom-4 hidden w-72 translate-x-8 translate-y-8 transform lg:block ${FLOATING_CARDS[activeTab].bgColor} rounded-lg border border-white/20 p-4 shadow-2xl backdrop-blur-xl`}
               >
                 {/* floating cards title container */}
-                <div className="flex items-center space-x-2 mb-2">
+                <div className="mb-2 flex items-center space-x-2">
                   {/* floating cards icon */}
                   <div
-                    className={`w-6 h-6 ${FLOATING_CARDS[activeTab].iconColor} flex items-center justify-center text-sm font-bold`}
+                    className={`h-6 w-6 ${FLOATING_CARDS[activeTab].iconColor} flex items-center justify-center text-sm font-bold`}
                   >
                     {FLOATING_CARDS[activeTab].icon}
                   </div>
@@ -171,7 +174,7 @@ export const Hero: FC = () => {
                 </div>
                 {/* floating cards content */}
                 <div
-                  className={`text-sm text-left ${FLOATING_CARDS[activeTab].contentColor}`}
+                  className={`text-left text-sm ${FLOATING_CARDS[activeTab].contentColor}`}
                 >
                   {FLOATING_CARDS[activeTab].content}
                 </div>
