@@ -32,9 +32,9 @@ const projects = [
       "https://github.com/noahtran96/Website-Development/tree/main/Website/11_food_delivery",
   },
   {
-    title: "Project Management Tool",
+    title: "Dev Platform Landing Page",
     description:
-      "A collaborative workspace for teams with real-time updates, task tracking, and integrations.",
+      "A premium AI-powered developer landing page featuring a dynamic IDE simulator, interactive code completion showcases, and custom mouse-tracking animations.",
     image: "/projects/project4.png",
     tags: ["React", "TypeScript", "Tailwind CSS", "Vite", "Vercel"],
     link: "https://15codeflow.vercel.app/",
