@@ -1,20 +1,20 @@
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { useState } from "react";
-
-const testimonials = [];
+import { TESTIMONIAL_ITEMS } from "../constants/testimonialItems";
 
 export const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const next = () => {
-    setActiveIndex((prev) => (prev + 1) % testimonials.length);
+    setActiveIndex((prev) => (prev + 1) % TESTIMONIAL_ITEMS.length);
   };
   const previous = () => {
     setActiveIndex(
-      (prev) => (prev - 1 + testimonials.length) % testimonials.length,
+      (prev) =>
+        (prev - 1 + TESTIMONIAL_ITEMS.length) % TESTIMONIAL_ITEMS.length,
     );
   };
   return (
-    <section id="testimonials" className="relative overflow-hidden py-32">
+    <section id="TESTIMONIAL_ITEMS" className="relative overflow-hidden py-32">
       {/* Background Glow */}
       <div className="bg-primary/5 absolute top-1/2 left-1/2 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl" />
       <div className="relative z-10 container mx-auto px-6">
@@ -40,20 +40,20 @@ export const Testimonials = () => {
                 <Quote className="text-primary-foreground h-6 w-6" />
               </div>
               <blockquote className="mb-8 pt-4 text-xl leading-relaxed font-medium md:text-2xl">
-                "{testimonials[activeIndex].quote}"
+                "{TESTIMONIAL_ITEMS[activeIndex].quote}"
               </blockquote>
               <div className="flex items-center gap-4">
                 <img
-                  src={testimonials[activeIndex].avatar}
-                  alt={testimonials[activeIndex].author}
+                  src={TESTIMONIAL_ITEMS[activeIndex].avatar}
+                  alt={TESTIMONIAL_ITEMS[activeIndex].author}
                   className="ring-primary/20 h-14 w-14 rounded-full object-cover ring-2"
                 />
                 <div className="flex items-center gap-4">
                   <div className="font-semibold">
-                    {testimonials[activeIndex].author}
+                    {TESTIMONIAL_ITEMS[activeIndex].author}
                   </div>
                   <div className="text-muted-foreground text-sm">
-                    {testimonials[activeIndex].role}
+                    {TESTIMONIAL_ITEMS[activeIndex].role}
                   </div>
                 </div>
               </div>
@@ -68,7 +68,7 @@ export const Testimonials = () => {
                 <ChevronLeft />
               </button>
               <div className="flex gap-2">
-                {testimonials.map((_, index) => (
+                {TESTIMONIAL_ITEMS.map((_, index: number) => (
                   <button
                     onClick={() => setActiveIndex(index)}
                     className={`h-2 w-2 rounded-full transition-all duration-300 ${index === activeIndex ? "bg-primary w-8" : "bg-muted-foreground/30 hover:bg-muted-foreground/50"}`}
