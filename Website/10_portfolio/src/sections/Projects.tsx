@@ -1,7 +1,6 @@
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton.jsx";
 import { ArrowUpRight, Github } from "lucide-react";
-
-const projects = [];
+import { PROJECT_ITEMS, ProjectItem } from "../constants/projectItems";
 
 export const Projects = () => {
   return (
@@ -29,7 +28,7 @@ export const Projects = () => {
 
         {/* Project Grid */}
         <div className="grid gap-8 md:grid-cols-2">
-          {projects.map((project, index) => (
+          {PROJECT_ITEMS.map((project: ProjectItem, index: number) => (
             <div
               key={index}
               className="group glass animate-fade-in overflow-hidden rounded-2xl md:row-span-1"
