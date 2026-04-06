@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Button } from "@/components/Button.jsx";
+import { Button } from "../components/Button.jsx";
 import emailjs from "@emailjs/browser";
-import { CONTACT_INFO, ContactInfo } from "../constants/contactInfo";
+import { CONTACT_INFO, ContactInfo } from "../constants";
+import { Send, CheckCircle, AlertCircle } from "lucide-react";
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
