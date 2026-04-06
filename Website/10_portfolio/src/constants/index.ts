@@ -1,2 +1,2 @@
-export * from "./highlightsItems";
+export * from "./highlightItems";
 export * from "./experienceItems";
