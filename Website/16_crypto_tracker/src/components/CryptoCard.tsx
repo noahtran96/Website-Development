@@ -1,4 +1,5 @@
 import type { Crypto } from "../api/coinGecko";
+import { formatPrice } from "../utils/formatter";
 
 interface CryptoCardProps {
   crypto: Crypto;
@@ -20,7 +21,13 @@ export const CryptoCard = ({ crypto }: CryptoCardProps) => {
       </div>
 
       <div className="crypto-price">
-        <p className="price">{crypto.current_price}</p>
+        <p className="price">{formatPrice(crypto.current_price)}</p>
+        <p
+          className={`change ${crypto.price_change_percentage_24h >= 0 ? "positive" : "negative"}`}
+        >
+          {crypto.price_change_percentage_24h >= 0 ? "↑" : "↓"}{" "}
+          {Math.abs(crypto.price_change_percentage_24h).toFixed(2)}%
+        </p>
       </div>
     </div>
   );
