@@ -1,0 +1,16 @@
+name: Deploy 16_crypto_tracker
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '16_crypto_tracker/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run deploy
+        run: echo "System is deploying 16_crypto_tracker..."
