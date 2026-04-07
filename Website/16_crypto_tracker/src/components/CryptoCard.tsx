@@ -8,7 +8,7 @@ interface CryptoCardProps {
 export const CryptoCard = ({ crypto }: CryptoCardProps) => {
   return (
     <div className="crypto-card">
-      {/* card header */}
+      {/* crypto header */}
       <div className="crypto-header">
         <div className="crypto-info">
           <img src={crypto.image} alt={crypto.name} />
@@ -20,6 +20,7 @@ export const CryptoCard = ({ crypto }: CryptoCardProps) => {
         </div>
       </div>
 
+      {/* crypto price */}
       <div className="crypto-price">
         <p className="price">{formatPrice(crypto.current_price)}</p>
         <p
@@ -28,6 +29,14 @@ export const CryptoCard = ({ crypto }: CryptoCardProps) => {
           {crypto.price_change_percentage_24h >= 0 ? "↑" : "↓"}{" "}
           {Math.abs(crypto.price_change_percentage_24h).toFixed(2)}%
         </p>
+      </div>
+
+      {/* crypto stats */}
+      <div className="crypto-stats">
+        <div className="stat">
+          <span className="stat-label">Market Cap</span>
+          <span className="stat-value">{crypto.market_cap}</span>
+        </div>
       </div>
     </div>
   );
