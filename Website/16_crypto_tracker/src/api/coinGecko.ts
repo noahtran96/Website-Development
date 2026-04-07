@@ -6,6 +6,7 @@ export interface Crypto {
   name: string;
   image: string;
   market_cap_rank: number;
+  current_price: number;
 }
 
 export const fetchCryptos = async () => {

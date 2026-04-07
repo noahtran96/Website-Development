@@ -19,7 +19,9 @@ export const CryptoCard = ({ crypto }: CryptoCardProps) => {
         </div>
       </div>
 
-      <div></div>
+      <div className="crypto-price">
+        <p className="price">{crypto.current_price}</p>
+      </div>
     </div>
   );
 };
