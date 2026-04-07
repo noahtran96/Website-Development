@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import { Home } from "./pages/Home";
 import { CoinDetail } from "./pages/CoinDetail";
 
-export const App = () => {
+const App = () => {
   return (
     <BrowserRouter>
       <Routes>
@@ -12,3 +12,5 @@ export const App = () => {
     </BrowserRouter>
   );
 };
+
+export default App;
