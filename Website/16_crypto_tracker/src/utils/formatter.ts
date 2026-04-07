@@ -16,6 +16,16 @@ export const formatPrice = (price: number): string => {
   }).format(price);
 };
 
+/**
+ * Formats large market cap numbers into human-readable strings
+ * - Use "T" for Trillions (1e12)
+ * - Use "B" for Billions (1e9)
+ * - Use "M" for Millions (1e6)
+ * - Returns locale-formatted string for smaller values
+ * @param marketCap - The total market capitalization value
+ * @returns A shorted string with magnitude suffixes (T, B, M)
+ */
+
 export const formatMarketCap = (marketCap: number): string => {
   if (marketCap >= 1e12) return `${(marketCap / 1e12).toFixed(2)}T`;
   if (marketCap >= 1e9) return `${(marketCap / 1e9).toFixed(2)}B`;

@@ -1,5 +1,5 @@
 import type { Crypto } from "../api/coinGecko";
-import { formatPrice } from "../utils/formatter";
+import { formatPrice, formatMarketCap } from "../utils/formatter";
 
 interface CryptoCardProps {
   crypto: Crypto;
@@ -33,9 +33,20 @@ export const CryptoCard = ({ crypto }: CryptoCardProps) => {
 
       {/* crypto stats */}
       <div className="crypto-stats">
+        {/* stat 1 - market cap */}
         <div className="stat">
           <span className="stat-label">Market Cap</span>
-          <span className="stat-value">{crypto.market_cap}</span>
+          <span className="stat-value">
+            {formatMarketCap(crypto.market_cap)}
+          </span>
+        </div>
+
+        {/* stat 2 - total volume */}
+        <div className="stat">
+          <span className="stat-label">Volume</span>
+          <span className="stat-value">
+            {formatMarketCap(crypto.total_volume)}
+          </span>
         </div>
       </div>
     </div>
