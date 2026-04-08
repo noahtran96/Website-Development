@@ -3,9 +3,11 @@ import { CryptoCard } from "../components/CryptoCard";
 import { fetchCryptos, type Crypto } from "../api/coinGecko";
 
 export const Home = () => {
-  const [cryptoList, setCryptoList] = useState([]);
+  const [cryptoList, setCryptoList] = useState<Crypto[]>([]);
+  const [filteredList, setFilteredList] = useState<Crypto[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [viewMode, setViewMode] = useState("grid");
+  const [sortBy, setSortBy] = useState("market_cap_rank");
 
   useEffect(() => {
     const fetchCryptoData = async () => {
@@ -22,11 +24,53 @@ export const Home = () => {
     fetchCryptoData();
   }, []);
 
+  useEffect(() => {
+    const filterAndSort = () => {
+      const filtered = [...cryptoList];
+      filtered.sort((a, b) => {
+        switch (sortBy) {
+          case "name":
+            return a.name.localeCompare(b.name);
+          case "price":
+            return a.current_price - b.current_price;
+          case "price_desc":
+            return b.current_price - a.current_price;
+          case "change":
+            return (
+              a.price_change_percentage_24h - b.price_change_percentage_24h
+            );
+          case "market_cap":
+            return a.market_cap - b.market_cap;
+          default:
+            return a.market_cap_rank - b.market_cap_rank;
+        }
+      });
+
+      setFilteredList(filtered);
+    };
+
+    filterAndSort();
+  }, [sortBy, cryptoList]);
+
   return (
     <div className="app">
       {/* display control */}
       <div className="controls">
-        <div className="filter-group"></div>
+        <div className="filter-group">
+          <label htmlFor="sort-select">Sort by:</label>
+          <select
+            id="sort-select"
+            value={sortBy}
+            onChange={(e) => setSortBy(e.target.value)}
+          >
+            <option value="market_cap_rank">Rank</option>
+            <option value="name">Name</option>
+            <option value="price">Price (Low to High)</option>
+            <option value="price_desc">Price (High to Low)</option>
+            <option value="change">24h Change</option>
+            <option value="market_cap">Market Cap</option>
+          </select>
+        </div>
         <div className="view-toggle">
           <button
             className={viewMode === "grid" ? "active" : ""}
@@ -50,7 +94,7 @@ export const Home = () => {
         </div>
       ) : (
         <div className={`crypto-container ${viewMode}`}>
-          {cryptoList.map((crypto: Crypto, key: number) => (
+          {filteredList.map((crypto: Crypto, key: number) => (
             <CryptoCard crypto={crypto} key={key} />
           ))}
         </div>
