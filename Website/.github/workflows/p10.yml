@@ -1,0 +1,16 @@
+name: Deploy 10_portfolio
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '10_portfolio/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run deploy
+        run: echo "System is deploying 10_portfolio..."

@@ -1,0 +1,16 @@
+name: Deploy 13_skincare
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '13_skincare/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run deploy
+        run: echo "System is deploying 13_skincare..."
