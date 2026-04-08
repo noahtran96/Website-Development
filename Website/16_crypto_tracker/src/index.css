@@ -137,6 +137,11 @@ body {
   backdrop-filter: blur(10px);
 }
 
+.filter-group select option {
+  background-color: #121212;
+  color: #fff;
+}
+
 .filter-group select:hover {
   background: rgba(255, 255, 255, 0.08);
 }
