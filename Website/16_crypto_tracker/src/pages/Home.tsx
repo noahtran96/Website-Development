@@ -5,6 +5,7 @@ import { fetchCryptos, type Crypto } from "../api/coinGecko";
 export const Home = () => {
   const [cryptoList, setCryptoList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [viewMode, setViewMode] = useState("grid");
 
   useEffect(() => {
     const fetchCryptoData = async () => {
@@ -23,13 +24,32 @@ export const Home = () => {
 
   return (
     <div className="app">
+      {/* display control */}
+      <div className="controls">
+        <div className="filter-group"></div>
+        <div className="view-toggle">
+          <button
+            className={viewMode === "grid" ? "active" : ""}
+            onClick={() => setViewMode("grid")}
+          >
+            Grid
+          </button>
+          <button
+            className={viewMode === "list" ? "active" : ""}
+            onClick={() => setViewMode("list")}
+          >
+            List
+          </button>
+        </div>
+      </div>
+
       {isLoading ? (
         <div className="loading">
           <div className="spinner"></div>
           <p>Loading crypto data...</p>
         </div>
       ) : (
-        <div className="crypto-container">
+        <div className={`crypto-container ${viewMode}`}>
           {cryptoList.map((crypto: Crypto, key: number) => (
             <CryptoCard crypto={crypto} key={key} />
           ))}
