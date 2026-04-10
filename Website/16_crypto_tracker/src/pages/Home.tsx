@@ -8,6 +8,7 @@ export const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [viewMode, setViewMode] = useState("grid");
   const [sortBy, setSortBy] = useState("market_cap_rank");
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     const fetchCryptoData = async () => {
@@ -26,7 +27,11 @@ export const Home = () => {
 
   useEffect(() => {
     const filterAndSort = () => {
-      const filtered = [...cryptoList];
+      const filtered = cryptoList.filter(
+        (crypto) =>
+          crypto.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          crypto.symbol.toLowerCase().includes(searchQuery.toLowerCase()),
+      );
       filtered.sort((a, b) => {
         switch (sortBy) {
           case "name":
@@ -50,7 +55,7 @@ export const Home = () => {
     };
 
     filterAndSort();
-  }, [sortBy, cryptoList]);
+  }, [sortBy, cryptoList, searchQuery]);
 
   return (
     <div className="app">
@@ -64,7 +69,13 @@ export const Home = () => {
           </div>
           {/* searchbar */}
           <div className="search-section">
-            <input type="text" />
+            <input
+              type="text"
+              placeholder="Search cryptos..."
+              className="search-input"
+              onChange={(e) => setSearchQuery(e.target.value)}
+              value={searchQuery}
+            />
           </div>
         </div>
       </header>
