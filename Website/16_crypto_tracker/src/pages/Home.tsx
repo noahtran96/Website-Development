@@ -54,6 +54,21 @@ export const Home = () => {
 
   return (
     <div className="app">
+      {/* navbar */}
+      <header className="header">
+        <div className="header-content">
+          {/* logo */}
+          <div className="logo-section">
+            <h1>🚀 Crypto Tracker</h1>
+            <p>Real-time cryptocurrency prices and market data</p>
+          </div>
+          {/* searchbar */}
+          <div className="search-section">
+            <input type="text" />
+          </div>
+        </div>
+      </header>
+
       {/* display control */}
       <div className="controls">
         <div className="filter-group">
@@ -87,6 +102,7 @@ export const Home = () => {
         </div>
       </div>
 
+      {/* crypto list */}
       {isLoading ? (
         <div className="loading">
           <div className="spinner"></div>
@@ -94,8 +110,8 @@ export const Home = () => {
         </div>
       ) : (
         <div className={`crypto-container ${viewMode}`}>
-          {filteredList.map((crypto: Crypto, key: number) => (
-            <CryptoCard crypto={crypto} key={key} />
+          {filteredList.map((crypto: Crypto) => (
+            <CryptoCard crypto={crypto} key={crypto.id} />
           ))}
         </div>
       )}
