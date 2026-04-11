@@ -1,6 +1,50 @@
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
+import { fetchCoinData } from "../api/coinGecko";
+import { useEffect, useState } from "react";
 
 export const CoinDetail = () => {
   const { id } = useParams();
-  return <div>This is the coin detail page</div>;
+  const navigate = useNavigate();
+  const [coin, setCoin] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    if (!id) return;
+    const loadCoinData = async () => {
+      try {
+        const data = await fetchCoinData(id);
+        setCoin(data);
+      } catch (err) {
+        console.error(`Error fetching crypto: ${err}`);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadCoinData();
+  }, [id]);
+
+  if (isLoading) {
+    return (
+      <div className="app">
+        <div className="loading">
+          <div className="spinner"></div>
+          <p>Loading coin data...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (!coin) {
+    return (
+      <div className="app">
+        <div className="no-results">
+          <p>Coin not found</p>
+          <button onClick={() => navigate("/")}>Go Back</button>
+        </div>
+      </div>
+    );
+  }
+
+  return <div>Hello</div>;
 };
