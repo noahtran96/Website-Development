@@ -24,7 +24,18 @@ export const fetchCryptos = async () => {
   return response.json();
 };
 
-export const fetchCoinData = async (id: string) => {
+export interface Coin {
+  id: string;
+  name: string;
+  symbol: string;
+  image: {
+    thumb: string;
+    small: string;
+    large: string;
+  };
+}
+
+export const fetchCoinData = async (id: string): Promise<Coin> => {
   const response = await fetch(
     `${BASE_URL}/coins/${id}?localization=false&tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=false`,
   );
