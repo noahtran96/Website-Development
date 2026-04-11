@@ -33,6 +33,13 @@ export interface Coin {
     small: string;
     large: string;
   };
+  market_data: {
+    market_cap_rank: number;
+    price_change_percentage_24h: number;
+    current_price: {
+      usd: number;
+    };
+  };
 }
 
 export const fetchCoinData = async (id: string): Promise<Coin> => {
