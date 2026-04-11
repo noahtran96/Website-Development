@@ -36,6 +36,12 @@ export interface Coin {
   market_data: {
     market_cap_rank: number;
     price_change_percentage_24h: number;
+    low_24h: {
+      usd: number;
+    };
+    high_24h: {
+      usd: number;
+    };
     current_price: {
       usd: number;
     };

@@ -82,6 +82,7 @@ export const CoinDetail = () => {
         </div>
         {/* coin price */}
         <div className="coin-price-section">
+          {/* current price */}
           <div className="current-price">
             <h2>{formatPrice(coin.market_data.current_price.usd)}</h2>
             <span
@@ -89,6 +90,21 @@ export const CoinDetail = () => {
             >
               {isPositive ? "↑" : "↓"} {Math.abs(priceChange).toFixed(2)}%
             </span>
+          </div>
+          {/* price ranges */}
+          <div className="price-ranges">
+            <div className="price-range">
+              <span className="range-label">24h High</span>
+              <span className="range-value">
+                {formatPrice(coin.market_data.high_24h.usd)}
+              </span>
+            </div>
+            <div className="price-range">
+              <span className="range-label">24h Low</span>
+              <span className="range-value">
+                {formatPrice(coin.market_data.low_24h.usd)}
+              </span>
+            </div>
           </div>
         </div>
       </div>
