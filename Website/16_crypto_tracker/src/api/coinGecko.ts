@@ -34,7 +34,15 @@ export interface Coin {
     large: string;
   };
   market_data: {
+    total_volume: {
+      usd: number;
+    };
+    market_cap: {
+      usd: number;
+    };
     market_cap_rank: number;
+    circulating_supply: number;
+    total_supply: number;
     price_change_percentage_24h: number;
     low_24h: {
       usd: number;
