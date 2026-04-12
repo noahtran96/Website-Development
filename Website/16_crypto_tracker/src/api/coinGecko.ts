@@ -60,7 +60,16 @@ export const fetchCoinData = async (id: string): Promise<Coin> => {
   return response.json();
 };
 
-export const fetchChartData = async (id) => {
+export interface ChartData {
+  prices: [number, number][];
+}
+
+export interface FormattedChartData {
+  time: string;
+  price: number;
+}
+
+export const fetchChartData = async (id: string): Promise<ChartData> => {
   const response = await fetch(
     `${BASE_URL}/coins/${id}/market_chart?vs_currency=usd&days=7`,
   );
