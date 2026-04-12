@@ -3,11 +3,13 @@ import { fetchCoinData } from "../api/coinGecko";
 import type { Coin } from "../api/coinGecko";
 import { useEffect, useState } from "react";
 import { formatPrice } from "../utils/formatter";
+import { Line, LineChart, ResponsiveContainer } from "recharts";
 
 export const CoinDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [coin, setCoin] = useState<Coin | null>(null);
+  const [chartData, setChartData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -106,6 +108,13 @@ export const CoinDetail = () => {
               </span>
             </div>
           </div>
+        </div>
+        {/* coin chart */}
+        <div className="chart-section">
+          <h3>Price Chart (7 Days)</h3>
+          <ResponsiveContainer width="100%" height={400}>
+            <LineChart data={chartData}></LineChart>
+          </ResponsiveContainer>
         </div>
       </div>
       ;
