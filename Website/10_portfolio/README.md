@@ -3,6 +3,12 @@
 A modern and fully responsive personal portfolio website built with **React** and **Tailwind CSS**.  
 This project showcases my projects, experience, testimonials, and contact information through a sleek glassmorphism UI with smooth animations and interactive components.
 
+## 🌐 Deployment
+
+👉 https://10portfolio.vercel.app/
+
+---
+
 ## ✨ Features
 
 - Fully responsive multi-section portfolio layout  
