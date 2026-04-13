@@ -6,7 +6,7 @@ A modern **cryptocurrency tracking web app** built with **React + TypeScript**, 
 
 ## 🌐 Deployment
 
-👉
+👉 https://16cryptotracker.vercel.app/
 
 ---
 
