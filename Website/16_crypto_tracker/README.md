@@ -1,73 +1,59 @@
-# React + TypeScript + Vite
+# 🚀 Crypto Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern **cryptocurrency tracking web app** built with **React + TypeScript**, providing real-time market data, detailed coin insights, and interactive price charts using the CoinGecko API.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🌐 Deployment
 
-## React Compiler
+👉
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- ⚛️ **React + TypeScript**
+- 🔁 **React Router** (Dynamic routing for coin detail pages)
+- 📊 **Recharts** (Interactive price charts)
+- 🎨 **CSS / Custom Styling**
+- 🌐 **CoinGecko API** (Real-time crypto data)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## ✨ Features
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **Real-time Crypto Data:** Fetches top 100 cryptocurrencies by market cap from CoinGecko API.
+- **Dynamic Coin Detail Pages:** Click on any coin to navigate to a detailed view with full market data.
+- **Interactive Price Chart:** Displays 7-day price trends using a responsive line chart.
+- **Search & Filter:** Quickly find coins by name or symbol with live filtering.
+- **Sorting Options:** Sort by price, market cap, rank, or 24h change.
+- **Responsive Layout:** Supports both grid and list views for better UX.
+- **Data Formatting:** Clean formatting for prices and large numbers (M, B, T).
+- **Error Handling & Loading States:** Smooth UX with loading spinners and fallback UI.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ⚙️ Getting Started
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Install dependencies:  
+\`\`\`bash
+npm install
+\`\`\`
+
+Run the project:  
+\`\`\`bash
+npm run dev
+\`\`\`
+
+The app runs locally at:  
+\`\`\`
+http://localhost:5173
+\`\`\`
+
+---
+
+## 📺 Credits
+
+- Data provided by **CoinGecko API**
+- This project was built by following a [YouTube tutorial](https://www.youtube.com/watch?v=r47C9c4qCqE) for educational purposes.
+- All credit for the original idea and guidance belongs to the tutorial creator.

@@ -22,6 +22,8 @@ export const Home = () => {
         setIsLoading(false);
       }
     };
+    // const interval = setInterval(fetchCryptoData, 30000);
+    // return () => clearInterval(interval);
     fetchCryptoData();
   }, []);
 
