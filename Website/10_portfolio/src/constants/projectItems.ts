@@ -11,10 +11,10 @@ export const PROJECT_ITEMS: ProjectItem[] = [
   {
     title: "Crypto Tracker",
     description:
-      "A comprehensive financial analytics platform with real-time data visualization, portfolio management, and AI-powered insights.",
+      "A cryptocurrency tracking app with real-time data, interactive charts, and detailed coin insights.",
     image: "/projects/project1.png",
-    tags: ["React", "TypeScript", "Vite", "Vercel"],
-    link: "#",
+    tags: ["React", "TypeScript", "React Router", "Recharts", "Vite", "Vercel"],
+    link: "https://16cryptotracker.vercel.app/",
     github:
       "https://github.com/noahtran96/Website-Development/tree/main/Website/16_crypto_tracker",
   },
