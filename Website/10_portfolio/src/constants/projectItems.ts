@@ -33,7 +33,7 @@ export const PROJECT_ITEMS: ProjectItem[] = [
     description:
       "A simple and interactive food ordering website that allows users to browse food categories, add items to a cart, and simulate the checkout process.",
     image: "/projects/project3.png",
-    tags: ["React.js", "OpenAI", "Python", "FastAPI"],
+    tags: ["React", "OpenAI", "Python", "FastAPI"],
     link: "#",
     github:
       "https://github.com/noahtran96/Website-Development/tree/main/Website/11_food_delivery",
