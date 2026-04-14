@@ -1,5 +1,5 @@
 import { useState, type FC } from "react";
-import logo from "/logo.png";
+import logo from "../assets/logo.png";
 import { NAV_ITEMS } from "../constants";
 import type { NavItemConfig } from "../constants";
 import { Menu, X } from "lucide-react";
@@ -44,6 +44,7 @@ export const Navbar: FC<NavbarProps> = ({ scrolled }) => {
           </div>
           {/* mobile menu button */}
           <button
+            aria-label={mobileMenuIsOpen ? "Close menu" : "Open menu"}
             className="p-2 text-gray-300 hover:text-white md:hidden"
             onClick={() => setMobileMenuIsOpen((prev) => !prev)}
           >
