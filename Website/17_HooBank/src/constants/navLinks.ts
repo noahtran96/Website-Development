@@ -3,7 +3,7 @@ export interface navLink {
   title: string;
 }
 
-export const navLinks = [
+export const navLinks: navLink[] = [
   {
     id: "home",
     title: "Home",

@@ -7,7 +7,7 @@ export interface feature {
   content: string;
 }
 
-export const features = [
+export const features: feature[] = [
   {
     id: "feature-1",
     icon: star,
