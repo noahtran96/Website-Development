@@ -1,24 +1,3 @@
-import { Github, Linkedin, Globe, Music2, Heart } from "lucide-react";
-
-const socialLinks = [
-  { icon: Github, href: "https://github.com/noahtran96", label: "GitHub" },
-  {
-    icon: Linkedin,
-    href: "https://www.linkedin.com/in/noahtran96",
-    label: "LinkedIn",
-  },
-  {
-    icon: Globe,
-    href: "https://justachillgeek.wordpress.com/",
-    label: "Website",
-  },
-  {
-    icon: Music2,
-    href: "https://www.tiktok.com/@noahisblogging",
-    label: "TikTok",
-  },
-];
-
 const footerLinks = [
   { href: "#about", label: "About" },
   { href: "#projects", label: "Projects" },
