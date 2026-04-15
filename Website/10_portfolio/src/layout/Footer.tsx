@@ -1,9 +1,4 @@
-const footerLinks = [
-  { href: "#about", label: "About" },
-  { href: "#projects", label: "Projects" },
-  { href: "#experience", label: "Experience" },
-  { href: "#contact", label: "Contact" },
-];
+import { SOCIAL_LINKS, SocialLink } from "../constants/socialLinks";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -37,7 +32,7 @@ export const Footer = () => {
 
           {/* Social Links */}
           <div className="flex items-center gap-4">
-            {socialLinks.map((social) => (
+            {SOCIAL_LINKS.map((social: SocialLink) => (
               <a
                 key={social.label}
                 href={social.href}
