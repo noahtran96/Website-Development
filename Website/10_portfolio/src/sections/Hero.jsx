@@ -10,14 +10,7 @@ import {
   Download,
 } from "lucide-react";
 
-const skills = [
-  "React",
-  "TypeScript",
-  "Tailwind CSS",
-  "JavaScript (ES6+)",
-  "HTML5",
-  "CSS3",
-];
+const skills = [];
 
 export const Hero = () => {
   return (
