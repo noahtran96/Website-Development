@@ -1,7 +1,15 @@
+type ButtonProps = {
+  className?: string;
+  size: string;
+  children: React.ReactNode;
+  href?: string;
+};
+
 export const Button = ({
   className = "",
   size = "default",
   children,
+  href,
   ...props
 }) => {
   const baseClasses =
@@ -14,7 +22,11 @@ export const Button = ({
   };
 
   const classes = `${baseClasses} ${sizeClasses[size]} ${className}`;
-  return (
+  return href ? (
+    <a href={href} className={classes}>
+      {children}
+    </a>
+  ) : (
     <button className={classes} {...props}>
       <span className="relative flex items-center justify-center gap-2">
         {children}
