@@ -1,11 +1,4 @@
-import {
-  Github,
-  Linkedin,
-  Globe,
-  Music2,
-  Heart,
-  LucideIcon,
-} from "lucide-react";
+import { Github, Linkedin, Globe, Music2, LucideIcon } from "lucide-react";
 
 export interface SocialLink {
   icon: LucideIcon;

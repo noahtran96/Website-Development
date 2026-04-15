@@ -1,4 +1,5 @@
-import { SOCIAL_LINKS, SocialLink } from "../constants/socialLinks";
+import { FOOTER_LINKS, FooterLink } from "../constants";
+import { SOCIAL_LINKS, SocialLink } from "../constants";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -19,7 +20,7 @@ export const Footer = () => {
 
           {/* Links */}
           <nav className="flex flex-wrap justify-center gap-6">
-            {footerLinks.map((link) => (
+            {FOOTER_LINKS.map((link: FooterLink) => (
               <a
                 key={link.href}
                 href={link.href}
