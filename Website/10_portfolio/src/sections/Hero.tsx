@@ -1,5 +1,5 @@
-import { Button } from "@/components/Button.jsx";
-import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
+import { Button } from "../components/Button";
+import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
 import {
   ArrowRight,
   Github,
@@ -9,8 +9,8 @@ import {
   ChevronDown,
   Download,
 } from "lucide-react";
-
-const skills = [];
+import { SKILLS } from "../constants/skills";
+import { SOCIAL_LINKS, SocialLink } from "../constants";
 
 export const Hero = () => {
   return (
@@ -84,21 +84,7 @@ export const Hero = () => {
             {/* Social Links */}
             <div className="animate-fade-in animation-delay-400 flex items-center gap-4">
               <span className="text-muted-foreground text-sm">Follow me: </span>
-              {[
-                { icon: Github, href: "https://github.com/noahtran96" },
-                {
-                  icon: Linkedin,
-                  href: "https://www.linkedin.com/in/noahtran96",
-                },
-                {
-                  icon: Globe,
-                  href: "https://justachillgeek.wordpress.com/",
-                },
-                {
-                  icon: Music2,
-                  href: "https://www.tiktok.com/@noahisblogging",
-                },
-              ].map((social, index) => (
+              {SOCIAL_LINKS.map((social: SocialLink, index: number) => (
                 <a
                   key={index}
                   href={social.href}
@@ -150,7 +136,7 @@ export const Hero = () => {
           </p>
           <div className="relative overflow-hidden">
             <div className="animate-marquee flex">
-              {[...skills, ...skills].map((skill, index) => (
+              {[...SKILLS, ...SKILLS].map((skill: string, index: number) => (
                 <div key={index} className="flex-shrink-0 px-8 py-4">
                   <span className="text-muted-foreground/50 hover:text-muted-foreground text-xl font-semibold transition-colors">
                     {skill}
