@@ -5,7 +5,7 @@ export interface Client {
   logo: string;
 }
 
-export const clients: Client[] = [
+export const CLIENTS: Client[] = [
   {
     id: "client-1",
     logo: airbnb,
