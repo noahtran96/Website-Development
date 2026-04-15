@@ -29,6 +29,10 @@ export const Testimonials = () => {
               amazing people.
             </span>
           </h2>
+          <p className="text-muted-foreground text-sm italic">
+            *This section is a preview. Real testimonials will be added in the
+            future
+          </p>
         </div>
 
         {/* Testimonial Carousel */}
