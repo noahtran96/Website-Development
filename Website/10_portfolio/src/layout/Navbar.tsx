@@ -1,13 +1,7 @@
-import { Button } from "@/components/Button.jsx";
+import { Button } from "../components/Button";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
-
-const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#projects", label: "Projects" },
-  { href: "#experience", label: "Experience" },
-  { href: "#testimonials", label: "Testimonials" },
-];
+import { NAV_LINKS, type NavLink } from "../constants/navLinks";
 
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -35,7 +29,7 @@ export const Navbar = () => {
         {/* Desktop Nav*/}
         <div className="hidden items-center gap-1 md:flex">
           <div className="glass flex items-center gap-1 rounded-full px-2 py-1">
-            {navLinks.map((link, index) => (
+            {NAV_LINKS.map((link: NavLink, index) => (
               <a
                 href={link.href}
                 key={index}
@@ -64,7 +58,7 @@ export const Navbar = () => {
       {isMobileMenuOpen && (
         <div className="glass-strong animate-fade-in md:hidden">
           <div className="container mx-auto flex flex-col gap-4 px-6 py-6">
-            {navLinks.map((link, index) => (
+            {NAV_LINKS.map((link: NavLink, index: number) => (
               <a
                 href={link.href}
                 key={index}
