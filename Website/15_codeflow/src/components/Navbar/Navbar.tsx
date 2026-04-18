@@ -1,7 +1,7 @@
 import { useState, type FC } from "react";
 import logo from "../assets/logo.png";
-import { NAV_ITEMS } from "../constants";
-import type { NavItemConfig } from "../constants";
+import { NAV_ITEMS } from "../../constants";
+import type { NavItemConfig } from "../../constants";
 import { Menu, X } from "lucide-react";
 
 interface NavbarProps {

@@ -1,5 +1,5 @@
 import { useState, useEffect, type FC } from "react";
-import { Navbar } from "./components/Navbar";
+import { Navbar } from "./components/Navbar/Navbar";
 import { Hero } from "./components/Hero";
 import { Features } from "./components/Features";
 import { Pricing } from "./components/Pricing";

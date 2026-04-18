@@ -1,8 +1,8 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { Navbar } from "./Navbar";
 
-// mock NAV_ITEMS
-jest.mock("../constants", () => ({
+// mock data
+jest.mock("../../constants", () => ({
   NAV_ITEMS: [
     { text: "Home", href: "#home" },
     { text: "Pricing", href: "#pricing" },

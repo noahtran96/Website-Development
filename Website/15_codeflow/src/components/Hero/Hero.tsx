@@ -1,11 +1,11 @@
 import type { FC } from "react";
 import { useState, useEffect } from "react";
 import { ArrowRight, ChevronDown, Play, Sparkles } from "lucide-react";
-import { CODE_EXAMPLES } from "../constants";
+import { CODE_EXAMPLES } from "../../constants";
 import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
 import js from "react-syntax-highlighter/dist/esm/languages/hljs/javascript";
 import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import { FLOATING_CARDS } from "../constants/floatingCards";
+import { FLOATING_CARDS } from "../../constants/floatingCards";
 SyntaxHighlighter.registerLanguage("javascript", js);
 
 interface Position {
