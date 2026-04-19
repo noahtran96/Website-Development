@@ -24,15 +24,25 @@ export const Hero = () => {
           </p>
         </div>
 
+        {/* headline + button */}
         <div className="flex w-full flex-row items-center justify-between">
           <h1 className="ss:text-[72px] ss:leading-[100px] flex-1 text-[52px] leading-[75px] font-semibold text-white">
             The Next <br className="hidden sm:block" />{" "}
-            <span className="text-gradient">Generation</span> Payment Method.
+            <span className="text-gradient">Generation</span>
           </h1>
           <div className="ss:flex mr-0 hidden md:mr-4">
             <GetStarted />
           </div>
         </div>
+
+        <h1 className="ss:text-[68px] ss:leading-[100px] w-full text-[52px] leading-[75px] font-semibold text-white">
+          Payment Method.
+        </h1>
+        <p className={`${styles.paragraph} mt-5 max-w-[470px]`}>
+          Our team of experts uses a methodology to identify the credit cards
+          most likely to fit your needs. We examine annual percentage rates,
+          annual fees.
+        </p>
       </div>
     </section>
   );
