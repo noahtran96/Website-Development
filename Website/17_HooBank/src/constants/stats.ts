@@ -1,10 +1,10 @@
-export interface stat {
+export interface Stat {
   id: string;
   title: string;
   value: string;
 }
 
-export const stats: stat[] = [
+export const STATS: Stat[] = [
   {
     id: "stats-1",
     title: "User Active",
