@@ -1,3 +1,10 @@
-export const Button = () => {
-  return <div>Button</div>;
+export const Button = ({ styles }) => {
+  return (
+    <button
+      type="button"
+      className={`bg-blue-gradient text-primary px-6 py-4 text-[18px] font-medium outline-none ${styles}`}
+    >
+      Get Started
+    </button>
+  );
 };
