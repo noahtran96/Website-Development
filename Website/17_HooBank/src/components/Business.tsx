@@ -25,8 +25,8 @@ export const Business = () => {
 
       {/* right side */}
       <div className={`${layout.sectionImg} flex-col`}>
-        {FEATURES.map((feature: Feature) => (
-          <FeatureCard key={feature.id} {...feature} />
+        {FEATURES.map((feature: Feature, index) => (
+          <FeatureCard key={feature.id} {...feature} index={index} />
         ))}
       </div>
     </section>

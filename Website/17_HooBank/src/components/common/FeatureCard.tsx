@@ -1,8 +1,19 @@
-import type { Feature } from "../../constants";
+import { FEATURES, type Feature } from "../../constants";
 import styles from "../../style";
 
-export const FeatureCard = ({ icon, title, content }: Feature) => (
-  <div className={`feature-card flex flex-row gap-4 rounded-[20px] p-6`}>
+interface FeatureCardProps extends Feature {
+  index: number;
+}
+
+export const FeatureCard = ({
+  icon,
+  title,
+  content,
+  index,
+}: FeatureCardProps) => (
+  <div
+    className={`feature-card flex flex-row gap-4 rounded-[20px] ${index !== FEATURES.length - 1 ? "mb-6" : "mb-0"} p-6`}
+  >
     {/* image */}
     <div
       className={`h-[64px] w-[64px] rounded-full ${styles.flexCenter} bg-dimBlue`}
