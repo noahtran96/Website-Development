@@ -9,7 +9,7 @@ import {
   Navbar,
   Stats,
   Testimonials,
-} from "./components";
+} from "./components/specific";
 import styles from "./style";
 
 function App() {

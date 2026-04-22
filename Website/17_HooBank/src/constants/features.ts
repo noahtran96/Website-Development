@@ -1,13 +1,13 @@
 import { send, shield, star } from "../assets";
 
-export interface feature {
+export interface Feature {
   id: string;
   icon: string;
   title: string;
   content: string;
 }
 
-export const features: feature[] = [
+export const FEATURES: Feature[] = [
   {
     id: "feature-1",
     icon: star,

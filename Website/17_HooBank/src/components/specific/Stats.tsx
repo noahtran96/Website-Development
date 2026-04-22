@@ -1,5 +1,5 @@
-import { STATS, type Stat } from "../constants";
-import styles from "../style";
+import { STATS, type Stat } from "../../constants";
+import styles from "../../style";
 
 export const Stats = () => {
   return (

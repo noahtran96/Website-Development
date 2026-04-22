@@ -1,6 +1,7 @@
-import { features } from "../constants";
+import { FEATURES, type Feature } from "../constants";
 import styles, { layout } from "../style";
-import { Button } from "./Button";
+import { FeatureCard } from "./common";
+import { Button } from "./common/Button";
 
 export const Business = () => {
   return (
@@ -20,6 +21,13 @@ export const Business = () => {
         </p>
         {/* button */}
         <Button styles="mt-10" />
+      </div>
+
+      {/* right side */}
+      <div className={`${layout.sectionImg} flex-col`}>
+        {FEATURES.map((feature: Feature) => (
+          <FeatureCard key={feature.id} {...feature} />
+        ))}
       </div>
     </section>
   );
