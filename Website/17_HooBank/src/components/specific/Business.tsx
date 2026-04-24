@@ -1,7 +1,7 @@
-import { FEATURES, type Feature } from "../constants";
-import styles, { layout } from "../style";
-import { FeatureCard } from "./common";
-import { Button } from "./common/Button";
+import { FEATURES, type Feature } from "../../constants";
+import styles, { layout } from "../../style";
+import { FeatureCard } from "../common";
+import { Button } from "../common/Button";
 
 export const Business = () => {
   return (
