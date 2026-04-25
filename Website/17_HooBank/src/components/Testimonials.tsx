@@ -8,9 +8,10 @@ export const Testimonials = () => {
       id="clients"
       className={`${styles.paddingY} ${styles.flexCenter} relative flex-col`}
     >
-      <div />
+      {/* gardient glow */}
+      <div className="blue__gradient absolute -right-[50%] z-[0] h-[60%] w-[60%] rounded-full" />
 
-      {/* Tagline */}
+      {/* tagline */}
       <div className="relative z-[1] mb-6 flex w-full flex-col items-center justify-between sm:mb-16 md:flex-row">
         <h1 className={styles.heading2}>
           What people are <br className="hidden sm:block" /> saying about us
@@ -23,7 +24,7 @@ export const Testimonials = () => {
         </div>
       </div>
 
-      {/* Testimonial cards */}
+      {/* testimonial cards */}
       <div className="feedback-container relative z-[1] flex w-full flex-wrap justify-center sm:justify-start">
         {TESTIMONIALS.map((testimonial: Testimonial) => (
           <TestimonialCard key={testimonial.id} {...testimonial} />
