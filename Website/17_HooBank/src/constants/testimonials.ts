@@ -1,6 +1,6 @@
 import { people01, people02, people03 } from "../assets";
 
-export interface testimonial {
+export interface Testimonial {
   id: string;
   content: string;
   name: string;
@@ -8,7 +8,7 @@ export interface testimonial {
   img: string;
 }
 
-export const testimonials: testimonial[] = [
+export const TESTIMONIALS: Testimonial[] = [
   {
     id: "feedback-1",
     content:

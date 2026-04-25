@@ -9,5 +9,5 @@ export * from "../common/GetStarted";
 export * from "./Hero";
 export * from "./Navbar";
 export * from "./Stats";
-export * from "../TestimonialCard";
+export * from "../common/TestimonialCard";
 export * from "../Testimonials";
