@@ -24,6 +24,11 @@ export const Testimonials = () => {
       </div>
 
       {/* Testimonial cards */}
+      <div className="feedback-container relative z-[1] flex w-full flex-wrap justify-center sm:justify-start">
+        {TESTIMONIALS.map((testimonial: Testimonial) => (
+          <TestimonialCard key={testimonial.id} {...testimonial} />
+        ))}
+      </div>
     </section>
   );
 };
