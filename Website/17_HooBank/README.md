@@ -1,73 +1,58 @@
-# React + TypeScript + Vite
+# 🚀 Crypto Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern **Fintech landing page** built with **React + TypeScript + TailwindCSS**, featuring a sleek dark-themed design, gradient effects, and high-performance UI components.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🌐 Deployment
 
-## React Compiler
+👉 https://17hoobank.vercel.app/
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- ⚛️ **React + TypeScript**
+- 🎨 **TailwindCSS** (Custom @theme with CSS variables)
+- 🌀 **Modern UI/UX** (Glassmorphism, Gradient glows, and Smooth scroll)
+- 📱 **Responsive Design** (Custom breakpoints: ss, xs, md, lg, xl)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## ✨ Features
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **Premium Modern Design:** A high-end look using custom radial and linear gradients (`text-gradient`, `bg-blue-gradient`).
+- **Interactive Hero Section:** Dynamic layout with a discount badge and a stylized "Get Started" call-to-action button.
+- **Dynamic Business Sections:**
+  - **Feature Showcase:** Highlights key benefits like Rewards and Security using reusable `FeatureCard` components.
+  - **Billing & Invoicing:** Visual representation of payment control with App Store/Google Play integrations.
+  - **Card Deals:** Clean section for comparing credit card deals with clear CTAs.
+- **Social Proof & Stats:** Real-time metrics display (Active Users, Trusted Companies, Transactions) and a professional testimonial slider.
+- **Responsive Navigation:** Fully functional mobile menu with smooth slide-top animations.
+- **Optimized Layout:** Uses a modular `style.ts` system for consistent spacing, padding, and flexbox alignment across the entire site.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ⚙️ Getting Started
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Install dependencies:  
+\`\`\`bash
+npm install
+\`\`\`
+
+Run the project:  
+\`\`\`bash
+npm run dev
+\`\`\`
+
+The app runs locally at:  
+\`\`\`
+http://localhost:5173
+\`\`\`
+
+---
+
+## 📺 Credits
+
+- This project was built by following a [YouTube tutorial](https://www.youtube.com/watch?v=F627pKNUCVQ&t=31704s) for educational purposes.
+- All credit for the original idea and guidance belongs to the tutorial creator.
