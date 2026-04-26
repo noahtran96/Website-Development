@@ -1,4 +1,4 @@
-# 🚀 Crypto Tracker
+# 🚀 HooBank - Modern Banking UI/UX
 
 A modern **Fintech landing page** built with **React + TypeScript + TailwindCSS**, featuring a sleek dark-themed design, gradient effects, and high-performance UI components.
 
