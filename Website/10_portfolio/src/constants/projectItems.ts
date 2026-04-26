@@ -36,7 +36,7 @@ export const PROJECT_ITEMS: ProjectItem[] = [
     tags: ["React", "TypeScript", "Tailwind CSS", "Vite", "Vercel"],
     link: "https://17hoobank.vercel.app/",
     github:
-      "https://github.com/noahtran96/Website-Development/tree/main/Website/11_food_delivery",
+      "https://github.com/noahtran96/Website-Development/tree/main/Website/17_HooBank",
   },
   {
     title: "Dev Platform Landing Page",
