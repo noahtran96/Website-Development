@@ -5,7 +5,7 @@ import { NAV_LINKS, type navLink } from "../../constants";
 export const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   return (
-    <nav className="navbar flex w-full items-center justify-between py-6">
+    <nav className="navbar bg-primary fixed top-0 z-[50] flex w-full items-center justify-between py-6">
       <img src={logo} alt="HooBank logo" className="h-[32px] w-[124px]" />
       <ul className="hidden flex-1 list-none items-center justify-end gap-10 sm:flex">
         {NAV_LINKS.map((nav: navLink) => (
