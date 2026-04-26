@@ -1,6 +1,6 @@
-import { TESTIMONIALS, type Testimonial } from "../constants";
-import styles from "../style";
-import { TestimonialCard } from "./common";
+import { TESTIMONIALS, type Testimonial } from "../../constants";
+import styles from "../../style";
+import { TestimonialCard } from "../common";
 
 export const Testimonials = () => {
   return (
