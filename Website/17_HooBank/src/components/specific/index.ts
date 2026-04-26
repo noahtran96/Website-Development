@@ -3,7 +3,7 @@ export * from "./Business";
 export * from "../common/Button";
 export * from "./CardDeal";
 export * from "./Clients";
-export * from "../CTA";
+export * from "./CTA";
 export * from "../Footer";
 export * from "../common/GetStarted";
 export * from "./Hero";
