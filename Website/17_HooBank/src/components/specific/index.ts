@@ -4,7 +4,7 @@ export * from "../common/Button";
 export * from "./CardDeal";
 export * from "./Clients";
 export * from "./CTA";
-export * from "../Footer";
+export * from "./Footer";
 export * from "../common/GetStarted";
 export * from "./Hero";
 export * from "./Navbar";

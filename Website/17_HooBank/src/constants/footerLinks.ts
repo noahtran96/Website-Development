@@ -8,7 +8,7 @@ export interface FooterLink {
   links: InternalLink[];
 }
 
-export const footerLinks: FooterLink[] = [
+export const FOOTER_LINKS: FooterLink[] = [
   {
     title: "Useful Links",
     links: [

@@ -6,7 +6,7 @@ export interface SocialItem {
   link: string;
 }
 
-export const socialMedia: SocialItem[] = [
+export const SOCIAL_MEDIA: SocialItem[] = [
   {
     id: "social-media-1",
     icon: instagram,
