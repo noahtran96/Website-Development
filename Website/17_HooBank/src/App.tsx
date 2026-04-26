@@ -16,9 +16,11 @@ function App() {
   return (
     <div className="w-full overflow-hidden bg-black">
       {/* navbar */}
-      <div className={`${styles.paddingX} ${styles.flexCenter}`}>
-        <div className={`${styles.boxWidth}`}>
-          <Navbar />
+      <div className="bg-primary fixed top-0 left-0 z-[50] w-full">
+        <div className={`${styles.paddingX} ${styles.flexCenter}`}>
+          <div className={`${styles.boxWidth}`}>
+            <Navbar />
+          </div>
         </div>
       </div>
 
