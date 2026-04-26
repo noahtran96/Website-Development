@@ -2,13 +2,16 @@ import styles from "../../style";
 import { logo } from "../../assets";
 import {
   FOOTER_LINKS,
+  SOCIAL_MEDIA,
   type FooterLink,
   type InternalLink,
+  type SocialItem,
 } from "../../constants";
 
 export const Footer = () => {
   return (
     <section className={`${styles.flexCenter} ${styles.paddingY} flex-col`}>
+      {/* footer links */}
       <div className={`${styles.flexStart} mb-8 w-full flex-col md:flex-row`}>
         {/* logo + tagline */}
         <div className="mr-10 flex flex-1 flex-col justify-start">
@@ -43,6 +46,26 @@ export const Footer = () => {
                 ))}
               </ul>
             </div>
+          ))}
+        </div>
+      </div>
+
+      {/* social media */}
+      <div className="flex w-full flex-col items-center justify-between border-t-[1px] border-t-[#3f3e45] pt-6 md:flex-row">
+        {/* copyright */}
+        <p className="text-center text-[18px] leading-[27px] font-normal text-white">
+          2021 HooBank. All Rights Reserved.
+        </p>
+
+        {/* social media */}
+        <div className="mt-6 flex flex-row md:mt-0">
+          {SOCIAL_MEDIA.map((social: SocialItem, index: number) => (
+            <img
+              src={social.icon}
+              alt="social media icon"
+              key={social.id}
+              className={`h-[21px] w-[21px] cursor-pointer object-contain ${index !== SOCIAL_MEDIA.length - 1 ? "mr-6" : "mr-0"}`}
+            />
           ))}
         </div>
       </div>
