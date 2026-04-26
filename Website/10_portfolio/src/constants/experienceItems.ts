@@ -37,7 +37,7 @@ export const EXPERIENCE_ITEMS: ExperienceItem[] = [
   },
   {
     period: "Apr 2020 — Dec 2020",
-    role: "Lead Admin, Teacher Community Officer cum Data Analyst",
+    role: "Teacher Community Lead cum Data Analyst",
     company: "One On One English",
     description:
       "Promoted twice to Lead Admin; engineered the company’s entire operational infrastructure from scratch using Airtable and Notion. Integrated internal CRM systems to automate payroll and workforce forecasting, slashing manual workload by 45% and boosting efficiency by 85%.",
