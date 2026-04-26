@@ -29,12 +29,12 @@ export const PROJECT_ITEMS: ProjectItem[] = [
       "https://github.com/noahtran96/Website-Development/tree/main/Website/14_saas_lp",
   },
   {
-    title: "Food Ordering Website",
+    title: "Modern Fintech Landing Page",
     description:
-      "A simple and interactive food ordering website that allows users to browse food categories, add items to a cart, and simulate the checkout process.",
+      "A sleek, responsive Fintech landing page showcasing modern UI/UX patterns, custom CSS gradients, and modular React architecture.",
     image: "/projects/project3.png",
-    tags: ["React", "Python", "FastAPI"],
-    link: "#",
+    tags: ["React", "TypeScript", "Tailwind CSS", "Vite", "Vercel"],
+    link: "https://17hoobank.vercel.app/",
     github:
       "https://github.com/noahtran96/Website-Development/tree/main/Website/11_food_delivery",
   },
