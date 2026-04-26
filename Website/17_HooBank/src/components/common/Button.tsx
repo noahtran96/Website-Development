@@ -1,4 +1,8 @@
-export const Button = ({ styles }) => {
+interface ButtonProps {
+  styles?: string;
+}
+
+export const Button = ({ styles }: ButtonProps) => {
   return (
     <button
       type="button"
