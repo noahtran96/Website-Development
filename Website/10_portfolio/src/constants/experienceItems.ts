@@ -14,7 +14,7 @@ export const EXPERIENCE_ITEMS: ExperienceItem[] = [
     company: "NAB Innovation Centre Vietnam",
     description:
       "Intensive training in Software Engineering as a career-switcher. Combining an analytical Operations mindset with modern engineering to build clean, optimized, and scalable solutions.",
-    technologies: ["React", "JavaScript", "Node.js"],
+    technologies: ["React", "JavaScript"],
     current: true,
   },
   {
