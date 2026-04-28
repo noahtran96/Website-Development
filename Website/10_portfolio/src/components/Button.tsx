@@ -21,7 +21,10 @@ export const Button = ({
     lg: "px-8 py-4 text-lg",
   };
 
-  const classes = `${baseClasses} ${sizeClasses[size]} ${className}`;
+  const disabledStyles =
+    "disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none";
+
+  const classes = `${baseClasses} ${sizeClasses[size]} ${disabledStyles} ${className}`;
   return href ? (
     <a href={href} className={classes}>
       {children}
