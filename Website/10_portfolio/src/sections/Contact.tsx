@@ -17,6 +17,16 @@ export const Contact = () => {
   });
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    {
+      /* domain check */
+    }
+    const allowedDomains = ["10portfolio.vercel.app", "localhost", "127.0.0.1"];
+    if (!allowedDomains.includes(window.location.hostname)) {
+      console.error("Unauthorized domain!");
+      return;
+    }
+
     setIsLoading(true);
     setSubmitStatus({ type: null, message: "" });
     try {
