@@ -1,4 +1,5 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { Navbar } from "./Navbar";
 
 // mock data
@@ -9,11 +10,14 @@ jest.mock("../../constants", () => ({
   ],
 }));
 
-describe("Navbar", () => {
-  it("renders logo text", () => {
+describe("Navbar Component", () => {
+  const user = userEvent.setup();
+
+  it("renders logo and brandname correctly", () => {
     render(<Navbar scrolled={false} />);
-    expect(screen.getByText("Code")).toBeInTheDocument();
-    expect(screen.getByText("Flow")).toBeInTheDocument();
+    expect(screen.getByAltText(/codeflow logo/i)).toBeInTheDocument();
+    expect(screen.getByText(/code/i)).toBeInTheDocument();
+    expect(screen.getByText(/flow/i)).toBeInTheDocument();
   });
 
   it("renders navigation items", () => {
