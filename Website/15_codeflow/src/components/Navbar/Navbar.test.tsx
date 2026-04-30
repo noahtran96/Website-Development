@@ -66,12 +66,23 @@ describe("Navbar Mobile Interactivity", () => {
     ).toBeInTheDocument();
   });
 
-  it("applies ", () => {
-    render(<Navbar scrolled={true} />);
+  it("applies different background styles based on the scrolled prop", () => {
+    // 1. Initial render with scrolled={false}
+    const { rerender } = render(<Navbar scrolled={false} />);
+    const navElement = screen.getByRole("navigation");
 
-    const nav = screen.getByRole("navigation");
+    // Verify transparent background when not scrolled
+    expect(navElement).toHaveClass("bg-slate-950/20");
+    expect(navElement).not.toHaveClass("bg-slate-950/80");
 
-    expect(nav).toHaveClass(/border-b/);
-    expect(nav).toHaveClass(/bg-slate-950\/80/);
+    // 2. Re-render with scrolled={true}
+    rerender(<Navbar scrolled={true} />);
+
+    // Verify solid background and border appear after scrolling
+    expect(navElement).toHaveClass("bg-slate-950/80");
+    expect(navElement).toHaveClass("border-b");
+
+    // Verify the old class is removed
+    expect(navElement).not.toHaveClass("bg-slate-950/20");
   });
 });
