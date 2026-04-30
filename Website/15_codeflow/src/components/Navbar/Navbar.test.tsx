@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Navbar } from "./Navbar";
 
-// mock data
+// Mock data
 jest.mock("../../constants", () => ({
   NAV_ITEMS: [
     { text: "Home", href: "#home" },
@@ -10,10 +10,11 @@ jest.mock("../../constants", () => ({
   ],
 }));
 
-describe("Navbar Component", () => {
+describe("Navbar Mobile Interactivity", () => {
+  // Setup userEvent instance
   const user = userEvent.setup();
 
-  it("renders logo and brandname correctly", () => {
+  it("renders logo and brand name correctly", () => {
     render(<Navbar scrolled={false} />);
     expect(screen.getByAltText(/codeflow logo/i)).toBeInTheDocument();
     expect(screen.getByText(/code/i)).toBeInTheDocument();
@@ -26,46 +27,46 @@ describe("Navbar Component", () => {
     expect(screen.getByText("Pricing")).toBeInTheDocument();
   });
 
-  it("toggles mobile menu when button is clicked", () => {
+  it("toggles mobile menu icon and accessibility label when clicked", async () => {
     render(<Navbar scrolled={false} />);
 
-    // original state: button = Open menu
-    const button = screen.getByRole("button", { name: /open menu/i });
+    // 1. Initial state: hamburger menu should be visible
+    const toggleButton = screen.getByRole("button", { name: /open menu/i });
+    expect(toggleButton).toBeInTheDocument();
 
-    // click => open menu
-    fireEvent.click(button);
+    // 2. Click to open: should switch to Close (X) icon
+    await user.click(toggleButton);
+    const closeButton = screen.getByRole("button", { name: /close menu/i });
+    expect(closeButton).toBeInTheDocument();
 
-    // after click => close menu
-    expect(
-      screen.getByRole("button", { name: /close menu/i }),
-    ).toBeInTheDocument();
-
-    // click => close menu
-    fireEvent.click(screen.getByRole("button", { name: /close menu/i }));
-
-    // return to open menu
+    // 3. Click again to close: should return to hamburger icon
+    await user.click(closeButton);
     expect(
       screen.getByRole("button", { name: /open menu/i }),
     ).toBeInTheDocument();
   });
 
-  it("closes mobile menu when clicking a nav item", () => {
+  it("closes mobile menu automatically when a navigation link is clicked", async () => {
     render(<Navbar scrolled={false} />);
 
-    // open menu
-    fireEvent.click(screen.getByRole("button", { name: /open menu/i }));
+    // 1. Open the mobile menu first
+    const toggleButton = screen.getByRole("button", { name: /open menu/i });
+    await user.click(toggleButton);
 
-    // click item
-    const mobileItem = screen.getAllByText("Home")[1];
-    fireEvent.click(mobileItem);
+    // 2. Identify mobile links
+    const allHomeLinks = screen.getAllByRole("link", { name: /home/i });
+    const mobileHomeLink = allHomeLinks[1];
 
-    // return to open menu
+    // 3. Click the mobile link
+    await user.click(mobileHomeLink);
+
+    // 4. Verification: The menu should be closed (button label reverts to "Open menu")
     expect(
       screen.getByRole("button", { name: /open menu/i }),
     ).toBeInTheDocument();
   });
 
-  it("applies scrolled styles when scrolled is true", () => {
+  it("applies ", () => {
     render(<Navbar scrolled={true} />);
 
     const nav = screen.getByRole("navigation");
