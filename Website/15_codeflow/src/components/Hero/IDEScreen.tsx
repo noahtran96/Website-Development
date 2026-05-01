@@ -1,10 +1,17 @@
-import {memo} from "react";
+import { memo } from "react";
 import { ChevronDown } from "lucide-react";
 import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
 import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { CODE_EXAMPLES, FLOATING_CARDS } from "../../constants";
 
-export const IDEScreen = memo(({activeTab, onTabChange} : {activeTab: string, onTabChange:}))
+interface IDEScreenProps {
+  activeTab: string;
+  onTabChange: (tab: string) => void;
+}
+
+export const IDEScreen = memo(
+  ({ activeTab, onTabChange }: IDEScreenProps) => {},
+);
 
 {
   /* IDE outer box */
