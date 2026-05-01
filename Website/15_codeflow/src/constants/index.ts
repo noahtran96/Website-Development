@@ -3,3 +3,4 @@ export * from "./codeExamples";
 export * from "./features";
 export * from "./pricingPlans";
 export * from "./testimonialItems";
+export * from "./floatingCards";
