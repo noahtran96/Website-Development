@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { ArrowRight, Play, Sparkles } from "lucide-react";
-import js from "react-syntax-highlighter/dist/esm/languages/hljs/javascript";
-SyntaxHighlighter.registerLanguage("javascript", js);
+import { IDEScreen } from "./IDEScreen";
 
 interface Position {
   x: number;
@@ -86,7 +85,9 @@ export const Hero = () => {
             </div>
           </div>
           {/* IDE screen */}
-          <div className="relative order-2 w-full"></div>
+          <div className="relative order-2 w-full">
+            <IDEScreen activeTab={activeTab} onTabChange={setActiveTab} />
+          </div>
         </div>
       </div>
     </section>

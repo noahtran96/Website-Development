@@ -1,8 +1,12 @@
 import { memo } from "react";
 import { ChevronDown } from "lucide-react";
 import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
+import js from "react-syntax-highlighter/dist/esm/languages/hljs/javascript";
 import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { CODE_EXAMPLES, FLOATING_CARDS } from "../../constants";
+
+// Register language outside to prevent re-registration every render
+SyntaxHighlighter.registerLanguage("javascript", js);
 
 interface IDEScreenProps {
   activeTab: string;
@@ -13,20 +17,20 @@ export const IDEScreen = memo(({ activeTab, onTabChange }: IDEScreenProps) => {
   const card = FLOATING_CARDS[activeTab];
   return (
     <div className="relative rounded-xl border border-white/10 bg-white/5 p-3 shadow-2xl backdrop-blur-xl sm:rounded-2xl sm:p-4">
-      {/* IDE inner box */}
+      {/* Container */}
       <div className="h-[280px] overflow-hidden rounded-lg border border-white/5 bg-gradient-to-br from-gray-900/20 to-gray-800/20 backdrop-blur-sm sm:h-[350px] lg:h-[450px]">
-        {/* IDE header */}
-        <div className="flex items-center justify-between border-b border-white bg-white/5 px-3 py-2 backdrop-blur-sm sm:px-4 sm:py-3">
+        {/* Header section */}
+        <div className="flex items-center justify-between border-b border-white/10 bg-white/5 px-3 py-2 backdrop-blur-sm sm:px-4 sm:py-3">
           {/* 3 dots + title container */}
           <div className="flex items-center space-x-2">
             {/* 3 dots container */}
             <div className="flex items-center space-x-1 sm:space-x-2">
               {/* 3 dots */}
-              <div className="h-2 w-2 rounded-full bg-red-500 sm:h-3 sm:w-3" />
-              <div className="h-2 w-2 rounded-full bg-yellow-500 sm:h-3 sm:w-3" />
-              <div className="h-2 w-2 rounded-full bg-green-500 sm:h-3 sm:w-3" />
+              <div className="h-2 w-2 rounded-full bg-red-500" />
+              <div className="h-2 w-2 rounded-full bg-yellow-500" />
+              <div className="h-2 w-2 rounded-full bg-green-500" />
             </div>
-            <span className="text-xs text-gray-300 sm:text-sm">
+            <span className="ml-2 text-xs font-medium text-gray-300 sm:text-sm">
               CodeFlow AI
             </span>
           </div>
@@ -41,6 +45,8 @@ export const IDEScreen = memo(({ activeTab, onTabChange }: IDEScreenProps) => {
               (example: string, index: number) => (
                 <button
                   key={index}
+                  role="tab"
+                  aria-selected={activeTab === example}
                   onClick={() => onTabChange(example)}
                   className={`rounded-t-lg border px-3 py-2 text-xs backdrop-blur-sm sm:text-sm ${activeTab === example ? "border-blue-400/20 bg-blue-500/30 text-white" : "hover:bg-white-10 border-white/10 bg-white/5 text-gray-300"} whitespace-nowrap transition-all duration-200`}
                 >
