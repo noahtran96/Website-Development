@@ -2,18 +2,26 @@ import { useState, useEffect } from "react";
 import { ArrowRight, Play, Sparkles } from "lucide-react";
 import { IDEScreen } from "./IDEScreen";
 
-interface Position {
-  x: number;
-  y: number;
-}
+// interface Position {
+//   x: number;
+//   y: number;
+// }
 
 export const Hero = () => {
-  const [mousePosition, setMousePosition] = useState<Position>({ x: 0, y: 0 });
+  // const [mousePosition, setMousePosition] = useState<Position>({ x: 0, y: 0 });
   const [activeTab, setActiveTab] = useState<string>("App.jsx");
+  // useEffect(() => {
+  //   function handleMouseMove(e: MouseEvent) {
+  //     setMousePosition({ x: e.clientX, y: e.clientY });
+  //   }
+  //   window.addEventListener("mousemove", handleMouseMove);
+  //   return () => window.removeEventListener("mousemove", handleMouseMove);
+  // }, []);
   useEffect(() => {
-    function handleMouseMove(e: MouseEvent) {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    }
+    const handleMouseMove = (e: MouseEvent) => {
+      document.documentElement.style.setProperty("--mouse-x", "${e.clientX}px");
+      document.documentElement.style.setProperty("--mouse-y", "${e.clientY}px");
+    };
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
