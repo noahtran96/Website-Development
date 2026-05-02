@@ -80,6 +80,7 @@ export const IDEScreen = memo(({ activeTab, onTabChange }: IDEScreenProps) => {
 
       {/* floating cards container */}
       <div
+        data-testid="floating-card"
         className={`absolute right-4 bottom-4 hidden w-72 translate-x-8 translate-y-8 transform lg:block ${card.bgColor} rounded-lg border border-white/20 p-4 shadow-2xl backdrop-blur-xl`}
       >
         {/* floating cards title container */}
@@ -103,3 +104,5 @@ export const IDEScreen = memo(({ activeTab, onTabChange }: IDEScreenProps) => {
     </div>
   );
 });
+
+IDEScreen.displayName = "IDEScreen";
