@@ -14,7 +14,7 @@ export const Testimonials = () => {
     );
   };
   return (
-    <section id="TESTIMONIAL_ITEMS" className="relative overflow-hidden py-32">
+    <section id="testimonials" className="relative overflow-hidden py-32">
       {/* Background Glow */}
       <div className="bg-primary/5 absolute top-1/2 left-1/2 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl" />
       <div className="relative z-10 container mx-auto px-6">
