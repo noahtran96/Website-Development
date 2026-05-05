@@ -19,8 +19,8 @@ export const Hero = () => {
   // }, []);
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      document.documentElement.style.setProperty("--mouse-x", "${e.clientX}px");
-      document.documentElement.style.setProperty("--mouse-y", "${e.clientY}px");
+      document.documentElement.style.setProperty("--mouse-x", `${e.clientX}px`);
+      document.documentElement.style.setProperty("--mouse-y", `${e.clientY}px`);
     };
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
@@ -45,7 +45,7 @@ export const Hero = () => {
       {/* hero outer box */}
       <div className="relative mx-auto w-full max-w-7xl text-center">
         {/* hero inner box */}
-        <div className="text-cente relative mx-auto flex max-w-7xl flex-col items-center gap-6 sm:gap-8 lg:grid lg:grid-cols-2 lg:gap-12 lg:text-left">
+        <div className="relative mx-auto flex max-w-7xl flex-col items-center gap-6 text-center sm:gap-8 lg:grid lg:grid-cols-2 lg:gap-12 lg:text-left">
           {/* hero text */}
           <div>
             {/* hero introduction pill */}
