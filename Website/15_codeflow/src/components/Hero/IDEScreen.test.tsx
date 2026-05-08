@@ -9,3 +9,13 @@ jest.mock("react-syntax-highlighter", () => ({
     <pre data-testid="code-block">{children}</pre>
   ),
 }));
+
+describe("IDEScreen Component", () => {
+  const mockOnTabChange = jest.fn();
+  const tabs = Object.keys(CODE_EXAMPLES);
+  const activeTab = tabs[0];
+
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+});
