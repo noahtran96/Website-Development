@@ -18,4 +18,11 @@ describe("IDEScreen Component", () => {
   beforeEach(() => {
     jest.clearAllMocks();
   });
+
+  it("renders the IDE header and brand name", () => {
+    render(<IDEScreen activeTab={activeTab} onTabChange={mockOnTabChange} />);
+
+    expect(screen.getByText(/CodeFlow AI/i)).toBeInTheDocument();
+    expect(screen.getByText(activeTab)).toBeInTheDocument();
+  });
 });
