@@ -33,4 +33,10 @@ describe("IDEScreen Component", () => {
       expect(screen.getByRole("tab", { name: tab })).toBeInTheDocument();
     });
   });
+
+  it("marks the active tab with aria-selected='true'", () => {
+    render(<IDEScreen activeTab={activeTab} onTabChange={mockOnTabChange} />);
+    const currentTabBtn = screen.getByRole("tab", { name: activeTab });
+    expect(currentTabBtn).toHaveAttribute("aria-selected", "true");
+  });
 });
