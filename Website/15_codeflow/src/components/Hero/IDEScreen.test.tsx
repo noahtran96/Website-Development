@@ -25,4 +25,12 @@ describe("IDEScreen Component", () => {
     expect(screen.getByText(/CodeFlow AI/i)).toBeInTheDocument();
     expect(screen.getByText(activeTab)).toBeInTheDocument();
   });
+
+  it("renders all tabs defined in constants", () => {
+    render(<IDEScreen activeTab={activeTab} onTabChange={mockOnTabChange} />);
+
+    tabs.forEach((tab) => {
+      expect(screen.getByRole("tab", { name: tab })).toBeInTheDocument();
+    });
+  });
 });
