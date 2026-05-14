@@ -3,20 +3,26 @@ import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { NAV_LINKS, type NavLink } from "../constants";
 
+// Scroll threshold constant for navbar UI trigger
+const SCROLL_THRESHOLD = 50;
+
 export const Navbar = () => {
   // useState hooks: mobile menu and user scroll behavior states
-
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
 
-  // useEffect hook: control navbar interface when scrolled above 50px, run once when component is mounted
+  // Toggle mobile menu
+  const toggleMenu = () => setIsMobileMenuOpen((prev) => !prev);
+  const closeMenu = () => setIsMobileMenuOpen(false);
 
+  // useEffect hook: control navbar interface when scrolled above 50px, run once when component is mounted
   useEffect(() => {
     // scroll event handler when scrolled above 50px
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const scrolled = window.scrollY > SCROLL_THRESHOLD;
+      setIsScrolled((prev) => (prev !== scrolled ? scrolled : prev)); // throttle to ensure necessary re-render
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll); // cleanup
   }, []);
 
@@ -56,33 +62,38 @@ export const Navbar = () => {
         {/* Mobile Menu Button*/}
         <button
           className="text-foreground cursor-pointer p-2 md:hidden"
-          onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </nav>
 
       {/* Mobile Menu*/}
-      {isMobileMenuOpen && (
+      <div
+        className={`overflow-hidden transition-all duration-300 md:hidden ${
+          isMobileMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
         <div className="glass-strong animate-fade-in md:hidden">
           <div className="container mx-auto flex flex-col gap-4 px-6 py-6">
             {NAV_LINKS.map((link: NavLink) => (
               <a
                 href={link.href}
                 key={link.id}
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={closeMenu}
                 className="text-muted-foreground hover:text-foreground py-2 text-lg"
               >
                 {link.label}
               </a>
             ))}
 
-            <Button href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
+            <Button href="#contact" onClick={closeMenu}>
               Contact Me
             </Button>
           </div>
         </div>
-      )}
+      </div>
     </header>
   );
 };
