@@ -35,10 +35,10 @@ export const Navbar = () => {
         {/* Desktop Nav*/}
         <div className="hidden items-center gap-1 md:flex">
           <div className="glass flex items-center gap-1 rounded-full px-2 py-1">
-            {NAV_LINKS.map((link: NavLink, index: number) => (
+            {NAV_LINKS.map((link: NavLink) => (
               <a
                 href={link.href}
-                key={index}
+                key={link.id}
                 className="text-muted-foreground hover:text-foreground hover:bg-surface rounded-full px-4 py-2 text-sm"
               >
                 {link.label}
@@ -66,10 +66,10 @@ export const Navbar = () => {
       {isMobileMenuOpen && (
         <div className="glass-strong animate-fade-in md:hidden">
           <div className="container mx-auto flex flex-col gap-4 px-6 py-6">
-            {NAV_LINKS.map((link: NavLink, index: number) => (
+            {NAV_LINKS.map((link: NavLink) => (
               <a
                 href={link.href}
-                key={index}
+                key={link.id}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="text-muted-foreground hover:text-foreground py-2 text-lg"
               >
