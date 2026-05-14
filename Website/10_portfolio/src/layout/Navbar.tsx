@@ -4,16 +4,22 @@ import { useState, useEffect } from "react";
 import { NAV_LINKS, type NavLink } from "../constants";
 
 export const Navbar = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  // useState hooks: mobile menu and user scroll behavior states
+
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
+
+  // useEffect hook: control navbar interface when scrolled above 50px, run once when component is mounted
 
   useEffect(() => {
+    // scroll event handler when scrolled above 50px
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll); // cleanup
   }, []);
+
   return (
     <header
       className={`fixed top-0 right-0 left-0 transition-all duration-500 ${isScrolled ? "glass-strong py-3" : "bg-transparent py-5"} z-50`}
@@ -29,7 +35,7 @@ export const Navbar = () => {
         {/* Desktop Nav*/}
         <div className="hidden items-center gap-1 md:flex">
           <div className="glass flex items-center gap-1 rounded-full px-2 py-1">
-            {NAV_LINKS.map((link: NavLink, index) => (
+            {NAV_LINKS.map((link: NavLink, index: number) => (
               <a
                 href={link.href}
                 key={index}
