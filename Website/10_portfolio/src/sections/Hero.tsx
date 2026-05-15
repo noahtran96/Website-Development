@@ -9,8 +9,7 @@ import {
   ChevronDown,
   Download,
 } from "lucide-react";
-import { SKILLS } from "../constants/skills";
-import { SOCIAL_LINKS, SocialLink } from "../constants";
+import { SKILLS, SOCIAL_LINKS, SocialLink } from "../constants";
 
 export const Hero = () => {
   return (
@@ -22,7 +21,8 @@ export const Hero = () => {
           alt="Hero image"
           className="h-full w-full object-cover opacity-40"
         />
-        <div className="from-background/20 via-background/80 to-background absolute inset-0 bg-gradient-to-b"></div>
+        {/* Gradient overlay */}
+        <div className="from-background/20 via-background/80 to-background absolute inset-0 bg-gradient-to-b" />
       </div>
 
       {/* Blue Dots*/}

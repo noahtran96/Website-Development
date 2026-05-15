@@ -17,13 +17,13 @@ export const Navbar = () => {
 
   // useEffect hook: control navbar interface when scrolled above 50px, run once when component is mounted
   useEffect(() => {
-    // scroll event handler when scrolled above 50px
+    // Scroll event handler when scrolled above 50px
     const handleScroll = () => {
       const scrolled = window.scrollY > SCROLL_THRESHOLD;
-      setIsScrolled((prev) => (prev !== scrolled ? scrolled : prev)); // throttle to ensure necessary re-render
+      setIsScrolled((prev) => (prev !== scrolled ? scrolled : prev)); // Throttle to ensure necessary re-render
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll); // cleanup
+    return () => window.removeEventListener("scroll", handleScroll); // Cleanup
   }, []);
 
   return (
@@ -38,7 +38,7 @@ export const Navbar = () => {
         >
           Noah<span className="text-primary">.</span>
         </a>
-        {/* Desktop Nav*/}
+        {/* Desktop nav*/}
         <div className="hidden items-center gap-1 md:flex">
           <div className="glass flex items-center gap-1 rounded-full px-2 py-1">
             {NAV_LINKS.map((link: NavLink) => (
@@ -52,14 +52,14 @@ export const Navbar = () => {
             ))}
           </div>
         </div>
-        {/* CTA Button */}
+        {/* CTA button */}
         <div className="hidden md:block">
           <Button href="#contact" size="sm">
             Contact Me
           </Button>
         </div>
 
-        {/* Mobile Menu Button*/}
+        {/* Mobile menu button*/}
         <button
           className="text-foreground cursor-pointer p-2 md:hidden"
           onClick={toggleMenu}
@@ -69,7 +69,7 @@ export const Navbar = () => {
         </button>
       </nav>
 
-      {/* Mobile Menu*/}
+      {/* Mobile menu*/}
       <div
         className={`overflow-hidden transition-all duration-300 md:hidden ${
           isMobileMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"

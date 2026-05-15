@@ -5,4 +5,5 @@ export * from "./contactInfo";
 export * from "./footerLinks";
 export * from "./navLinks";
 export * from "./socialLinks";
+export * from "./skills";
 export * from "./testimonialItems";
