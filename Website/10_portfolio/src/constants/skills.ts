@@ -1,7 +1,7 @@
-export type SkillType = {
+export interface SkillType {
   id: string;
   name: string;
-};
+}
 
 export const SKILLS: SkillType[] = [
   { id: "1", name: "React" },

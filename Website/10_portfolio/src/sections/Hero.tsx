@@ -9,7 +9,7 @@ import {
   ChevronDown,
   Download,
 } from "lucide-react";
-import { SKILLS, SOCIAL_LINKS, SocialLink } from "../constants";
+import { SKILLS, SkillType, SOCIAL_LINKS, SocialLink } from "../constants";
 
 export const Hero = () => {
   return (
@@ -136,10 +136,10 @@ export const Hero = () => {
           </p>
           <div className="relative overflow-hidden">
             <div className="animate-marquee flex">
-              {[...SKILLS, ...SKILLS].map((skill: string, index: number) => (
-                <div key={index} className="flex-shrink-0 px-8 py-4">
+              {[...SKILLS, ...SKILLS].map((skill: SkillType) => (
+                <div key={skill.id} className="flex-shrink-0 px-8 py-4">
                   <span className="text-muted-foreground/50 hover:text-muted-foreground text-xl font-semibold transition-colors">
-                    {skill}
+                    {skill.name}
                   </span>
                 </div>
               ))}
