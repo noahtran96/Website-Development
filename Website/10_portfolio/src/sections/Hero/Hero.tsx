@@ -1,5 +1,5 @@
-import { Button } from "../components/Button";
-import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
+import { Button } from "../../components/Button";
+import { AnimatedBorderButton } from "../../components/AnimatedBorderButton";
 import {
   ArrowRight,
   Github,
@@ -9,8 +9,9 @@ import {
   ChevronDown,
   Download,
 } from "lucide-react";
-import { SKILLS, SkillType, SOCIAL_LINKS, SocialLink } from "../constants";
-import { BlueDots } from "../components/BlueDots";
+import { SKILLS, SkillType, SOCIAL_LINKS, SocialLink } from "../../constants";
+import { BlueDots } from "../../components/BlueDots";
+import { Social } from "./Social";
 
 export const Hero = () => {
   return (
@@ -26,7 +27,7 @@ export const Hero = () => {
         <div className="from-background/20 via-background/80 to-background absolute inset-0 bg-gradient-to-b" />
       </div>
 
-      {/* Blue Dots*/}
+      {/* Blue dots*/}
       <BlueDots />
 
       {/* Content */}
@@ -70,20 +71,7 @@ export const Hero = () => {
             </div> */}
 
             {/* Social Links */}
-            <div className="animate-fade-in animation-delay-400 flex items-center gap-4">
-              <span className="text-muted-foreground text-sm">Follow me: </span>
-              {SOCIAL_LINKS.map((social: SocialLink) => (
-                <a
-                  key={social.id}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="glass hover:bg-primary/10 hover:text-primary rounded-full p-2 transition-all duration-300"
-                >
-                  {<social.icon className="h-5 w-5" />}
-                </a>
-              ))}
-            </div>
+            <Social />
           </div>
           {/* Right Column - Profile Image */}
           <div className="animate-fade-in animation-delay-300 relative">
