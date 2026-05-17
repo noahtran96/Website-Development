@@ -10,6 +10,7 @@ import {
   Download,
 } from "lucide-react";
 import { SKILLS, SkillType, SOCIAL_LINKS, SocialLink } from "../constants";
+import { BlueDots } from "../components/BlueDots";
 
 export const Hero = () => {
   return (
@@ -26,20 +27,7 @@ export const Hero = () => {
       </div>
 
       {/* Blue Dots*/}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        {[...Array(30)].map((_, i) => (
-          <div
-            className="absolute h-1.5 w-1.5 rounded-full opacity-60"
-            style={{
-              backgroundColor: "#60a5fa",
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animation: `slow-drift ${15 + Math.random() * 20}s ease-in-out infinite`,
-              animationDelay: `${Math.random() * 5}s`,
-            }}
-          ></div>
-        ))}
-      </div>
+      <BlueDots />
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 pt-32 pb-20">
@@ -84,9 +72,9 @@ export const Hero = () => {
             {/* Social Links */}
             <div className="animate-fade-in animation-delay-400 flex items-center gap-4">
               <span className="text-muted-foreground text-sm">Follow me: </span>
-              {SOCIAL_LINKS.map((social: SocialLink, index: number) => (
+              {SOCIAL_LINKS.map((social: SocialLink) => (
                 <a
-                  key={index}
+                  key={social.id}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -136,8 +124,11 @@ export const Hero = () => {
           </p>
           <div className="relative overflow-hidden">
             <div className="animate-marquee flex">
-              {[...SKILLS, ...SKILLS].map((skill: SkillType) => (
-                <div key={skill.id} className="flex-shrink-0 px-8 py-4">
+              {[...SKILLS, ...SKILLS].map((skill: SkillType, index: number) => (
+                <div
+                  key={`${skill.id}-${index}`}
+                  className="flex-shrink-0 px-8 py-4"
+                >
                   <span className="text-muted-foreground/50 hover:text-muted-foreground text-xl font-semibold transition-colors">
                     {skill.name}
                   </span>
