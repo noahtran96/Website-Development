@@ -60,7 +60,7 @@ export const Hero = () => {
               </p>
             </div>
 
-            {/* CTA Buttons */}
+            {/* CTA buttons */}
             {/* <div className="animate-fade-in animation-delay-300 flex flex-wrap gap-4">
               <Button href="#contact" size="lg">
                 Contact Me <ArrowRight className="h-5 w-5 shrink-0" />
@@ -71,10 +71,10 @@ export const Hero = () => {
               </AnimatedBorderButton>
             </div> */}
 
-            {/* Social Links */}
+            {/* Social links */}
             <Social />
           </div>
-          {/* Right Column - Profile Image */}
+          {/* Right column - profile image */}
           <div className="animate-fade-in animation-delay-300 relative">
             {/* Profile Image */}
             <div className="relative mx-auto max-w-md">
