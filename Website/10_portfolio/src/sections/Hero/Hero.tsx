@@ -74,9 +74,9 @@ export const Hero = () => {
             <Social />
           </div>
 
-          {/* Right column: profile image */}
+          {/* Right column: profile image, floating badge and stats badge */}
           <div className="animate-fade-in animation-delay-300 relative">
-            {/* Profile Image */}
+            {/* Profile image */}
             <div className="relative mx-auto max-w-md">
               <div className="from-primary/30 to-primary/10 absolute inset-0 animate-pulse rounded-3xl bg-gradient-to-br via-transparent blur-2xl" />
               <div className="glass glow-border relative rounded-3xl p-2">
@@ -86,7 +86,7 @@ export const Hero = () => {
                   className="aspect-[4/5] w-full rounded-2xl object-cover"
                 />
 
-                {/* Floating Badge */}
+                {/* Floating badge */}
                 <div className="glass animate-float absolute -right-4 -bottom-4 rounded-xl px-4 py-3">
                   <div className="flex items-center gap-3">
                     <div className="bg-primary h-3 w-3 animate-pulse rounded-full" />
@@ -96,7 +96,7 @@ export const Hero = () => {
                   </div>
                 </div>
 
-                {/* Stats Badge */}
+                {/* Stats badge */}
                 <div className="glass animate-float animation-delay-500 absolute -top-4 -left-4 rounded-xl px-4 py-3">
                   <div className="text-primary text-2xl font-bold">5+</div>
                   <div className="text-muted-foreground text-xs">Projects</div>
@@ -106,10 +106,10 @@ export const Hero = () => {
           </div>
         </div>
 
-        {/* Skills Section */}
+        {/* Skills marquee */}
         <SkillsMarquee />
 
-        {/* Scroll Icon */}
+        {/* Scroll down icon */}
         <div className="animate-fade-in animation-delay-800 absolute bottom-8 left-1/2 -translate-x-1/2">
           <a
             href="#about"
