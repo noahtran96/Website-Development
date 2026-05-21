@@ -9,7 +9,6 @@ import {
   ChevronDown,
   Download,
 } from "lucide-react";
-import { SKILLS, SkillType, SOCIAL_LINKS, SocialLink } from "../../constants";
 import { BlueDots } from "../../components/BlueDots";
 import { Social } from "./Social";
 import { SkillsMarquee } from "./SkillsMarquee";
@@ -17,7 +16,7 @@ import { SkillsMarquee } from "./SkillsMarquee";
 export const Hero = () => {
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden">
-      {/* Background */}
+      {/* Background layer: image and gradient overlay */}
       <div className="absolute inset-0">
         <img
           src="/hero-bg.png"
@@ -28,13 +27,13 @@ export const Hero = () => {
         <div className="from-background/20 via-background/80 to-background absolute inset-0 bg-gradient-to-b" />
       </div>
 
-      {/* Blue dots*/}
+      {/* Effect layer: blue dots*/}
       <BlueDots />
 
-      {/* Content */}
+      {/* Content layer */}
       <div className="relative z-10 container mx-auto px-6 pt-32 pb-20">
         <div className="grid items-center gap-12 lg:grid-cols-2">
-          {/* Left Column - Text Content */}
+          {/* Left column (text): headline and social links */}
           <div className="space-y-8">
             <div className="animate-fade-in">
               <span className="glass text-primary inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm">
@@ -74,7 +73,8 @@ export const Hero = () => {
             {/* Social links */}
             <Social />
           </div>
-          {/* Right column - profile image */}
+
+          {/* Right column: profile image */}
           <div className="animate-fade-in animation-delay-300 relative">
             {/* Profile Image */}
             <div className="relative mx-auto max-w-md">
