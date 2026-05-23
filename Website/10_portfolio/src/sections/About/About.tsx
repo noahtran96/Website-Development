@@ -1,12 +1,11 @@
-import { HighlightItem } from "../constants";
-import { HIGHLIGHT_ITEMS } from "../constants";
+import { HIGHLIGHT_ITEMS, HighlightItem } from "@/constants";
 
 export const About = () => {
   return (
     <section id="about" className="relative overflow-hidden py-32">
       <div className="relative z-10 container mx-auto px-6">
         <div className="grid items-center gap-16 lg:grid-cols-2">
-          {/* Left Column - Introduction */}
+          {/* Left column: introduction text */}
           <div className="space-y-8">
             <div className="animate-fade-in">
               <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase">
@@ -49,7 +48,7 @@ export const About = () => {
             </div>
           </div>
 
-          {/* Right Column - Highlights */}
+          {/* Right column: highlight cards */}
           <div className="grid gap-6 sm:grid-cols-2">
             {HIGHLIGHT_ITEMS.map((item: HighlightItem, index: number) => (
               <div

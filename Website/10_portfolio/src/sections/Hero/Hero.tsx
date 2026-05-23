@@ -1,15 +1,5 @@
-import { Button } from "../../components/Button";
-import { AnimatedBorderButton } from "../../components/AnimatedBorderButton";
-import {
-  ArrowRight,
-  Github,
-  Linkedin,
-  Globe,
-  Music2,
-  ChevronDown,
-  Download,
-} from "lucide-react";
-import { BlueDots } from "../../components/BlueDots";
+import { ChevronDown } from "lucide-react";
+import { BlueDots } from "@/components/BlueDots";
 import { Social } from "./Social";
 import { SkillsMarquee } from "./SkillsMarquee";
 

@@ -1,7 +1,7 @@
-import { Button } from "../components/Button";
+import { Button } from "@/components/Button";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
-import { NAV_LINKS, type NavLink } from "../constants";
+import { NAV_LINKS, type NavLink } from "@/constants";
 
 // Scroll threshold constant for navbar UI trigger
 const SCROLL_THRESHOLD = 50;
