@@ -1,6 +1,6 @@
-import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
+import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
 import { ArrowUpRight, Github } from "lucide-react";
-import { PROJECT_ITEMS, ProjectItem } from "../constants";
+import { PROJECT_ITEMS, ProjectItem } from "@/constants";
 
 export const Projects = () => {
   return (
@@ -65,7 +65,7 @@ export const Projects = () => {
               {/* Content */}
               <div className="space-y-4 p-6">
                 <div className="flex items-start justify-between">
-                  <h3 className="group-hover:text-primary transition:colors text-xl font-semibold">
+                  <h3 className="group-hover:text-primary text-xl font-semibold transition-colors">
                     {project.title}
                   </h3>
                   <ArrowUpRight className="text-muted-foreground group-hover:text-primary h-5 w-5 transition-all group-hover:translate-x-1 group-hover:translate-y-1" />

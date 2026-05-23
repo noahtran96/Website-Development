@@ -1,4 +1,5 @@
 export interface ProjectItem {
+  id: string;
   title: string;
   description: string;
   image: string;
@@ -9,6 +10,7 @@ export interface ProjectItem {
 
 export const PROJECT_ITEMS: ProjectItem[] = [
   {
+    id: "1",
     title: "Crypto Tracker",
     description:
       "A cryptocurrency tracking app with real-time data, interactive charts, and detailed coin insights.",
@@ -19,6 +21,7 @@ export const PROJECT_ITEMS: ProjectItem[] = [
       "https://github.com/noahtran96/Website-Development/tree/main/Website/16_crypto_tracker",
   },
   {
+    id: "2",
     title: "SaaS Landing Page",
     description:
       "A modern AI SaaS landing page showcasing services, pricing plans, and business solutions with a clean, responsive UI.",
@@ -30,6 +33,7 @@ export const PROJECT_ITEMS: ProjectItem[] = [
       "https://github.com/noahtran96/Website-Development/tree/main/Website/14_saas_lp",
   },
   {
+    id: "3",
     title: "Modern Fintech Landing Page",
     description:
       "A sleek, responsive Fintech landing page showcasing modern UI/UX patterns, custom CSS gradients, and modular React architecture.",
@@ -40,6 +44,7 @@ export const PROJECT_ITEMS: ProjectItem[] = [
       "https://github.com/noahtran96/Website-Development/tree/main/Website/17_HooBank",
   },
   {
+    id: "4",
     title: "Dev Platform Landing Page",
     description:
       "A premium AI-powered developer landing page featuring a dynamic IDE simulator, interactive code completion showcases, and custom mouse-tracking animations.",
