@@ -26,7 +26,7 @@ export const Projects = () => {
           </p>
         </div>
 
-        {/* Project Grid */}
+        {/* Project grid */}
         <div className="grid gap-8 md:grid-cols-2">
           {PROJECT_ITEMS.map((project: ProjectItem, index: number) => (
             <div
@@ -41,7 +41,7 @@ export const Projects = () => {
                   className="h-full w-full object-cover transition-transform duration-900 group-hover:scale-110"
                 />
                 <div className="from-card via-card/50 absolute inset-0 bg-gradient-to-t to-transparent opacity-60" />
-                {/* Overlay Links */}
+                {/* Overlay links */}
                 <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                   <a
                     href={project.link}
@@ -88,7 +88,7 @@ export const Projects = () => {
           ))}
         </div>
 
-        {/* View All CTA Button */}
+        {/* View All CTA button */}
         <div className="animate-fade-in animation-delay-500 mt-12 text-center">
           <a
             href="https://github.com/noahtran96"
