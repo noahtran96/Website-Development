@@ -62,7 +62,6 @@ export const Projects = () => {
                 </div>
               </div>
 
-              {/* Content */}
               <div className="space-y-4 p-6">
                 <div className="flex items-start justify-between">
                   <h3 className="group-hover:text-primary text-xl font-semibold transition-colors">
