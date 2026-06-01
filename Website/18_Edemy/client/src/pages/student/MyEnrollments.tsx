@@ -1,5 +1,3 @@
-const MyEnrollments = () => {
+export const MyEnrollments = () => {
   return <div>MyEnrollments</div>;
 };
-
-export default MyEnrollments;
