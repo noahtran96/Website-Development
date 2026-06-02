@@ -1,5 +1,3 @@
-const AddCourse = () => {
+export const AddCourse = () => {
   return <div>AddCourse</div>;
 };
-
-export default AddCourse;
