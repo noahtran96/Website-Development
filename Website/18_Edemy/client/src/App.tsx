@@ -14,10 +14,12 @@ import {
   MyCourses,
   StudentEnrolled,
 } from "./pages/educator";
+import Navbar from "./components/student/Navbar";
 
 const App = () => {
   return (
-    <div>
+    <div className="text-default min-h-screen bg-white">
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/course-list" element={<CourseList />} />
