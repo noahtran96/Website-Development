@@ -1,3 +1,9 @@
+import { Outlet } from "react-router-dom";
+
 export const Educator = () => {
-  return <div>Educator</div>;
+  return (
+    <div>
+      <div>{<Outlet />}</div>
+    </div>
+  );
 };
