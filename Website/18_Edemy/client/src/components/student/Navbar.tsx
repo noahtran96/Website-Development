@@ -15,7 +15,7 @@ export const Navbar = () => {
       />
       {/* Desktop navbar */}
       <div className="hidden items-center gap-5 text-gray-500 md:flex">
-        <div>
+        <div className="flex items-center gap-5">
           <button>Become Educator</button> |{" "}
           <Link to="/my-enrollments">My Enrollments</Link>
         </div>
@@ -23,7 +23,17 @@ export const Navbar = () => {
           Create Account
         </button>
       </div>
-      <div></div>
+
+      {/* Mobile navbar */}
+      <div className="flex items-center gap-2 text-gray-500 sm:gap-5 md:hidden">
+        <div>
+          <button>Become Educator</button> |{" "}
+          <Link to="/my-enrollments">My Enrollments</Link>
+        </div>
+        <button>
+          <img src={assets.user_icon} alt="User icon" />
+        </button>
+      </div>
     </div>
   );
 };
