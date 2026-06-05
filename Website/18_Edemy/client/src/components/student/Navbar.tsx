@@ -1,8 +1,11 @@
 import { assets } from "@/assets/assets";
 import { Link } from "react-router-dom";
+import { useClerk, UserButton, useUser } from "@clerk/react";
 
 export const Navbar = () => {
   const isCourseListPage = location.pathname.includes("/course-list");
+  const { openSignIn } = useClerk();
+  const { user } = useUser();
 
   return (
     <div
@@ -19,7 +22,10 @@ export const Navbar = () => {
           <button>Become Educator</button> |{" "}
           <Link to="/my-enrollments">My Enrollments</Link>
         </div>
-        <button className="rounded-full bg-blue-600 px-5 py-2 text-white">
+        <button
+          onClick={() => openSignIn()}
+          className="rounded-full bg-blue-600 px-5 py-2 text-white"
+        >
           Create Account
         </button>
       </div>
