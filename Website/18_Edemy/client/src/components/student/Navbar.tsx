@@ -19,26 +19,42 @@ export const Navbar = () => {
       {/* Desktop navbar */}
       <div className="hidden items-center gap-5 text-gray-500 md:flex">
         <div className="flex items-center gap-5">
-          <button>Become Educator</button> |{" "}
-          <Link to="/my-enrollments">My Enrollments</Link>
+          {user && (
+            <>
+              <button>Become Educator</button> |{" "}
+              <Link to="/my-enrollments">My Enrollments</Link>{" "}
+            </>
+          )}
         </div>
-        <button
-          onClick={() => openSignIn()}
-          className="rounded-full bg-blue-600 px-5 py-2 text-white"
-        >
-          Create Account
-        </button>
+        {user ? (
+          <UserButton />
+        ) : (
+          <button
+            onClick={() => openSignIn()}
+            className="rounded-full bg-blue-600 px-5 py-2 text-white"
+          >
+            Create Account
+          </button>
+        )}
       </div>
 
       {/* Mobile navbar */}
       <div className="flex items-center gap-2 text-gray-500 sm:gap-5 md:hidden">
-        <div>
-          <button>Become Educator</button> |{" "}
-          <Link to="/my-enrollments">My Enrollments</Link>
+        <div className="flex items-center gap-1 max-sm:text-xs sm:gap-2">
+          {user && (
+            <>
+              <button>Become Educator</button> |{" "}
+              <Link to="/my-enrollments">My Enrollments</Link>
+            </>
+          )}
         </div>
-        <button>
-          <img src={assets.user_icon} alt="User icon" />
-        </button>
+        {user ? (
+          <UserButton />
+        ) : (
+          <button onClick={() => openSignIn()}>
+            <img src={assets.user_icon} alt="User icon" />
+          </button>
+        )}
       </div>
     </div>
   );
