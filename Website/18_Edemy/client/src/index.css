@@ -1,8 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 @import "tailwindcss";
 
-* {
-  font-family: Outfit;
+@theme {
+  --font-family-sans: "Outfit", sans-serif;
+}
+
+.text-title-sm {
+  font-size: 1.75rem !important;
+  line-height: 2.125rem !important;
+}
+
+.text-title-lg {
+  font-size: 3rem !important;
+  line-height: 3.5rem !important;
+}
+
+.text-normal {
+  font-size: 0.9375rem !important;
+  line-height: 1.3125rem !important;
+}
+
+body {
+  font-family: var(--font-family-sans);
 }
 
 button {
