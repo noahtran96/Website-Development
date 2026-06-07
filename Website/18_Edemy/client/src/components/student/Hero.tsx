@@ -1,4 +1,5 @@
 import { assets } from "@/assets/assets";
+import { SearchBar } from "./SearchBar";
 
 export const Hero = () => {
   return (
@@ -22,6 +23,7 @@ export const Hero = () => {
         supportive community to help you achieve your personal and professional
         goals.
       </p>
+      <SearchBar />
     </div>
   );
 };
