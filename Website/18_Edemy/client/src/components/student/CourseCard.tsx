@@ -1,11 +1,12 @@
 import { assets } from "@/assets/assets";
 import { AppContext } from "@/context/AppContext";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 
 export const CourseCard = ({ course }) => {
   const { currency } = useContext(AppContext);
   return (
-    <div>
+    <Link to={"/course/" + course._id} onClick={() => scrollTo(0, 0)}>
       <img src={course.courseThumbnail} alt="Course thumbnail" />
       <div>
         <h3>{course.courseTitle}</h3>
@@ -27,6 +28,6 @@ export const CourseCard = ({ course }) => {
           ).toFixed(2)}
         </p>
       </div>
-    </div>
+    </Link>
   );
 };
