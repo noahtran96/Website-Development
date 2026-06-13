@@ -6,21 +6,34 @@ import { Link } from "react-router-dom";
 export const CourseCard = ({ course }) => {
   const { currency } = useContext(AppContext);
   return (
-    <Link to={"/course/" + course._id} onClick={() => scrollTo(0, 0)}>
-      <img src={course.courseThumbnail} alt="Course thumbnail" />
-      <div>
-        <h3>{course.courseTitle}</h3>
-        <p>{course.educator.name}</p>
-        <div>
+    <Link
+      to={"/course/" + course._id}
+      onClick={() => scrollTo(0, 0)}
+      className="overflow-hidden rounded-lg border border-gray-500/30 pb-6"
+    >
+      <img
+        src={course.courseThumbnail}
+        alt="Course thumbnail"
+        className="w-full"
+      />
+      <div className="p-3 text-left">
+        <h3 className="text-base font-semibold">{course.courseTitle}</h3>
+        <p className="text-gray-500">{course.educator.name}</p>
+        <div className="flex items-center space-x-2">
           <p>4.5</p>
-          <div>
+          <div className="flex">
             {[...Array(5)].map((_, index: number) => (
-              <img key={index} src={assets.star} alt="Rating star" />
+              <img
+                key={index}
+                src={assets.star}
+                alt="Rating star"
+                className="h-3.5 w-3.5"
+              />
             ))}
           </div>
-          <p>22</p>
+          <p className="text-gray-500">22</p>
         </div>
-        <p>
+        <p className="text-base font-semibold text-gray-800">
           {currency}
           {(
             course.coursePrice -
