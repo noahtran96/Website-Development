@@ -12,10 +12,10 @@ export const CourseSection = () => {
       </h2>
       <p className="mt-3 text-sm text-gray-500 md:text-base">
         Discover our top-rated courses across various categories. From coding
-        and design to business and wellness, our courses are crafted to deliver
-        results.
+        and design to <br /> business and wellness, our courses are crafted to
+        deliver results.
       </p>
-      <div>
+      <div className="grid-cols-auto my-10 grid gap-4 px-4 md:my-16 md:px-0">
         {allCourses.slice(0, 4).map((course) => (
           <CourseCard key={course._id} course={course} />
         ))}
