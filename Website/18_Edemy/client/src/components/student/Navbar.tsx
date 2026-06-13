@@ -1,8 +1,11 @@
 import { assets } from "@/assets/assets";
 import { Link } from "react-router-dom";
 import { useClerk, UserButton, useUser } from "@clerk/react";
+import { useContext } from "react";
+import { AppContext } from "@/context/AppContext";
 
 export const Navbar = () => {
+  const { navigate } = useContext(AppContext);
   const isCourseListPage = location.pathname.includes("/course-list");
   const { openSignIn } = useClerk();
   const { user } = useUser();
@@ -12,6 +15,7 @@ export const Navbar = () => {
       className={`flex items-center justify-between border-b border-gray-500 px-4 py-4 sm:px-10 md:px-14 lg:px-36 ${isCourseListPage ? "bg-white" : "bg-cyan-100/70"}`}
     >
       <img
+        onClick={() => navigate("/")}
         src={assets.logo}
         alt="Edemy logo"
         className="w-28 cursor-pointer lg:w-32"
