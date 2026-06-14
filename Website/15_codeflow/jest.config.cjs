@@ -7,6 +7,9 @@ module.exports = {
   transform: {
     ...tsJestTransformCfg,
   },
+  transformIgnorePatterns: [
+    "node_modules/(?!(react-syntax-highlighter|lucide-react)/)",
+  ],
   setupFilesAfterEnv: ["<rootDir>/src/setupTests.ts"],
 
   moduleNameMapper: {
