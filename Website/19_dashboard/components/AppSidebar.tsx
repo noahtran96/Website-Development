@@ -25,7 +25,7 @@ import { ChevronUp, User2 } from "lucide-react"
 export const AppSidebar = () => {
   return (
     <Sidebar collapsible="icon">
-      <SidebarHeader>
+      <SidebarHeader className="py-4">
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton asChild>
