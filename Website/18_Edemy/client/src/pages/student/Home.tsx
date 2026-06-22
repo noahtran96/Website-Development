@@ -1,6 +1,7 @@
 import { Companies } from "@/components/student/Companies";
 import { CourseSection } from "@/components/student/CourseSection";
 import { Hero } from "@/components/student/Hero";
+import { Testimonials } from "@/components/student/Testimonials";
 
 export const Home = () => {
   return (
@@ -8,6 +9,7 @@ export const Home = () => {
       <Hero />
       <Companies />
       <CourseSection />
+      <Testimonials />
     </div>
   );
 };

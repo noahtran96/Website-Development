@@ -15,9 +15,6 @@ import course_3_thumbnail from "./course_3.png";
 import course_4_thumbnail from "./course_4.png";
 import star from "./rating_star.svg";
 import star_blank from "./star_dull_icon.svg";
-import profile_img_1 from "./profile_img_1.png";
-import profile_img_2 from "./profile_img_2.png";
-import profile_img_3 from "./profile_img_3.png";
 import arrow_icon from "./arrow_icon.svg";
 import down_arrow_icon from "./down_arrow_icon.svg";
 import time_left_clock_icon from "./time_left_clock_icon.svg";
@@ -58,9 +55,6 @@ export const assets = {
   course_4_thumbnail,
   star,
   star_blank,
-  profile_img_1,
-  profile_img_2,
-  profile_img_3,
   arrow_icon,
   dropdown_icon,
   cross_icon,
@@ -100,33 +94,6 @@ export const dummyEducatorData = {
   updatedAt: "2024-12-12T10:56:17.930Z",
   __v: 0,
 };
-
-export const dummyTestimonial = [
-  {
-    name: "Donald Jackman",
-    role: "SWE 1 @ Amazon",
-    image: assets.profile_img_1,
-    rating: 5,
-    feedback:
-      "I've been using Imagify for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.",
-  },
-  {
-    name: "Richard Nelson",
-    role: "SWE 2 @ Samsung",
-    image: assets.profile_img_2,
-    rating: 4,
-    feedback:
-      "I've been using Imagify for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.",
-  },
-  {
-    name: "James Washington",
-    role: "SWE 2 @ Google",
-    image: assets.profile_img_3,
-    rating: 4.5,
-    feedback:
-      "I've been using Imagify for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.",
-  },
-];
 
 export const dummyDashboardData = {
   totalEarnings: 707.38,
