@@ -39,6 +39,9 @@ import profile_img from "./profile_img.png";
 import profile_img2 from "./profile_img2.png";
 import profile_img3 from "./profile_img3.png";
 import lesson_icon from "./lesson_icon.svg";
+import profile_img_1 from "./profile_img_1.png";
+import profile_img_2 from "./profile_img_2.png";
+import profile_img_3 from "./profile_img_3.png";
 
 export const assets = {
   logo,
@@ -82,6 +85,9 @@ export const assets = {
   play_icon,
   blue_tick_icon,
   lesson_icon,
+  profile_img_1,
+  profile_img_2,
+  profile_img_3,
 };
 
 export const dummyEducatorData = {

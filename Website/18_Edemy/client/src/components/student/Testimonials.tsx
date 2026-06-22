@@ -1,12 +1,60 @@
+import { TESTIMONIALS, type TestimonialType } from "@/constants";
+import { assets } from "@/assets/assets";
+
 export const Testimonials = () => {
   return (
-    <div>
-      <h2>Testimonials</h2>
-      <p>
+    <div className="px-8 pb-14 md:px-0">
+      {/* Headline */}
+      <h2 className="text-3xl font-medium text-gray-800">Testimonials</h2>
+      <p className="mt-3 text-gray-500 md:text-base">
         Hear from our learners as they share their journeys of transformation,
         success, and how our <br />
         platform has made a difference in their lives.
       </p>
+
+      {/* Testimonial data */}
+      <div className="grid-cols-auto mt-14 grid gap-8">
+        {TESTIMONIALS.map((testimonial: TestimonialType) => (
+          <div
+            key={testimonial.id}
+            className="overflow-hidden rounded-lg border border-gray-500/30 bg-white pb-6 text-left text-sm shadow-[0px_4px_15px_0px] shadow-black/5"
+          >
+            <div className="flex items-center gap-4 bg-gray-500/10 px-5 py-4">
+              <img
+                src={testimonial.image}
+                alt={testimonial.name}
+                className="h-12 w-12 rounded-full"
+              />
+              <div>
+                <h1 className="text-lg font-medium text-gray-800">
+                  {testimonial.name}
+                </h1>
+                <p className="text-gray-800/80">{testimonial.role}</p>
+              </div>
+            </div>
+            <div className="p-5 pb-7">
+              <div className="flex gap-0.5">
+                {Array.from({ length: 5 }).map((_, index: number) => (
+                  <img
+                    key={index}
+                    src={
+                      index < Math.floor(testimonial.rating)
+                        ? assets.star
+                        : assets.star_blank
+                    }
+                    alt="Rating star"
+                    className="h-5"
+                  />
+                ))}
+              </div>
+              <p className="mt-5 text-gray-500">{testimonial.feedback}</p>
+            </div>
+            <a href="#" className="px-5 text-blue-500 underline">
+              Read more
+            </a>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
