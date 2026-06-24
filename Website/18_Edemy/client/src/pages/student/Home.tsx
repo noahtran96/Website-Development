@@ -1,6 +1,7 @@
-import CallToAction from "@/components/student/CallToAction";
+import { CallToAction } from "@/components/student/CallToAction";
 import { Companies } from "@/components/student/Companies";
 import { CourseSection } from "@/components/student/CourseSection";
+import { Footer } from "@/components/student/Footer";
 import { Hero } from "@/components/student/Hero";
 import { Testimonials } from "@/components/student/Testimonials";
 
@@ -12,6 +13,7 @@ export const Home = () => {
       <CourseSection />
       <Testimonials />
       <CallToAction />
+      <Footer />
     </div>
   );
 };
