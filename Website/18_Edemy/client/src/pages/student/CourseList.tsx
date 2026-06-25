@@ -1,12 +1,19 @@
 import { CourseCard } from "@/components/student/CourseCard";
 import { SearchBar } from "@/components/student/SearchBar";
 import { AppContext } from "@/context/AppContext";
-import { useContext } from "react";
+import { useContext, useMemo } from "react";
 import { useParams } from "react-router-dom";
 
 export const CourseList = () => {
   const { navigate, allCourses } = useContext(AppContext);
   const { input } = useParams();
+  const filteredCourse = useMemo(() => {
+    if (!allCourses) return [];
+    if (!input) return allCourses;
+    return allCourses.filter((course) =>
+      course.courseTitle?.toLowerCase().includes(input.toLowerCase())
+    );
+  }, [allCourses, input]);
 
   return (
     <>
@@ -32,7 +39,7 @@ export const CourseList = () => {
 
         {/* Courses */}
         <div className="my-16 grid grid-cols-1 gap-3 px-2 sm:grid-cols-2 md:grid-cols-3 md:p-0 lg:grid-cols-4">
-          {allCourses.map((course) => (
+          {filteredCourse.map((course) => (
             <CourseCard key={course._id} course={course} />
           ))}
         </div>
