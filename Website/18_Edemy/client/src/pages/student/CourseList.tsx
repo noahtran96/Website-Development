@@ -1,5 +1,6 @@
 import { assets } from "@/assets/assets";
 import { CourseCard } from "@/components/student/CourseCard";
+import { Footer } from "@/components/student/Footer";
 import { SearchBar } from "@/components/student/SearchBar";
 import { AppContext } from "@/context/AppContext";
 import { useContext, useMemo } from "react";
@@ -55,6 +56,7 @@ export const CourseList = () => {
             <CourseCard key={course._id} course={course} />
           ))}
         </div>
+        <Footer />
       </div>
     </>
   );

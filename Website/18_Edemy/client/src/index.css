@@ -20,8 +20,22 @@
   line-height: 1.3125rem !important;
 }
 
+.text-course-details-heading-small {
+  font-size: 26px !important;
+  line-height: 36px !important;
+}
+
+.text-course-details-heading-large {
+  font-size: 36px !important;
+  line-height: 44px !important;
+}
+
 .grid-cols-auto {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+}
+
+.h-section-height {
+  height: 500px !important;
 }
 
 body {
