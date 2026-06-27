@@ -1,6 +1,7 @@
 import { assets } from "@/assets/assets";
 import { Loading } from "@/components/student";
 import { AppContext } from "@/context/AppContext";
+import humanizeDuration from "humanize-duration";
 import { useContext, useMemo } from "react";
 import { useParams } from "react-router-dom";
 
@@ -84,6 +85,39 @@ export const CourseDetails = () => {
                     {chapter.chapterContent.length} lectures -{" "}
                     {calculateChapterTime(chapter)}
                   </p>
+                </div>
+
+                <div className="max-h-96 overflow-hidden transition-all duration-300">
+                  <ul className="list-disc border-t border-gray-300 py-2 pr-4 pl-4 text-gray-600 md:pl-10">
+                    {chapter.chapterContent.map((lecture) => (
+                      <li
+                        key={lecture.lectureId}
+                        className="flex items-start gap-2 py-1"
+                      >
+                        <img
+                          src={assets.play_icon}
+                          alt="Play icon"
+                          className="mt-1 h-4 w-4"
+                        />
+                        <div className="md:text-default flex w-full items-center justify-between text-xs text-gray-800">
+                          <p>{lecture.lectureTitle}</p>
+                          <div className="flex gap-2">
+                            {lecture.isPreviewFree && (
+                              <p className="cursor-pointer text-blue-500">
+                                Preview
+                              </p>
+                            )}
+                            <p>
+                              {humanizeDuration(
+                                lecture.lectureDuration * 60 * 1000,
+                                { units: ["h", "m"] }
+                              )}
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             ))}
