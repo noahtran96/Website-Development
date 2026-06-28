@@ -2,11 +2,12 @@ import { assets } from "@/assets/assets";
 import { Loading } from "@/components/student";
 import { AppContext } from "@/context/AppContext";
 import humanizeDuration from "humanize-duration";
-import { useContext, useMemo } from "react";
+import { useContext, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
 
 export const CourseDetails = () => {
   const { id } = useParams();
+  const [openSection, setOpenSection] = useState({});
   const {
     allCourses,
     calculateRating,
@@ -20,6 +21,13 @@ export const CourseDetails = () => {
   }, [allCourses, id]);
 
   if (!courseData) return <Loading />;
+
+  const toggleSection = (id) => {
+    setOpenSection((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
+  };
 
   return (
     <div className="relative z-0 flex flex-col-reverse items-start justify-between gap-10 px-8 pt-20 text-left md:flex-row md:px-36 md:pt-30">
@@ -74,9 +82,16 @@ export const CourseDetails = () => {
                 key={chapter.chapterId}
                 className="mb-2 rounded border border-gray-300 bg-white"
               >
-                <div className="flex cursor-pointer items-center justify-between px-4 py-3 select-none">
+                <div
+                  onClick={() => toggleSection(chapter.chapterId)}
+                  className="flex cursor-pointer items-center justify-between px-4 py-3 select-none"
+                >
                   <div className="flex items-center gap-2">
-                    <img src={assets.down_arrow_icon} alt="Down arrow icon" />
+                    <img
+                      src={assets.down_arrow_icon}
+                      alt="Down arrow icon"
+                      className={`transform transition-transform ${openSection[chapter.chapterId] ? "rotate-180" : ""}`}
+                    />
                     <p className="text-sm font-medium md:text-base">
                       {chapter.chapterTitle}
                     </p>
@@ -87,7 +102,9 @@ export const CourseDetails = () => {
                   </p>
                 </div>
 
-                <div className="max-h-96 overflow-hidden transition-all duration-300">
+                <div
+                  className={`overflow-hidden transition-all duration-300 ${openSection[chapter.chapterId] ? "max-h-96" : "max-h-0"}`}
+                >
                   <ul className="list-disc border-t border-gray-300 py-2 pr-4 pl-4 text-gray-600 md:pl-10">
                     {chapter.chapterContent.map((lecture) => (
                       <li
