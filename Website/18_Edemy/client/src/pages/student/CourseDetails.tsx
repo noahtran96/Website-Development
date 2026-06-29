@@ -140,6 +140,17 @@ export const CourseDetails = () => {
             ))}
           </div>
         </div>
+        <div className="md:text-default py-20 text-sm">
+          <h3 className="text-xl font-semibold text-gray-800">
+            Course Description
+          </h3>
+          <p
+            dangerouslySetInnerHTML={{
+              __html: courseData.courseDescription,
+            }}
+            className="rich-text pt-3"
+          ></p>
+        </div>
       </div>
       {/* Right column */}
       <div className="relative z-20"></div>
