@@ -14,6 +14,7 @@ export const CourseDetails = () => {
     calculateChapterTime,
     calculateCourseDuration,
     calculateNoOfLectures,
+    currency,
   } = useContext(AppContext);
   const courseData = useMemo(() => {
     if (!allCourses || allCourses.length === 0) return null;
@@ -153,7 +154,38 @@ export const CourseDetails = () => {
         </div>
       </div>
       {/* Right column */}
-      <div className="relative z-20"></div>
+      <div className="max-w-course-card shadow-custom-card relative z-20 min-w-[300px] overflow-hidden rounded-t bg-white sm:min-w-[420px] md:rounded-none">
+        <img src={courseData.courseThumbnail} alt="Course thumbnail" />
+        <div className="px-5 pt-5 pb-5">
+          <div className="flex items-center gap-2">
+            <img
+              src={assets.time_left_clock_icon}
+              alt="Time left clock icon"
+              className="h-3.5 w-3.5 object-contain"
+            />
+            <p className="text-red-500">
+              <span className="font-medium">5 days</span> left at this price!
+            </p>
+          </div>
+
+          <div className="flex items-center gap-3 pt-2">
+            <p className="text-2xl font-semibold text-gray-800 md:text-4xl">
+              {currency}
+              {(
+                courseData.coursePrice -
+                (courseData.discount * courseData.coursePrice) / 100
+              ).toFixed(2)}
+            </p>
+            <p className="text-gray-500 line-through md:text-lg">
+              {currency}
+              {courseData.coursePrice}
+            </p>
+            <p className="text-gray-500 md:text-lg">
+              {courseData.discount}% off
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
