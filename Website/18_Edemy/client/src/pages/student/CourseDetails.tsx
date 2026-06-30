@@ -5,6 +5,7 @@ import { AppContext } from "@/context/AppContext";
 import humanizeDuration from "humanize-duration";
 import { useContext, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
+import YouTube from "react-youtube";
 
 export const CourseDetails = () => {
   const { id } = useParams();
@@ -127,7 +128,16 @@ export const CourseDetails = () => {
                             <p>{lecture.lectureTitle}</p>
                             <div className="flex gap-2">
                               {lecture.isPreviewFree && (
-                                <p onClick={() => setPlayerData({videoId: lecture.lectureUrl.split("/").pop()})} className="cursor-pointer text-blue-500">
+                                <p
+                                  onClick={() =>
+                                    setPlayerData({
+                                      videoId: lecture.lectureUrl
+                                        .split("/")
+                                        .pop(),
+                                    })
+                                  }
+                                  className="cursor-pointer text-blue-500"
+                                >
                                   Preview
                                 </p>
                               )}
@@ -161,15 +171,22 @@ export const CourseDetails = () => {
         </div>
         {/* Right column */}
         <div className="max-w-course-card shadow-custom-card relative z-20 min-w-[300px] overflow-hidden rounded-t bg-white sm:min-w-[420px] md:rounded-none">
-          <img src={courseData.courseThumbnail} alt="Course thumbnail" />
+          {playerData ? (
+            <YouTube
+              videoId={playerData.videoId}
+              opts={{ playerVars: { autoplay: 1 } }}
+              iframeClassName="w-full aspect-video"
+            />
+          ) : (
+            <img src={courseData.courseThumbnail} alt="Course thumbnail" />
+          )}
           <div className="px-5 pt-5 pb-5">
             <div className="flex items-center gap-2">
-              {playerData ? : <img
+              <img
                 src={assets.time_left_clock_icon}
                 alt="Time left clock icon"
                 className="h-3.5 w-3.5 object-contain"
-              />}
-              
+              />
               <p className="text-red-500">
                 <span className="font-medium">5 days</span> left at this price!
               </p>
