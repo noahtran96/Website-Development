@@ -10,6 +10,7 @@ export const CourseDetails = () => {
   const { id } = useParams();
   const [openSection, setOpenSection] = useState({});
   const [isEnrolled, setIsEnrolled] = useState(false);
+  const [playerData, setPlayerData] = useState(null);
   const {
     allCourses,
     calculateRating,
@@ -126,7 +127,7 @@ export const CourseDetails = () => {
                             <p>{lecture.lectureTitle}</p>
                             <div className="flex gap-2">
                               {lecture.isPreviewFree && (
-                                <p className="cursor-pointer text-blue-500">
+                                <p onClick={() => setPlayerData({videoId: lecture.lectureUrl.split("/").pop()})} className="cursor-pointer text-blue-500">
                                   Preview
                                 </p>
                               )}
@@ -163,11 +164,12 @@ export const CourseDetails = () => {
           <img src={courseData.courseThumbnail} alt="Course thumbnail" />
           <div className="px-5 pt-5 pb-5">
             <div className="flex items-center gap-2">
-              <img
+              {playerData ? : <img
                 src={assets.time_left_clock_icon}
                 alt="Time left clock icon"
                 className="h-3.5 w-3.5 object-contain"
-              />
+              />}
+              
               <p className="text-red-500">
                 <span className="font-medium">5 days</span> left at this price!
               </p>
