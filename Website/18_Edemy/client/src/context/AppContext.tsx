@@ -56,9 +56,15 @@ export const AppContextProvider = (props) => {
     return totalLectures;
   };
 
+  // Fetch user enrolled courses
+  const fetchUserEnrolledCourses = async () => {
+    setEnrolledCourses(COURSE_DATA);
+  };
+
   useEffect(() => {
     const loadData = async () => {
       await fetchAllCourses();
+      await fetchUserEnrolledCourses();
     };
     loadData();
   }, []);
@@ -73,6 +79,8 @@ export const AppContextProvider = (props) => {
     calculateChapterTime,
     calculateCourseDuration,
     calculateNoOfLectures,
+    enrolledCourses,
+    fetchUserEnrolledCourses,
   };
   return (
     <AppContext.Provider value={value}>{props.children}</AppContext.Provider>
