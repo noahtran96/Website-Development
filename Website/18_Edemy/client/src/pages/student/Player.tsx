@@ -3,6 +3,8 @@ import { AppContext } from "@/context/AppContext";
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import humanizeDuration from "humanize-duration";
+import YouTube from "react-youtube";
+import { Footer } from "@/components/student/Footer";
 
 export const Player = () => {
   const { enrolledCourses, calculateChapterTime } = useContext(AppContext);
@@ -17,15 +19,16 @@ export const Player = () => {
     }));
   };
   const getCourseData = () => {
-    enrolledCourses.map((course) => {
-      if (course._id === courseId) {
-        setCourseData(course);
-      }
-    });
+    const currentCourse = enrolledCourses.find(
+      (course) => (course._id = courseId)
+    );
+    if (currentCourse) {
+      setCourseData(currentCourse);
+    }
   };
   useEffect(() => {
     getCourseData();
-  }, [enrolledCourses]);
+  }, [enrolledCourses, courseId]);
   return (
     <>
       <div className="flex flex-col-reverse gap-10 p-4 sm:p-10 md:grid md:grid-cols-2 md:px-36">
@@ -109,8 +112,34 @@ export const Player = () => {
           </div>
         </div>
         {/* Right column */}
-        <div></div>
+        <div className="md:mt-10">
+          {playerData ? (
+            <div>
+              <YouTube
+                videoId={playerData.lectureUrl.split("/").pop()}
+                iframeClassName="w-full aspect-video"
+              />
+              <div className="mt-1 flex items-center justify-between">
+                <p>
+                  {playerData.chapter}.{playerData.lecture}{" "}
+                  {playerData.lectureTitle}
+                </p>
+                <p>
+                  <button className="text-blue-600">
+                    {false ? "Completed" : "Mark Complete"}
+                  </button>
+                </p>
+              </div>
+            </div>
+          ) : (
+            <img
+              src={courseData ? courseData.courseThumbnail : ""}
+              alt="Course thumbnail"
+            />
+          )}
+        </div>
       </div>
+      <Footer />
     </>
   );
 };
