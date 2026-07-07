@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import humanizeDuration from "humanize-duration";
 import YouTube from "react-youtube";
 import { Footer } from "@/components/student/Footer";
+import { Rating } from "@/components/student/Rating";
 
 export const Player = () => {
   const { enrolledCourses, calculateChapterTime } = useContext(AppContext);
@@ -109,6 +110,11 @@ export const Player = () => {
                   </div>
                 </div>
               ))}
+          </div>
+          {/* Ratings */}
+          <div className="mt-10 flex items-center gap-2 py-3">
+            <h1 className="text-xl font-bold">Rate this course</h1>
+            <Rating initialRating={0} />
           </div>
         </div>
         {/* Right column */}
