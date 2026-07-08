@@ -48,7 +48,7 @@ export const Footer = () => {
         </div>
       </div>
       <p className="py-4 text-center text-xs text-white/60 md:text-sm">
-        Copyright 2026 © Endemy. All rights reserved.
+        Copyright 2026 © Edemy. All rights reserved.
       </p>
     </footer>
   );
