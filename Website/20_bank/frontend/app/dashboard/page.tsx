@@ -1,15 +1,38 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { gql } from "@apollo/client";
+import { useQuery } from "@apollo/client/react";
+
+const GET_ACCOUNT_INFO = gql`
+  query GetAccountInfo {
+    getAccountInfo {
+      name
+      accountNumber
+      balance
+      bankName
+    }
+  }
+`;
 
 export default function DashboardPage() {
-  const [account] = useState({
-    name: "NOAH TRAN",
-    accountNumber: "1903969999",
-    balance: 5000000,
-    bankName: "NOAH FAKECOMBANK",
-  });
+  const { loading, error, data } = useQuery(GET_ACCOUNT_INFO);
+
+  if (loading)
+    return (
+      <div className="p-6 text-center text-gray-500">
+        Loading account details...
+      </div>
+    );
+
+  if (error)
+    return (
+      <div className="p-6 text-center text-red-500">
+        BFF connection error: {error.message}
+      </div>
+    );
+
+  const account = data.getAccountInfo;
 
   return (
     <div className="min-h-screen bg-gray-50 p-6">
