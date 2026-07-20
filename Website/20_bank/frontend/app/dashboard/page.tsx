@@ -10,7 +10,7 @@ const GET_ACCOUNT_INFO = gql`
       name
       accountNumber
       balance
-      bankName
+      bankNam
     }
   }
 `;
