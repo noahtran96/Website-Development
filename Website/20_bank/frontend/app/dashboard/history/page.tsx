@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useQuery, gql } from "@apollo/client";
+import { gql } from "@apollo/client";
+import { useQuery } from "@apollo/client/react";
 
 const GET_TRANSACTION_HISTORY = gql`
   query GetTransactionHistory {
@@ -16,30 +17,22 @@ const GET_TRANSACTION_HISTORY = gql`
 `;
 
 export default function HistoryPage() {
-  // Mock transaction history from Transaction Service on port 5003
-  const [transactions] = useState([
-    {
-      id: "TX1001",
-      type: "RECEIVED",
-      amount: 2000000,
-      content: "Monthly salary",
-      date: "2026-07-15 10:30",
-    },
-    {
-      id: "TX1002",
-      type: "SENT",
-      amount: 500000,
-      content: "Dinner",
-      date: "2026-07-15 19:15",
-    },
-    {
-      id: "TX1003",
-      type: "SENT",
-      amount: 1500000,
-      content: "Electricity",
-      date: "2026-07-14 08:00",
-    },
-  ]);
+  const { loading, error, data } = useQuery(GET_TRANSACTION_HISTORY);
+
+  if (loading)
+    return (
+      <div className="p-6 text-center text-gray-500">
+        Loading transaction history...
+      </div>
+    );
+  if (error)
+    return (
+      <div className="p-6 text-center text-red-500">
+        BFF connection error: {error.message}
+      </div>
+    );
+
+  const transactions = data.getTransactionHistory;
 
   return (
     <div className="min-h-screen bg-gray-50 p-6">
@@ -56,27 +49,33 @@ export default function HistoryPage() {
         </h1>
         <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
           <div className="divide-y divide-gray-100">
-            {transactions.map((transaction) => (
-              <div
-                key={transaction.id}
-                className="p-4 flex justify-between items-center hover:bg-gray-55 transition-colors"
-              >
-                <div>
-                  <p className="font-semibold text-gray-800">
-                    {transaction.content}
-                  </p>
-                  <p className="text-xs text-gray-400 mt-1">
-                    {transaction.date} • Transaction ID: {transaction.id}
-                  </p>
-                </div>
+            {transactions.length === 0 ? (
+              <p className="p-4 text-center text-gray-400">
+                No transaction recorded
+              </p>
+            ) : (
+              transactions.map((transaction) => (
                 <div
-                  className={`font-bold text-lg ${transaction.type === "RECEIVED" ? "text-green-600" : "text-red-600"}`}
+                  key={transaction.id}
+                  className="p-4 flex justify-between items-center hover:bg-gray-55 transition-colors"
                 >
-                  {transaction.type === "RECEIVED" ? "+" : "-"}
-                  {transaction.amount.toLocaleString("vi-VN")}đ
+                  <div>
+                    <p className="font-semibold text-gray-800">
+                      {transaction.content}
+                    </p>
+                    <p className="text-xs text-gray-400 mt-1">
+                      {transaction.date} • Transaction ID: {transaction.id}
+                    </p>
+                  </div>
+                  <div
+                    className={`font-bold text-lg ${transaction.type === "RECEIVED" ? "text-green-600" : "text-red-600"}`}
+                  >
+                    {transaction.type === "RECEIVED" ? "+" : "-"}
+                    {transaction.amount.toLocaleString("vi-VN")}đ
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))
+            )}
           </div>
         </div>
       </div>
