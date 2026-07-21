@@ -1,7 +1,19 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useQuery, gql } from "@apollo/client";
+
+const GET_TRANSACTION_HISTORY = gql`
+  query GetTransactionHistory {
+    getTransactionHistory {
+      id
+      type
+      amount
+      content
+      date
+    }
+  }
+`;
 
 export default function HistoryPage() {
   // Mock transaction history from Transaction Service on port 5003

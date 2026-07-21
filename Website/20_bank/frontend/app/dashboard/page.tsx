@@ -10,7 +10,7 @@ const GET_ACCOUNT_INFO = gql`
       name
       accountNumber
       balance
-      bankNam
+      bankName
     }
   }
 `;
@@ -48,7 +48,7 @@ export default function DashboardPage() {
             </p>
           </div>
           <span className="px-3 py-1 bg-green-100 text-green-800 text-xs font-semibold rounded-full">
-            Online
+            Data from BFF
           </span>
         </div>
 
