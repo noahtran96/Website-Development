@@ -2,6 +2,9 @@
 
 import Link from "next/link";
 import React, { useState } from "react";
+import { gql } from "@apollo/client";
+import { useMutation } from "@apollo/client/react";
+import { useRouter } from "next/navigation";
 
 export default function TransferPage() {
   const [receiver, setReceiver] = useState("");
