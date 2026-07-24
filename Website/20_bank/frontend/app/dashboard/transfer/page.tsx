@@ -81,7 +81,7 @@ export default function TransferPage() {
             type="submit"
             className="w-full py-3 bg-violet-600 text-white font-semibold rounded-xl hover:bg-violet-700 transition-colors shadow-md"
           >
-            Proceed transfer
+            Proceed transfer!
           </button>
         </form>
       </div>
