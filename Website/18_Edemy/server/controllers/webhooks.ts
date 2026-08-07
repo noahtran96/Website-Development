@@ -26,9 +26,7 @@ export const clerkWebhooks = async (res, res) => {
         res.json({})
         break;
       }
-      case "user.not created" {
-        break;
-      }
+   
     }
   } catch (error) {}
 };
