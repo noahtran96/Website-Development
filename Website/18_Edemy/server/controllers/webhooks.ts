@@ -26,6 +26,8 @@ export const clerkWebhooks = async (res, res) => {
         res.json({})
         break;
       }
+      default:
+        console.log("user is working")
    
     }
   } catch (error) {}
