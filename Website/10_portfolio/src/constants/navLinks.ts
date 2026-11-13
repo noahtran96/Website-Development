@@ -1,12 +1,10 @@
-export interface NavLink {
+export interface NavLinkItem {
   id: string;
-  href: string;
+  path: string;
   label: string;
 }
 
-export const NAV_LINKS: NavLink[] = [
-  { id: "1", href: "#about", label: "About" },
-  { id: "2", href: "#projects", label: "Projects" },
-  { id: "3", href: "#experience", label: "Experience" },
-  { id: "4", href: "#testimonials", label: "Testimonials" },
+export const NAV_LINKS: NavLinkItem[] = [
+  { id: "1", path: "/about", label: "About" },
+  { id: "2", path: "/projects", label: "Projects" },
 ];

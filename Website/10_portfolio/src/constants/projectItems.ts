@@ -1,17 +1,22 @@
+export type ProjectCategory = "all" | "frontend" | "fullstack" | "data";
+
 export interface ProjectItem {
   id: string;
   title: string;
+  category: Exclude<ProjectCategory, "all">;
   description: string;
+  impact?: string;
   image: string;
   tags: string[];
-  link: string;
-  github: string;
+  link?: string;
+  github?: string;
 }
 
 export const PROJECT_ITEMS: ProjectItem[] = [
   {
     id: "1",
     title: "Crypto Tracker",
+    category: "fullstack",
     description:
       "A cryptocurrency tracking app with real-time data, interactive charts, and detailed coin insights.",
     image: "/projects/project1.png",
@@ -22,7 +27,8 @@ export const PROJECT_ITEMS: ProjectItem[] = [
   },
   {
     id: "2",
-    title: "SaaS Landing Page",
+    title: "AI SaaS Landing Architecture",
+    category: "frontend",
     description:
       "A modern AI SaaS landing page showcasing services, pricing plans, and business solutions with a clean, responsive UI.",
     image: "/projects/project2.png",
@@ -34,7 +40,8 @@ export const PROJECT_ITEMS: ProjectItem[] = [
   },
   {
     id: "3",
-    title: "Modern Fintech Landing Page",
+    title: "HooBank Fintech UI",
+    category: "frontend",
     description:
       "A sleek, responsive Fintech landing page showcasing modern UI/UX patterns, custom CSS gradients, and modular React architecture.",
     image: "/projects/project3.png",
@@ -45,7 +52,8 @@ export const PROJECT_ITEMS: ProjectItem[] = [
   },
   {
     id: "4",
-    title: "Dev Platform Landing Page",
+    title: "CodeFlow AI Platform",
+    category: "frontend",
     description:
       "A premium AI-powered developer landing page featuring a dynamic IDE simulator, interactive code completion showcases, and custom mouse-tracking animations.",
     image: "/projects/project4.png",
