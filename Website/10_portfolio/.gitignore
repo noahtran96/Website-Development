@@ -7,7 +7,6 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-public
 node_modules
 dist
 dist-ssr
@@ -28,3 +27,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Revamped files
+src/sections/Contact.tsx
