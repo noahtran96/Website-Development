@@ -1,7 +1,7 @@
 import { Button } from "@/components/Button";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
-import { NAV_LINKS, type NavLink } from "@/constants";
+import { NAV_LINKS, type NavLinkItem } from "@/constants";
 
 // Scroll threshold constant for navbar UI trigger
 const SCROLL_THRESHOLD = 50;
@@ -41,9 +41,9 @@ export const Navbar = () => {
         {/* Desktop nav*/}
         <div className="hidden items-center gap-1 md:flex">
           <div className="glass flex items-center gap-1 rounded-full px-2 py-1">
-            {NAV_LINKS.map((link: NavLink) => (
+            {NAV_LINKS.map((link: NavLinkItem) => (
               <a
-                href={link.href}
+                href={link.path}
                 key={link.id}
                 className="text-muted-foreground hover:text-foreground hover:bg-surface rounded-full px-4 py-2 text-sm"
               >
@@ -53,11 +53,11 @@ export const Navbar = () => {
           </div>
         </div>
         {/* CTA button */}
-        <div className="hidden md:block">
+        {/* <div className="hidden md:block">
           <Button href="#contact" size="sm">
             Contact Me
           </Button>
-        </div>
+        </div> */}
 
         {/* Mobile menu button*/}
         <button
@@ -77,9 +77,9 @@ export const Navbar = () => {
       >
         <div className="glass-strong animate-fade-in md:hidden">
           <div className="container mx-auto flex flex-col gap-4 px-6 py-6">
-            {NAV_LINKS.map((link: NavLink) => (
+            {NAV_LINKS.map((link: NavLinkItem) => (
               <a
-                href={link.href}
+                href={link.path}
                 key={link.id}
                 onClick={closeMenu}
                 className="text-muted-foreground hover:text-foreground py-2 text-lg"
@@ -88,9 +88,9 @@ export const Navbar = () => {
               </a>
             ))}
 
-            <Button href="#contact" onClick={closeMenu}>
+            {/* <Button href="#contact" onClick={closeMenu}>
               Contact Me
-            </Button>
+            </Button> */}
           </div>
         </div>
       </div>

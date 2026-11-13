@@ -30,3 +30,4 @@ dist-ssr
 
 # Revamped files
 src/sections/Contact.tsx
+src/sections/Hero/SkillsMarquee.tsx

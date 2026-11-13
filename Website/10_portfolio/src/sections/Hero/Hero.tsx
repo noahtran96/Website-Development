@@ -1,7 +1,14 @@
-import { ChevronDown } from "lucide-react";
+import {
+  ArrowRight,
+  CheckCircle2,
+  ChevronDown,
+  Cpu,
+  Terminal,
+} from "lucide-react";
 import { BlueDots } from "@/components/BlueDots";
 import { Social } from "./Social";
 import { SkillsMarquee } from "./SkillsMarquee";
+import { Link } from "react-router-dom";
 
 export const Hero = () => {
   return (
@@ -10,7 +17,7 @@ export const Hero = () => {
       <div className="absolute inset-0">
         <img
           src="/hero-bg.png"
-          alt="Hero image"
+          alt="Hero background"
           className="h-full w-full object-cover opacity-40"
         />
         {/* Gradient overlay */}
@@ -22,30 +29,26 @@ export const Hero = () => {
 
       {/* Content layer */}
       <div className="relative z-10 container mx-auto px-6 pt-32 pb-20">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
+        <div className="grid items-center gap-12 lg:grid-cols-12">
           {/* Left column (text): headline and social links */}
-          <div className="space-y-8">
+          <div className="space-y-8 lg:col-span-7">
             <div className="animate-fade-in">
               <span className="glass text-primary inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm">
                 <span className="bg-primary h-2 w-2 animate-pulse rounded-full" />
-                Software Engineering Enthusiast
+                Tech BA • Ops & BI Intelligence • Fullstack Builder
               </span>
             </div>
 
             {/* Headline */}
             <div className="space-y-4">
               <h1 className="animate-fade-in animation-delay-100 text-5xl leading-tight font-bold md:text-6xl lg:text-7xl">
-                Crafting <span className="text-primary glow-text">digital</span>
-                <br />
-                experiences with <br />
-                <span className="font-serif font-normal text-white italic">
-                  precision.
-                </span>
+                Noah Tran<span className="text-primary">.</span>
               </h1>
               <p className="text-muted-foreground animate-fade-in animation-delay-200 max-w-lg text-lg">
-                Hi, I'm Noah Tran - a software engineering enthusiast
-                specializing in React, TypeScript and Tailwind CSS. I build
-                scalable, performant web applications that users love.
+                Translating complex business operations into{" "}
+                <span className="text-foreground font-medium">
+                  technical architecture, BI intelligence, and working software.
+                </span>
               </p>
             </div>
 
@@ -60,54 +63,115 @@ export const Hero = () => {
               </AnimatedBorderButton>
             </div> */}
 
+            {/* CTA Buttons */}
+            <div className="animate-fade-in animation-delay-300 flex flex-wrap items-center gap-4">
+              <Link
+                to="/projects"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center gap-2 rounded-xl px-6 py-3.5 text-sm font-semibold shadow-lg transition-all"
+              >
+                Explore Work <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                to="/about"
+                className="glass hover:bg-surface text-foreground inline-flex items-center gap-2 rounded-xl px-6 py-3.5 text-sm font-medium transition-all"
+              >
+                Capabilities
+              </Link>
+            </div>
+
             {/* Social links */}
             <Social />
           </div>
 
           {/* Right column: profile image, floating badge and stats badge */}
-          <div className="animate-fade-in animation-delay-300 relative">
-            {/* Profile image */}
-            <div className="relative mx-auto max-w-md">
-              <div className="from-primary/30 to-primary/10 absolute inset-0 animate-pulse rounded-3xl bg-gradient-to-br via-transparent blur-2xl" />
-              <div className="glass glow-border relative rounded-3xl p-2">
-                <img
-                  src="/profile-photo1.png"
-                  alt="Noah Tran"
-                  className="aspect-[4/5] w-full rounded-2xl object-cover"
-                />
+          <div className="animate-fade-in animation-delay-300 lg:col-span-5">
+            <div className="glass-strong glow-border relative overflow-hidden rounded-2xl p-6">
+              {/* Top Window Bar */}
+              <div className="mb-6 flex items-center justify-between border-b border-white/10 pb-4">
+                <div className="flex items-center gap-2">
+                  <span className="h-3 w-3 rounded-full bg-rose-500/80" />
+                  <span className="h-3 w-3 rounded-full bg-amber-500/80" />
+                  <span className="h-3 w-3 rounded-full bg-emerald-500/80" />
+                </div>
+                <span className="text-muted-foreground font-mono text-xs">
+                  noah.system.spec
+                </span>
+              </div>
 
-                {/* Floating badge */}
-                <div className="glass animate-float absolute -right-4 -bottom-4 rounded-xl px-4 py-3">
-                  <div className="flex items-center gap-3">
-                    <div className="bg-primary h-3 w-3 animate-pulse rounded-full" />
-                    <span className="text-sm font-medium">
-                      Available for work
-                    </span>
+              {/* Structured Profile Spec */}
+              <div className="space-y-5 font-mono text-sm">
+                <div>
+                  <div className="text-muted-foreground mb-1 text-xs">
+                    // POSITIONING
+                  </div>
+                  <div className="text-foreground flex items-center gap-2 font-sans font-medium">
+                    <Cpu size={16} className="text-primary shrink-0" />
+                    <span>Business-to-Dev Bridge who actually ships code</span>
                   </div>
                 </div>
 
-                {/* Stats badge */}
-                <div className="glass animate-float animation-delay-500 absolute -top-4 -left-4 rounded-xl px-4 py-3">
-                  <div className="text-primary text-2xl font-bold">5+</div>
-                  <div className="text-muted-foreground text-xs">Projects</div>
+                <div>
+                  <div className="text-muted-foreground mb-2.5 text-xs">
+                    // CORE CAPABILITIES
+                  </div>
+                  <ul className="space-y-2.5 font-sans text-sm">
+                    <li className="flex items-start gap-2.5 text-slate-300">
+                      <CheckCircle2
+                        size={16}
+                        className="text-primary mt-0.5 shrink-0"
+                      />
+                      <span>
+                        <strong className="text-white">System & Ops:</strong>{" "}
+                        UML specs, architecture & workflow automation
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2.5 text-slate-300">
+                      <CheckCircle2
+                        size={16}
+                        className="text-primary mt-0.5 shrink-0"
+                      />
+                      <span>
+                        <strong className="text-white">BI Intelligence:</strong>{" "}
+                        Data pipelines, analytics & executive dashboards
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2.5 text-slate-300">
+                      <CheckCircle2
+                        size={16}
+                        className="text-primary mt-0.5 shrink-0"
+                      />
+                      <span>
+                        <strong className="text-white">Fullstack Build:</strong>{" "}
+                        End-to-end web apps from database to UI
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Mini Metrics Grid */}
+                <div className="grid grid-cols-3 gap-3 border-t border-white/10 pt-5 font-sans">
+                  <div className="bg-surface/60 rounded-xl p-3 text-center">
+                    <div className="text-primary text-xl font-bold">90%</div>
+                    <div className="text-muted-foreground text-[11px]">
+                      Automation
+                    </div>
+                  </div>
+                  <div className="bg-surface/60 rounded-xl p-3 text-center">
+                    <div className="text-primary text-xl font-bold">-65%</div>
+                    <div className="text-muted-foreground text-[11px]">
+                      Ops Cost
+                    </div>
+                  </div>
+                  <div className="bg-surface/60 rounded-xl p-3 text-center">
+                    <div className="text-primary text-xl font-bold">5+ Yrs</div>
+                    <div className="text-muted-foreground text-[11px]">
+                      Leadership
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Skills marquee */}
-        <SkillsMarquee />
-
-        {/* Scroll down icon */}
-        <div className="animate-fade-in animation-delay-800 absolute bottom-8 left-1/2 -translate-x-1/2">
-          <a
-            href="#about"
-            className="text-muted-foreground hover:text-primary flex flex-col items-center gap-2"
-          >
-            <span className="text-xs tracking-wider uppercase">Scroll</span>
-            <ChevronDown className="h-6 w-6 animate-bounce" />
-          </a>
         </div>
       </div>
     </section>
