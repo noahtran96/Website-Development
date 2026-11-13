@@ -1,0 +1,16 @@
+name: Deploy 15_codeflow
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '15_codeflow/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run deploy
+        run: echo "System is deploying 15_codeflow..."

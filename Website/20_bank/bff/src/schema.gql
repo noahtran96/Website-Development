@@ -1,0 +1,32 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type AccountType {
+  name: String!
+  accountNumber: String!
+  balance: Int!
+  bankName: String!
+}
+
+type TransactionType {
+  id: String!
+  type: String!
+  amount: Int!
+  description: String!
+  date: String!
+}
+
+type TransferResultType {
+  success: Boolean!
+  message: String!
+}
+
+type Query {
+  getAccountInfo: AccountType!
+  getTransactionHistory: [TransactionType!]!
+}
+
+type Mutation {
+  transferMoney(recipient: String!, amount: Int!, description: String!): TransferResultType!
+}

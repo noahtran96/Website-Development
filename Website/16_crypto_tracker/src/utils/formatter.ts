@@ -1,0 +1,34 @@
+/**
+ * Formats a cryptocurrency price for display
+ * - For prices < 0.01: Returns 8 decimal places (ideal for low-value/meme coins)
+ * - For prices >= 0.01: Returns a standard USD currency format (with $ and commas)
+ * @param price - The raw numerical price value (e.g., 0.00001234 or 50000)
+ * @returns A formatted string ready for the UI
+ */
+
+export const formatPrice = (price: number): string => {
+  if (price < 0.01) return price.toFixed(8);
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }).format(price);
+};
+
+/**
+ * Formats large market cap numbers into human-readable strings
+ * - Use "T" for Trillions (1e12)
+ * - Use "B" for Billions (1e9)
+ * - Use "M" for Millions (1e6)
+ * - Returns locale-formatted string for smaller values
+ * @param marketCap - The total market capitalization value
+ * @returns A shorted string with magnitude suffixes (T, B, M)
+ */
+
+export const formatMarketCap = (marketCap: number): string => {
+  if (marketCap >= 1e12) return `${(marketCap / 1e12).toFixed(2)}T`;
+  if (marketCap >= 1e9) return `${(marketCap / 1e9).toFixed(2)}B`;
+  if (marketCap >= 1e6) return `${(marketCap / 1e6).toFixed(2)}M`;
+  return marketCap.toLocaleString();
+};

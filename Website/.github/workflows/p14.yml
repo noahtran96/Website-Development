@@ -1,0 +1,16 @@
+name: Deploy 14_saas_lp
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '14_saas_lp/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run deploy
+        run: echo "System is deploying 14_saas_lp..."
